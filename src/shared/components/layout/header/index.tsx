@@ -1,11 +1,9 @@
 import { fakeMenu } from "@/shared/mock/menu";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Bungee } from 'next/font/google'
+
 import { useRouter } from "next/router";
 import Image from "next/image";
-
-const bungee = Bungee({ subsets: ["latin-ext"], display: 'swap', weight: ['400'] })
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);

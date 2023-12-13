@@ -18,7 +18,7 @@ const SuccessProject = ({solution, id}: Props) => {
             {solution[id].successProject.map((item, idx) => (
             <div key={idx} className='grid grid-cols-2 justify-start items-center'>
               <div className='flex justify-center items-center px-10 py-10'>
-                <Image className='' height={300} width={300} src={item.image} alt={''}></Image>
+                <Image className='w-full h-auto' height={300} width={300} src={item.image} alt={''}></Image>
               </div>
               <div className='flex flex-col gap-3 px-10 py-10'>
                 <h1 className='text-[#1B3864] text-4xl '>{item.title}</h1>

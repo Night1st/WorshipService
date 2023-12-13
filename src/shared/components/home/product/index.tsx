@@ -1,5 +1,4 @@
 import TitleSection from "../../common/TitleSection";
-import InfoCard from "./InfoCard";
 import ProductCard from "./productCard";
 
 const NextGenerationSolution = () => {

@@ -1,5 +1,5 @@
 import TitleSection from "../../common/TitleSection";
-import ProductCard from "./productCard";
+import EventCard from "./eventCard";
 
 const EventUpcoming = () => {
   const MetaData = [
@@ -30,7 +30,7 @@ const EventUpcoming = () => {
       />
       <div className="w-full min-h-[350px] grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 mt-10 overflow-hidden">
         {MetaData.map((item, idx) => (
-          <ProductCard key={idx} title={item.title} description={item.description} image={item.image} date={item.date}/>
+          <EventCard key={idx} title={item.title} description={item.description} image={item.image} date={item.date}/>
         ))}
       </div>
     </section>

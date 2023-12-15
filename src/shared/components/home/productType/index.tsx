@@ -3,28 +3,28 @@ import TitleSection from "../../common/TitleSection";
 const ProductType = () => {
     const Type = [
         {
-            title: "HƯƠNG",
-            image: ""
+            title: "Hương",
+            image: "bg-huong"
         },
         {
-            title: "NẾN",
-            image: ""
+            title: "Nến",
+            image: "bg-nen"
         },
         {
-            title: "TIỀN VÀNG",
-            image: ""
+            title: "Tiền vàng",
+            image: "bg-tienvang"
         },
         {
-            title: "SET ĐỒ CÚNG",
-            image: ""
+            title: "Set đồ cúng",
+            image: "bg-setdocung"
         },
         {
-            title: "ĐỒ HẦU",
-            image: ""
+            title: "Đồ hầu",
+            image: "bg-dohau"
         },
         {
-            title: "SẢN PHẨM KHÁC",
-            image: ""
+            title: "Sản phẩm khác",
+            image: "bg-sanphamkhac"
         },
     ]
     return (
@@ -35,8 +35,8 @@ const ProductType = () => {
             />
             <div className="w-full grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 mt-10 overflow-hidden">
                 {Type.map((item, idx) => (
-                    <div key={idx} className="flex justify-center bg-[gray]" style={{backgroundImage: `url(${item.image})`}}>
-                        <p className="text-xl text-white text-center pt-20">{item.title}</p>
+                    <div key={idx} className={`flex justify-center ${item.image} bg-cover bg-no-repeat bg-center  rounded-3xl`}>
+                        <p className="text-4xl text-white text-center pt-20 pb-5">{item.title}</p>
                     </div>
                 ))}
             </div>

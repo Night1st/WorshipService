@@ -1,17 +1,17 @@
 import ConnectForm from "@/shared/components/common/ConnectForm";
+import MaybeInterested from "@/shared/components/common/MaybeInterested";
 import ProductList from "@/shared/components/common/ProductList";
 import Banner from "@/shared/components/home/banner";
-import ProductType from "@/shared/components/home/productType";
 import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
 import Head from "next/head";
 
 const homeData = {
-    title: "SẢN PHẨM",
-    description: "Chúng tôi luôn mong muốn mang đến các sản phẩm chất lượng nhất",
-    image: "bg-sanpham"
+    title: "HƯƠNG",
+    description: "Hương thể hiện truyền thống, văn hóa tâm linh của dân tộc Việt, tỏ lòng thành kính với tổ tiên, thánh thần, trời đất…sau là nguyện cầu sự bình an cho gia đạo. Tấm lòng thành ấy sẽ thêm thuần khiết, khi sản phẩm ấy chính là những nén nhang sạch tự nhiên, an toàn, dịu ấm mang ý nghĩa nhân văn hướng thiện.",
+    image: "bg-huong"
 }
 
-export function ProductDetail() {
+export function Huong() {
     return (
       <>
         <Head>
@@ -20,8 +20,8 @@ export function ProductDetail() {
           <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
         </Head>
         <Banner data={homeData}/>
-        <ProductType />
         <ProductList />
+        <MaybeInterested />
         <ConnectForm/>
       </>
     );
@@ -48,8 +48,7 @@ export function ProductDetail() {
   //     };
   //   }
   // }
-  ProductDetail.getLayout = (children: React.ReactNode) => (
+  Huong.getLayout = (children: React.ReactNode) => (
     <LayoutWebsite>{children}</LayoutWebsite>
   );
-  export default ProductDetail;
-  
+  export default Huong;

@@ -21,7 +21,8 @@ const ProductCard = ({title, image, price, status}: Props) => {
                     src={image}
                     width={350}
                     height={350}
-                    alt={""}/>
+                    alt={""}
+                    />
             </div>
             <div className="flex flex-col gap-3 px-3 py-3">
                 <p className="px-2 text-lg text-black bg-[#EDB84F] rounded-xl w-fit">{status}</p>

@@ -2,17 +2,17 @@ export const footerData = {
     contactData: [
         {
             head: "Địa chỉ",
-            title: "Tòa 6th Element, đường Nguyễn Văn Huyên, phường Xuân La, quận Tây Hồ, thành phố Hà Nội",
+            title: "17/31 Khu Nam Trung, Phường Nam Khê, Thành phố Uông Bí, Tỉnh Quảng Ninh",
             icon: "/images/iconAddress.png"
         },
         {
             head: "Hotline",
-            title: "+84 123 456 789",
+            title: "0985903699 | 0394286488",
             icon: "/images/iconPhone.png"
         },
         {
             head: "Email",
-            title: "support@mtv.com.vn",
+            title: "vu.tuan35@gmail.com",
             icon: "/images/iconEmail.png"
         }
     ],

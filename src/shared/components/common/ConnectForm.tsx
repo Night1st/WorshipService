@@ -21,17 +21,17 @@ const ConnectForm = () => {
   return (
     <>
       <section className='mx-auto px-32 py-10'>
-        <div className='bg-[#1B3864] p-5 justify-around items-center rounded-lg'>
-          <h1 className='text-center text-white text-4xl'>Đăng kí nhận tư vấn</h1>
+        <div className='bg-[var(--secondary-color-100)] p-5 justify-around items-center rounded-lg'>
+          <h1 className='text-center text-[var(--primary-color-1000)] text-4xl'>ĐĂNG KÍ NHẬN TƯ VẤN</h1>
           <p className='text-center'>Vui lòng để lại thông tin, chúng tôi sẽ hỗ trợ bạn trong thời gian sớm nhất</p>
-          <div className='grid grid-cols-2 gap-4 pt-10 justify-between text-white'>
+          <div className='grid grid-cols-2 gap-4 pt-10 justify-between text-black'>
             <div className='flex flex-col'>
               <div className='mb-4'>
                 <label className='block text-sm font-bold mb-2'>
                   Họ tên *
                 </label>
                 <input
-                  className='bg-[#1B3864] appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline'
+                  className='appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline'
                   id='username'
                   type='text'
                   placeholder='Vui lòng cho biết họ tên của bạn'
@@ -42,7 +42,7 @@ const ConnectForm = () => {
                   Số điện thoại *
                 </label>
                 <input
-                  className='bg-[#1B3864] appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline'
+                  className='appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline'
                   id='password'
                   type='text'
                   placeholder='Nhập số điện thoại của bạn'
@@ -53,7 +53,7 @@ const ConnectForm = () => {
                   Email *
                 </label>
                 <input
-                  className='bg-[#1B3864] appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline'
+                  className='appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline'
                   id='password'
                   type='text'
                   placeholder='Nhập email của bạn'
@@ -78,14 +78,13 @@ const ConnectForm = () => {
                     {data.map((item, index) => (
                         <button
                             key={index}
-                            className={`${item == selectedIcon && "bg-[white] text-black transition duration-750 ease-in-out"} justify-between items-center py-2 px-3 rounded-full cursor-pointer`}
-                            style={{ border: "1px solid #fff" }}
+                            className={`${item == selectedIcon && "bg-[#44000D] text-white transition duration-750 ease-in-out"} border-[#44000D] border-2 justify-between items-center py-2 px-3 rounded-full cursor-pointer`}
                             onClick={() => setSelectedIcon(item)}
                         >{`${item}`}</button>
                     ))}
                 </div>
                 <textarea
-                  className='bg-[#1B3864] appearance-none border rounded w-full h-32 py-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline'
+                  className='appearance-none border rounded w-full h-32 py-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline'
                   placeholder='Nếu bạn cần hỗ trợ vấn đề khác, vui lòng cho chúng tôi biết.'
                 />
               </div>
@@ -93,8 +92,7 @@ const ConnectForm = () => {
           </div>
           <div className='flex w-full justify-center items-center'>
               <motion.button
-                whileHover="hover"
-                className={`bg-[white] relative flex justify-center items-center gap-3 text-black py-4 px-4 rounded cursor-pointer mt-3 w-60`}
+                className={`relative flex justify-center items-center gap-3 text-[var(--primary-color-900)] border-[#44000D] border-2 py-4 px-4 rounded cursor-pointer mt-3 w-60`}
               >
                 <p className="text-sm">{"Đăng ký"}</p>
                 <motion.div

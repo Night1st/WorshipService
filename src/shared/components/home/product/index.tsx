@@ -9,31 +9,36 @@ const Product = () => {
     {
       title: "Hương bài Cơ Đảm tăm 38 tàn trắng",
       image: "/images/Product.png",
-      price: "120.000đ",
+      oldPrice: "100.000đ",
+      newPrice: "120.000đ",
       status: "Miễn phí vận chuyển"
     },
     {
       title: "Hương bài Cơ Đảm tăm 38 tàn trắng",
       image: "/images/Product.png",
-      price: "120.000đ",
+      oldPrice: "100.000đ",
+      newPrice: "120.000đ",
       status: "Miễn phí vận chuyển"
     },
     {
       title: "Hương bài Cơ Đảm tăm 38 tàn trắng",
       image: "/images/Product.png",
-      price: "120.000đ",
+      oldPrice: "100.000đ",
+      newPrice: "120.000đ",
       status: "Miễn phí vận chuyển"
     },
     {
       title: "Hương bài Cơ Đảm tăm 38 tàn trắng",
       image: "/images/Product.png",
-      price: "120.000đ",
+      oldPrice: "100.000đ",
+      newPrice: "120.000đ",
       status: "Miễn phí vận chuyển"
     },
     {
       title: "Hương bài Cơ Đảm tăm 38 tàn trắng",
       image: "/images/Product.png",
-      price: "120.000đ",
+      oldPrice: "100.000đ",
+      newPrice: "120.000đ",
       status: "Miễn phí vận chuyển"
     },
   ]
@@ -45,7 +50,7 @@ const Product = () => {
       />
       <div className="w-full min-h-[350px] grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-5 mt-10 overflow-hidden">
         {MetaData.map((item, idx) => (
-          <ProductCard key={idx} title={item.title} price={item.price} image={item.image} status={item.status}/>
+          <ProductCard key={idx} title={item.title} oldPrice={item.oldPrice} newPrice={item.newPrice} image={item.image} status={item.status}/>
         ))}
       </div>
       <div className="flex justify-end items-end">

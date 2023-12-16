@@ -48,21 +48,23 @@ const Product = () => {
           <ProductCard key={idx} title={item.title} price={item.price} image={item.image} status={item.status}/>
         ))}
       </div>
-      <motion.button
-        whileHover="hover"
-        className={`bg-[white] relative flex justify-center items-center gap-3 text-[#1B3864] text-left py-4 px-4 border-2 cursor-pointer mt-3`}
-        onClick={() => router.push("")}
-      >
-        <p className="text-sm">{"Khám phá"}</p>
-        <IconArrowRight  color="#1B3864" />
-        <motion.div
-          className="absolute left-0 top-0 h-full w-0"
-          transition={{
-            duration: 0.3,
-            ease: "easeInOut",
-          }}
-        ></motion.div>
-      </motion.button>
+      <div className="flex justify-end items-end">
+          <motion.button
+            whileHover="hover"
+            className={`bg-[white] relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-4 px-4 min-w-[200px] border-2 cursor-pointer mt-3`}
+            onClick={() => router.push("/productDetail")}
+          >
+            <p className="text-sm">{"Khám phá"}</p>
+            <IconArrowRight  color="#550F17" />
+            <motion.div
+              className="absolute left-0 top-0 h-full w-0"
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+              }}
+            ></motion.div>
+          </motion.button>
+          </div>
     </section>
   );
 };

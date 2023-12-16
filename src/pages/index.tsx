@@ -7,7 +7,7 @@ import ConnectForm from "@/shared/components/common/ConnectForm";
 import EventUpcoming from "@/shared/components/home/eventUpcoming";
 
 const homeData = {
-  title: "KHẨU HIỆU",
+  title: "Mang bình an tới mỗi gia đình Việt",
   description: "",
   image: "bg-trangchu"
 }

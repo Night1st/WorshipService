@@ -3,6 +3,7 @@ import ProductList from "@/shared/components/common/ProductList";
 import Banner from "@/shared/components/home/banner";
 import ProductType from "@/shared/components/home/productType";
 import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
+import { productData } from "@/shared/mock/product";
 import Head from "next/head";
 
 const homeData = {
@@ -15,13 +16,13 @@ export function ProductDetail() {
     return (
       <>
         <Head>
-          <title>Trang chủ</title>
+          <title>Sản phẩm</title>
           <meta name="description" content="Trang chủ NGS" />
           <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
         </Head>
         <Banner data={homeData}/>
         <ProductType />
-        <ProductList />
+        <ProductList product={productData[0]} />
         <ConnectForm/>
       </>
     );

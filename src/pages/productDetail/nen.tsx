@@ -7,21 +7,21 @@ import Head from "next/head";
 import { productData } from "@/shared/mock/product";
 
 const homeData = {
-    title: "HƯƠNG",
-    description: "Hương thể hiện truyền thống, văn hóa tâm linh của dân tộc Việt, tỏ lòng thành kính với tổ tiên, thánh thần, trời đất…sau là nguyện cầu sự bình an cho gia đạo. Tấm lòng thành ấy sẽ thêm thuần khiết, khi sản phẩm ấy chính là những nén nhang sạch tự nhiên, an toàn, dịu ấm mang ý nghĩa nhân văn hướng thiện.",
-    image: "bg-huong"
+    title: "NẾN",
+    description: "Việc giữ lửa thắp nến, đèn thờ cúng đối với người Việt ta luôn được giữ gìn. Ánh sáng tượng trưng cho sự linh thiêng, ấm cúng. Mà những ánh sáng được tạo ra từ nén hương đèn dầu hay nến đều có ý nghĩa đặc trưng mà các gia đình luôn để tâm tới.",
+    image: "bg-nen"
 }
 
-export function Huong() {
+export function Nen() {
     return (
       <>
         <Head>
-          <title>Hương</title>
+          <title>Nến</title>
           <meta name="description" content="Trang chủ NGS" />
           <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
         </Head>
         <Banner data={homeData}/>
-        <ProductList product={productData[0]} />
+        <ProductList product={productData[1]} />
         <MaybeInterested />
         <ConnectForm/>
       </>
@@ -49,7 +49,7 @@ export function Huong() {
   //     };
   //   }
   // }
-  Huong.getLayout = (children: React.ReactNode) => (
+  Nen.getLayout = (children: React.ReactNode) => (
     <LayoutWebsite>{children}</LayoutWebsite>
   );
-  export default Huong;
+  export default Nen;

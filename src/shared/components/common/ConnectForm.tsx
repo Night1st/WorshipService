@@ -62,8 +62,8 @@ const ConnectForm = () => {
               <div className='mb-4 flex justify-end'>
               <Modal open={open} onClose={() => setOpen(false)}>
                   <div className='text-center w-full flex flex-col gap-5'>
-                    <h1 className='text-4xl text-black pt-10'>Kết nối thành công</h1>
-                    <p className="text-2xl text-black">Bạn đã kết nối với Metaverse thành công. Chúng tôi sẽ liên hệ với bạn sớm nhất.</p>
+                    <h1 className='text-4xl text-green-400 pt-10'>ĐĂNG KÝ THÀNH CÔNG</h1>
+                    <p className="text-2xl text-black">Quý khách đã đăng ký nhận tư vấn thành công. Chúng tôi sẽ liên hệ Quý khách sớm nhất.</p>
                     <Image className='ml-auto mr-auto py-10' height={400} width={400} src={'/images/ConnectSuccess.png'} alt={''} />
                   </div>
               </Modal>
@@ -93,6 +93,7 @@ const ConnectForm = () => {
           <div className='flex w-full justify-center items-center'>
               <motion.button
                 className={`relative flex justify-center items-center gap-3 text-[var(--primary-color-900)] border-[#44000D] border-2 py-4 px-4 rounded cursor-pointer mt-3 w-60`}
+                onClick={() => setOpen(true)}
               >
                 <p className="text-sm">{"Đăng ký"}</p>
                 <motion.div

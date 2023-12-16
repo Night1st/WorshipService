@@ -3,25 +3,25 @@ import MaybeInterested from "@/shared/components/common/MaybeInterested";
 import ProductList from "@/shared/components/common/ProductList";
 import Banner from "@/shared/components/home/banner";
 import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
-import Head from "next/head";
 import { productData } from "@/shared/mock/product";
+import Head from "next/head";
 
 const homeData = {
-    title: "HƯƠNG",
-    description: "Hương thể hiện truyền thống, văn hóa tâm linh của dân tộc Việt, tỏ lòng thành kính với tổ tiên, thánh thần, trời đất…sau là nguyện cầu sự bình an cho gia đạo. Tấm lòng thành ấy sẽ thêm thuần khiết, khi sản phẩm ấy chính là những nén nhang sạch tự nhiên, an toàn, dịu ấm mang ý nghĩa nhân văn hướng thiện.",
-    image: "bg-huong"
+    title: "SET ĐỒ CÚNG",
+    description: "Thờ cúng tổ tiên là một trong những tín ngưỡng đã có từ lâu đời và in sâu trong dòng chảy văn hóa của người dân Việt Nam. Thông qua việc thờ cúng, con người gửi gắm những mong mỏi trong cuộc sống của mình vào đấng linh thiêng.",
+    image: "bg-setdocung"
 }
 
-export function Huong() {
+export function SetDoCung() {
     return (
       <>
         <Head>
-          <title>Hương</title>
+          <title>Set đồ cúng</title>
           <meta name="description" content="Trang chủ NGS" />
           <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
         </Head>
         <Banner data={homeData}/>
-        <ProductList product={productData[0]} />
+        <ProductList product={productData[3]} />
         <MaybeInterested />
         <ConnectForm/>
       </>
@@ -49,7 +49,7 @@ export function Huong() {
   //     };
   //   }
   // }
-  Huong.getLayout = (children: React.ReactNode) => (
+  SetDoCung.getLayout = (children: React.ReactNode) => (
     <LayoutWebsite>{children}</LayoutWebsite>
   );
-  export default Huong;
+  export default SetDoCung;

@@ -5,15 +5,15 @@ export const fakeMenu = [
     },
     {
         title: "GIỚI THIỆU",
-        link: "/solution"
+        link: "/aboutUs"
     },
     {
         title: "SẢN PHẨM",
-        link: ""
+        link: "/productDetail"
     },
     {
         title: "TIN TỨC & SỰ KIỆN",
-        link: ""
+        link: "/eventUpcoming"
     },
     {
         title: "LIÊN HỆ",

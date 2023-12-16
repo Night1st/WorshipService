@@ -3,25 +3,25 @@ import MaybeInterested from "@/shared/components/common/MaybeInterested";
 import ProductList from "@/shared/components/common/ProductList";
 import Banner from "@/shared/components/home/banner";
 import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
-import Head from "next/head";
 import { productData } from "@/shared/mock/product";
+import Head from "next/head";
 
 const homeData = {
-    title: "HƯƠNG",
-    description: "Hương thể hiện truyền thống, văn hóa tâm linh của dân tộc Việt, tỏ lòng thành kính với tổ tiên, thánh thần, trời đất…sau là nguyện cầu sự bình an cho gia đạo. Tấm lòng thành ấy sẽ thêm thuần khiết, khi sản phẩm ấy chính là những nén nhang sạch tự nhiên, an toàn, dịu ấm mang ý nghĩa nhân văn hướng thiện.",
-    image: "bg-huong"
+    title: "ĐỒ HẦU",
+    description: "Nghi lễ tín ngưỡng thờ Mẫu được công nhận là di sản phi vật thể thứ 11 của dân tộc Việt Nam. Nhìn chung, tín ngưỡng thờ Mẫu này tạo nên tổng thể hài hòa của nhiều hoạt động đặc sắc, bao gồm các lễ hội dân gian, cuộc hành hương, nghi thức tế lễ hay những buổi tiệc thánh.",
+    image: "bg-dohau"
 }
 
-export function Huong() {
+export function DoHau() {
     return (
       <>
         <Head>
-          <title>Hương</title>
+          <title>Đồ hầu</title>
           <meta name="description" content="Trang chủ NGS" />
           <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
         </Head>
         <Banner data={homeData}/>
-        <ProductList product={productData[0]} />
+        <ProductList product={productData[4]} />
         <MaybeInterested />
         <ConnectForm/>
       </>
@@ -49,7 +49,7 @@ export function Huong() {
   //     };
   //   }
   // }
-  Huong.getLayout = (children: React.ReactNode) => (
+  DoHau.getLayout = (children: React.ReactNode) => (
     <LayoutWebsite>{children}</LayoutWebsite>
   );
-  export default Huong;
+  export default DoHau;

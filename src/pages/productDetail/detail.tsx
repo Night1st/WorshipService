@@ -1,7 +1,8 @@
 import ConnectForm from "@/shared/components/common/ConnectForm";
-import MaybeInterested from "@/shared/components/common/MaybeInterested";
 import OrderDetail from "@/shared/components/common/OrderDetail";
+import RelatedProduct from "@/shared/components/common/RelatedProduct";
 import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
+import { productData } from "@/shared/mock/product";
 import Head from "next/head";
 
 const imageData = [
@@ -19,7 +20,7 @@ export function Detail() {
           <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
         </Head>
         <OrderDetail images={imageData} />
-        <MaybeInterested />
+        <RelatedProduct product={productData[0]} />
         <ConnectForm/>
       </>
     );

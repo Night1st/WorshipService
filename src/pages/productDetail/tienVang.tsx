@@ -3,25 +3,25 @@ import MaybeInterested from "@/shared/components/common/MaybeInterested";
 import ProductList from "@/shared/components/common/ProductList";
 import Banner from "@/shared/components/home/banner";
 import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
-import Head from "next/head";
 import { productData } from "@/shared/mock/product";
+import Head from "next/head";
 
 const homeData = {
-    title: "HƯƠNG",
-    description: "Hương thể hiện truyền thống, văn hóa tâm linh của dân tộc Việt, tỏ lòng thành kính với tổ tiên, thánh thần, trời đất…sau là nguyện cầu sự bình an cho gia đạo. Tấm lòng thành ấy sẽ thêm thuần khiết, khi sản phẩm ấy chính là những nén nhang sạch tự nhiên, an toàn, dịu ấm mang ý nghĩa nhân văn hướng thiện.",
-    image: "bg-huong"
+    title: "TIỀN VÀNG",
+    description: "Tiền vàng mã là một loại vật phẩm quen thuộc được sử dụng trong những nghi lễ thờ cúng của người Việt. Hơn cả thế, tiền vàng mã còn mang trong mình những ý nghĩa tâm linh và là biểu tượng của tín ngưỡng thờ cúng tốt đẹp được cha ông ta lưu truyền bao đời nay.",
+    image: "bg-tienvang"
 }
 
-export function Huong() {
+export function TienVang() {
     return (
       <>
         <Head>
-          <title>Hương</title>
+          <title>Tiền vàng</title>
           <meta name="description" content="Trang chủ NGS" />
           <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
         </Head>
         <Banner data={homeData}/>
-        <ProductList product={productData[0]} />
+        <ProductList product={productData[2]} />
         <MaybeInterested />
         <ConnectForm/>
       </>
@@ -49,7 +49,7 @@ export function Huong() {
   //     };
   //   }
   // }
-  Huong.getLayout = (children: React.ReactNode) => (
+  TienVang.getLayout = (children: React.ReactNode) => (
     <LayoutWebsite>{children}</LayoutWebsite>
   );
-  export default Huong;
+  export default TienVang;

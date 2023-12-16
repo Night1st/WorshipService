@@ -1,30 +1,37 @@
 import TitleSection from "../../common/TitleSection";
+import router from "next/router";
 
 const ProductType = () => {
     const Type = [
         {
             title: "Hương",
-            image: "bg-huong"
+            image: "bg-huong",
+            link: '/productDetail/huong'
         },
         {
             title: "Nến",
-            image: "bg-nen"
+            image: "bg-nen",
+            link: '/productDetail/nen'
         },
         {
             title: "Tiền vàng",
-            image: "bg-tienvang"
+            image: "bg-tienvang",
+            link: '/productDetail/tienVang'
         },
         {
             title: "Set đồ cúng",
-            image: "bg-setdocung"
+            image: "bg-setdocung",
+            link: '/productDetail/setDoCung'
         },
         {
             title: "Đồ hầu",
-            image: "bg-dohau"
+            image: "bg-dohau",
+            link: '/productDetail/doHau'
         },
         {
             title: "Sản phẩm khác",
-            image: "bg-sanphamkhac"
+            image: "bg-sanphamkhac",
+            link: '/productDetail/sanPhamKhac'
         },
     ]
     return (
@@ -35,7 +42,7 @@ const ProductType = () => {
             />
             <div className="w-full grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 mt-10 overflow-hidden">
                 {Type.map((item, idx) => (
-                    <div key={idx} className={`flex justify-center ${item.image} bg-cover bg-no-repeat bg-center  rounded-3xl`}>
+                    <div key={idx} className={`flex justify-center ${item.image} bg-cover bg-no-repeat bg-center cursor-pointer rounded-3xl`} onClick={() => router.push(item.link)}>
                         <p className="text-4xl text-white text-center pt-20 pb-5">{item.title}</p>
                     </div>
                 ))}

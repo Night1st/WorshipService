@@ -1,13 +1,15 @@
 import Link from "next/link";
+import router from "next/router";
 
 interface Props {
   title: string;
+  link: string
 }
 
-const InforFooter = ({ title }: Props) => {
+const InforFooter = ({ title, link }: Props) => {
   return (
-    <ul className="flex flex-col justify-end items-start ">
-      <h1 className="text-2xl">{title}</h1>
+    <ul className="flex flex-col cursor-pointer justify-end items-start ">
+      <h1 className="text-2xl" onClick={() => router.push(link)}>{title}</h1>
     </ul>
   );
 };

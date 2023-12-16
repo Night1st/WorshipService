@@ -31,7 +31,7 @@ const ContentBanner = ({ data }: Props) => {
   const src = data.image
   return (
     <div className={`w-full flex min-h-screen flex-col justify-center items-center leading-[90%] tracking-wide ${src} bg-cover lg:left-0 lg:px-16 lg:items-center`}>
-      <div className="text-lg font-bold capitalize lg:text-6xl">
+      <div className="text-lg font-bold lg:text-6xl">
         {/* <h1 className="inline-block pr-2 text-4xl lg:text-6xl">Cải Tiến</h1> */}
         <AnimatePresence mode="wait">
           <motion.span variants={staggerChildren} animate="animate">

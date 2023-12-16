@@ -22,7 +22,7 @@ const EventCard = ({title, image, description, date}: Props) => {
                     alt={""}/>
             </div>
             <div className="flex gap-3 px-3 py-5">
-                <div className="flex flex-col gap-3 bg-[#DEDEDE] justify-center text-center min-w-[80px]">
+                <div className="flex flex-col gap-3 bg-[var(--secondary-color-500)] justify-center text-center min-w-[80px]">
                     <p className="text-2xl text-black ">01</p>
                     <p className="text-base">{date}</p>
                 </div>

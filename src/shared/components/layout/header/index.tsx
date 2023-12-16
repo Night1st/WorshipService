@@ -30,7 +30,7 @@ const Header = () => {
       className='w-full sticky top-0 z-50 flex justify-between items-center gap-5 px-5 py-5 md:px-40 transition bg-[var(--primary-color-800)] bg-opacity-100 text-white duration-500 ease-in-out '
     >
       <div className="flex justify-around items-center">
-        <Image height={50} width={50} src={"/images/Logo.png"} alt={""}></Image>
+        <Image height={50} width={50} src={"/images/Logo.png"} alt={""} onClick={() => router.push('/')}></Image>
         {/* <PreImage height={100} width={100} src={logo} alt={"Logo"} layer={false} /> */}
 
       </div>

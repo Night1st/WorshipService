@@ -12,7 +12,7 @@ export function ProductDetail() {
           <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
         </Head>
         <section className="px-40 py-10">
-            <LargeEventCard title={"Mừng Tết Nguyên đán Giáp Thìn 2024, giảm giá lên đến 50%"} image={"/images/WorshipBanner.png"} description={"Từ 01/01/2024 , Nhang Đức Tuấn đón Tết Nguyên đán Giáp Thìn 2024, giảm giá tất cả mặt hàng đối với các đơn hàng trên 50.000 đồng. "} date={"Tháng 01 2023"}/>
+            <LargeEventCard title={"Mừng Tết Nguyên đán Giáp Thìn 2024, giảm giá lên đến 50%"} image={"/images/SuKien.png"} description={"Từ 01/01/2024 , Nhang Đức Tuấn đón Tết Nguyên đán Giáp Thìn 2024, giảm giá tất cả mặt hàng đối với các đơn hàng trên 50.000 đồng. "} date={"Tháng 01 2023"}/>
         </section>
         
         <EventList />

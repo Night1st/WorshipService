@@ -10,12 +10,12 @@ const Footer = () => {
           <Image height={150} width={150} src={"/images/Logo.png"} alt={""}></Image>
         </div>
         <div className="flex flex-col">
-          <InforFooter title="Giới thiệu"/>
-          <InforFooter title="Sản phẩm"/>
-          <InforFooter title="Tin tức & Sự kiện"/>
+          <InforFooter title="Giới thiệu" link='#'/>
+          <InforFooter title="Sản phẩm" link='/productDetail'/>
+          <InforFooter title="Tin tức & Sự kiện"  link='/eventUpcoming'/>
         </div>
         <div className="flex flex-col">
-          <InforFooter title="Liên hệ"/>
+          <InforFooter title="Liên hệ"  link='#'/>
           <div className="flex gap-3 py-2">
             {footerData.icon.map((item, idx) => (
               <Image key={idx} height={30} width={30} src={item.icon} alt={''}></Image>

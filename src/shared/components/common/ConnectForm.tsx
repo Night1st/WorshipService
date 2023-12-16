@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import Image from "next/image";
-import BtnFindOut from './BtnFindOut';
 import { motion } from 'framer-motion';
-import router from 'next/router';
-import IconLineDirection from '../icon/IconLineDirection';
 import Modal from './Modal';
-import IconArrowRight from '../icon/IconArrowRight';
 
 const data = [
     "Hương",

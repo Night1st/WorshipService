@@ -10,11 +10,11 @@ interface Props {
 
 const Address = ({image, description}: Props) => {
     return (
-        <section className='mx-auto px-32 py-10 bg-[rgb(230,234,239,0.5)]'>
-        <div className='w-full flex flex-col justify-around items-center'>
+        <section className='mx-auto p-4 laptop:px-32 laptop:py-8'>
+        <div className='w-full flex flex-col justify-around items-center gap-5'>
           <TitleSection title='HỆ THỐNG PHÂN PHỐI' description='' />
-          <div className='flex justify-between items-center'>
-            <div className='justify-center items-center px-10 py-10'>
+          <div className='flex justify-between items-center border-2'>
+            <div className='justify-center items-center px-10 py-10 phone:max-laptop:hidden'>
               <Image className='' height={300} width={300} src={image} alt={''}></Image>
             </div>
             <div className='px-10 py-10'>

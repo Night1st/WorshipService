@@ -8,12 +8,12 @@ interface Props {
 
 const RelatedProduct = ({product}: Props) => {
     return ( 
-        <section className="px-40 py-10">
+        <section className="p-4 laptop:px-32 laptop:py-8">
           <TitleSection
             title="SẢN PHẨM LIÊN QUAN"
             description="Khám phá các sản phẩm của chúng tôi"
           />
-          <div className="w-full min-h-[350px] grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-5 mt-10 overflow-hidden">
+          <div className="w-full min-h-[350px] grid grid-cols-1 gap-5 tablet:grid-cols-2 laptop:grid-cols-5 mt-10 overflow-hidden">
             {Array(5).fill(
               <ProductCard title={product.title ? product.title : "Hương bài Cơ Đảm tăm 38 tàn trắng"} oldPrice={product.oldPrice ? product.oldPrice : "120.000đ"} newPrice={product.newPrice ? product.newPrice : "120.000đ"} image={product.image ? product.image : "/images/Product.png"} status={product.status ? product.status : "Miễn phí vận chuyển"}/>
             )}

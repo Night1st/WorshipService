@@ -9,10 +9,10 @@ interface Props {
 const AboutUs = ({image, description}: Props) => {
     return (
         <div className='flex justify-center items-center'>
-            <div className='flex justify-center items-center px-10 py-10 w-1/3'>
+            <div className='hidden laptop:flex justify-center items-center laptop:p-10 laptop:w-1/3'>
                 <Image className='' height={300} width={300} src={image} alt={''}></Image>
             </div>
-            <div className='px-10 py-10 w-2/3 text-center'>
+            <div className='p-5 laptop:p-10 laptop:w-2/3 text-center'>
                 <p className='text-lg'>{description}</p>
             </div>
       </div>

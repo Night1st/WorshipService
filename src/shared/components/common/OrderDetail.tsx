@@ -21,9 +21,9 @@ const Policy = [
 const OrderDetail = ({images}: ImageProps) => {
     const [mainImage, setMainImage] = useState<string>(images[0]);
     return (
-        <section className="px-40 py-10">
-            <div className='flex'>
-                <div className='flex flex-col w-1/3 p-5'>
+        <section className="p-4 laptop:px-32 laptop:py-8">
+            <div className='flex-col laptop:flex'>
+                <div className='flex flex-col w-full laptop:w-1/3 p-5'>
                     <div className='flex justify-center items-center w-full min-h-[300px]'>
                         <Image width={300} height={300} src={mainImage} alt={''} className='w-full min-h-[300px] rounded-xl'/>
                     </div>
@@ -33,12 +33,12 @@ const OrderDetail = ({images}: ImageProps) => {
                         ))}
                     </div>
                 </div>
-                <div className='flex flex-col w-2/3 gap-3 p-8'>
+                <div className='flex flex-col w-full laptop:w-2/3 gap-3 p-8'>
                     <h1 className="text-3xl text-black ">{"Hương bài Cơ Đảm tăm 38 tàn trắng"}</h1>
                     <p className="px-2 text-base text-black bg-[#EDB84F] rounded-xl w-fit">{"Miễn phí vận chuyển"}</p>
                     <p className="text-lg line-through pt-5">{"120.000đ"}</p>
                     <p className="text-4xl text-red-800">{"120.000đ"}</p>
-                    <div className='gap-5 grid grid-cols-3 pt-5'>
+                    <div className='gap-5 grid grid-cols-1 laptop:grid-cols-3 pt-5'>
                     <motion.button
                         whileHover="hover"
                         className={`bg-[white] relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-4 px-4 min-w-[200px] cursor-pointer mt-3`}
@@ -86,7 +86,7 @@ const OrderDetail = ({images}: ImageProps) => {
                     </div>
                 </div>
             </div>
-            <div className='grid grid-cols-3 gap-5'>
+            <div className='grid grid-cols-1 laptop:grid-cols-3 gap-5'>
                 <div className='flex border-2 rounded-xl border-[var(--primary-color-900)]'>
                     <div className='flex p-5 gap-5'>
                         <div>

@@ -2,26 +2,24 @@ import Head from 'next/head';
 import LayoutWebsite from '@/shared/components/layout/LayoutWebsite';
 import Banner from '@/shared/components/home/banner';
 import ConnectForm from '@/shared/components/common/ConnectForm';
-import History from '@/shared/components/home/whyUs/history';
-import Address from '@/shared/components/home/whyUs/address';
+import ContactInfo from '@/shared/components/home/contactInfo';
 
 const homeData = {
-  title: 'Nhang Đức Tuấn',
-  description: 'Mang bình an tới mỗi gia đình Việt',
-  image: 'bg-gioithieu',
+  title: 'LIÊN HỆ',
+  description: 'Theo dõi các tin tức và sự kiện của chúng tôi',
+  image: 'bg-lienhe',
 };
 
 export function AboutUs() {
   return (
     <>
       <Head>
-        <title>Về chúng tôi</title>
+        <title>Liên hệ</title>
         <meta name='description' content='Trang chủ NGS' />
         <meta name='keywords' content='Công nghệ thông tin, Giải pháp số' />
       </Head>
       <Banner data={homeData} />
-      <History image={'/images/LichSu.jpg'} description={'Năm ..., Nhang Đức Tuấn chính thức được thành lập, nhằm cung cấp sản phẩm chính là hương cúng và tiền vàng. Năm ..., Nhang Đức Tuấn mở rộng kinh doanh các sản phẩm cúng lễ khác như nến, đồ hầu,...'} />
-      <Address image={'/images/Banner/Sản_phẩm.jpg'} description={''}/>
+      <ContactInfo/>
       <ConnectForm />
     </>
   );

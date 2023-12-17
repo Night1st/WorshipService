@@ -16,11 +16,11 @@ const ConnectForm = () => {
   const [open, setOpen] = useState(false)
   return (
     <>
-      <section className='mx-auto px-32 py-10'>
-        <div className='bg-[var(--secondary-color-100)] p-5 justify-around items-center rounded-lg'>
-          <h1 className='text-center text-[var(--primary-color-1000)] text-4xl'>ĐĂNG KÍ NHẬN TƯ VẤN</h1>
+      <section className='mx-auto px-4 laptop:px-32 py-10'>
+        <div className='bg-[var(--secondary-color-100)] p-5 justify-around items-center rounded-3xl'>
+          <h1 className='text-center text-[var(--primary-color-1000)] text-2xl laptop:text-4xl'>ĐĂNG KÍ NHẬN TƯ VẤN</h1>
           <p className='text-center'>Vui lòng để lại thông tin, chúng tôi sẽ hỗ trợ bạn trong thời gian sớm nhất</p>
-          <div className='grid grid-cols-2 gap-4 pt-10 justify-between text-black'>
+          <div className='grid grid-cols-1 laptop:grid-cols-2 gap-4 pt-10 justify-between text-black'>
             <div className='flex flex-col'>
               <div className='mb-4'>
                 <label className='block text-sm font-bold mb-2'>
@@ -58,9 +58,9 @@ const ConnectForm = () => {
               <div className='mb-4 flex justify-end'>
               <Modal open={open} onClose={() => setOpen(false)}>
                   <div className='text-center w-full flex flex-col gap-5'>
-                    <h1 className='text-4xl text-green-400 pt-10'>ĐĂNG KÝ THÀNH CÔNG</h1>
-                    <p className="text-2xl text-black">Quý khách đã đăng ký nhận tư vấn thành công. Chúng tôi sẽ liên hệ Quý khách sớm nhất.</p>
-                    <Image className='ml-auto mr-auto py-10' height={400} width={400} src={'/images/ConnectSuccess.png'} alt={''} />
+                    <h1 className='text-2xl laptop:text-4xl text-green-400 pt-10'>ĐĂNG KÝ THÀNH CÔNG</h1>
+                    <p className="text-lg laptop:text-2xl text-black">Quý khách đã đăng ký nhận tư vấn thành công. Chúng tôi sẽ liên hệ Quý khách sớm nhất.</p>
+                    <Image className='ml-auto mr-auto py-10' height={400} width={400} src={'/images/Contact.png'} alt={''} />
                   </div>
               </Modal>
               </div>
@@ -70,11 +70,11 @@ const ConnectForm = () => {
                 <label className='block text-sm font-bold'>
                   Sản phẩm quan tâm
                 </label>
-                <div className='flex gap-3 py-5'>
+                <div className='laptop:flex laptop:gap-3 laptop:py-5'>
                     {data.map((item, index) => (
                         <button
                             key={index}
-                            className={`${item == selectedIcon && "bg-[#44000D] text-white transition duration-750 ease-in-out"} border-[#44000D] border-2 justify-between items-center py-2 px-3 rounded-full cursor-pointer`}
+                            className={`${item == selectedIcon && "bg-[#44000D] text-white transition duration-750 ease-in-out"} border-[#44000D] border-2 justify-between items-center m-1 px-2 laptop:p-2 rounded-full cursor-pointer`}
                             onClick={() => setSelectedIcon(item)}
                         >{`${item}`}</button>
                     ))}

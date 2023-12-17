@@ -35,12 +35,12 @@ const ProductType = () => {
         },
     ]
     return (
-        <section className="px-40 py-10">
+        <section className="p-4 laptop:px-32 laptop:py-8">
             <TitleSection
                 title="DANH MỤC SẢN PHẨM"
                 description="Chọn nhóm sản phẩm mà bạn quan tâm"
             />
-            <div className="w-full grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 mt-10 overflow-hidden">
+            <div className="w-full grid grid-cols-1 gap-5 tablet:grid-cols-2 laptop:grid-cols-3 mt-10 overflow-hidden">
                 {Type.map((item, idx) => (
                     <div key={idx} className={`flex justify-center ${item.image} bg-cover bg-no-repeat bg-center cursor-pointer rounded-3xl`} onClick={() => router.push(item.link)}>
                         <p className="text-4xl text-white text-center pt-20 pb-5">{item.title}</p>

@@ -26,7 +26,7 @@ const EventUpcoming = () => {
     },
   ]
   return ( 
-    <section className="px-40 py-10">
+    <section className="p-4 laptop:px-32 laptop:py-8">
       <TitleSection
         title="SỰ KIỆN SẮP TỚI"
         description="Theo dõi chúng tôi để tham gia các sự kiện hấp dẫn"
@@ -39,7 +39,7 @@ const EventUpcoming = () => {
       <div className="flex justify-end items-end">
           <motion.button
             whileHover="hover"
-            className={`bg-[white] relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-4 px-4 min-w-[200px] border-2 cursor-pointer mt-3`}
+            className={`bg-[white] relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-4 px-4 min-w-[200px] cursor-pointer mt-3`}
             onClick={() => router.push("/eventUpcoming")}
           >
             <p className="text-sm">{"Khám phá"}</p>

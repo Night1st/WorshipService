@@ -13,10 +13,10 @@ export const fakeMenu = [
     },
     {
         title: "TIN TỨC & SỰ KIỆN",
-        link: "/eventUpcoming"
+        link: "/newsAndEvent"
     },
     {
         title: "LIÊN HỆ",
-        link: ""
+        link: "/contact"
     }
 ];

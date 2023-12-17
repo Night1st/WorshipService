@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Data } from ".";
+import { Vujahday_Script } from "next/font/google";
 export const staggerChildren = {
   animate: {
     transition: {
@@ -8,33 +9,17 @@ export const staggerChildren = {
     },
   },
 };
-
-export const wordAnimation = {
-  initial: {
-    opacity: 0,
-    y: -100,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      ease: [0.6, 0.01, 0.05, 0.95],
-      duration: 1,
-    },
-  },
-};
 interface Props {
   data: Data;
 }
-
+const vujahday = Vujahday_Script({ subsets: ["latin-ext"], display: 'swap', weight: ['400']})
 const ContentBanner = ({ data }: Props) => {
   const src = data.image
   return (
-    <div className={`w-full flex min-h-screen flex-col justify-center items-center leading-[90%] tracking-wide ${src} bg-cover lg:left-0 lg:items-center`}>
+    <div className={`w-full flex min-h-screen flex-col justify-center items-center leading-[90%] tracking-wide ${src} lg:left-0 lg:items-center`} style={{backgroundSize: '100% 100%'}}>
       <div className="text-lg font-bold lg:text-6xl">
-        {/* <h1 className="inline-block pr-2 text-4xl lg:text-6xl">Cải Tiến</h1> */}
         <AnimatePresence mode="wait">
-          <motion.span variants={staggerChildren} animate="animate">
+          <motion.span variants={staggerChildren} animate="animate" className={data.title == "Nhang Đức Tuấn" ? (vujahday.className) : ""} style={data.title == "Nhang Đức Tuấn" ? {color: '#FFE26F'} : {}}>
             {data.title}
           </motion.span>
         </AnimatePresence>

@@ -6,6 +6,7 @@ import Image from "next/image";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isToggleOpen, setIsToggleOpen] = useState(false);
   const router = useRouter()
   useEffect(() => {
     const handleScroll = () => {
@@ -27,23 +28,19 @@ const Header = () => {
 
   return (  
     <section
-      className='w-full sticky top-0 z-50 flex justify-between items-center gap-5 px-5 py-5 md:px-40 transition bg-[var(--primary-color-800)] bg-opacity-100 text-white duration-500 ease-in-out '
+      className='w-full sticky top-0 z-50 laptop:flex justify-between items-center gap-5 px-5 py-5 md:px-40 transition bg-[var(--primary-color-800)] bg-opacity-100 text-white duration-500 ease-in-out '
     >
-      <div className="flex justify-around items-center">
-        <Image height={50} width={50} src={"/images/Logo.png"} alt={""} onClick={() => router.push('/')}></Image>
-        {/* <PreImage height={100} width={100} src={logo} alt={"Logo"} layer={false} /> */}
-
-      </div>
-      <div className="flex justify-center items-center gap-10">
-        <ul className="justify-center items-cente gap-10 hidden lg:flex ml-10">
-            {fakeMenu.map((item, inx) => (
-              <Link href={item.link} key={inx}>
-                <li>{item.title}</li>
-              </Link>
-            ))}
-        </ul>
-      </div>
-      <div className="block md:hidden">...</div>
+      <Image height={50} width={50} src={"/images/Logo.png"} alt={""} onClick={() => router.push('/')}></Image>
+      <ul className={`justify-center items-center gap-10 phone:max-laptop:text-center laptop:flex ml-10 ${isToggleOpen ? "block" : "hidden"}`}>
+          {fakeMenu.map((item, inx) => (
+            <Link href={item.link} key={inx}>
+              <li >{item.title}</li>
+            </Link>
+          ))}
+      </ul>
+      <button className="absolute right-5 top-4 block laptop:hidden" onClick={() => setIsToggleOpen(!isToggleOpen)}>
+        <Image height={50} width={50} src={"/images/Logo/MenuIcon.png"} alt={""}></Image>
+      </button>
     </section>
   );
 };

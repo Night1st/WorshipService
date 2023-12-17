@@ -19,6 +19,15 @@ module.exports = {
         setdocung: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/Set_đồ_cúng.jpg)',
         dohau: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/Đồ_hầu.jpg)',
         sanphamkhac: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/Sản_phẩm_khác.jpg)',
+        tintucsukien: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/TinTucSuKien.png)',
+        lienhe: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/LienHe.jpg)',
+        gioithieu: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/GioiThieu.png)'
+      },
+      screens: {
+        'phone': '400px',
+        'tablet': '768px',
+        'laptop': '1024px',
+        'desktop': '1280px',
       },
     },
   },

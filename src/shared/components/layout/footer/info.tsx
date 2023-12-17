@@ -9,7 +9,7 @@ interface Props {
 const InforFooter = ({ title, link }: Props) => {
   return (
     <ul className="flex flex-col cursor-pointer justify-end items-start ">
-      <h1 className="text-2xl" onClick={() => router.push(link)}>{title}</h1>
+      <h1 className="text-lg laptop:text-2xl" onClick={() => router.push(link)}>{title}</h1>
     </ul>
   );
 };

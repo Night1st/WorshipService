@@ -51,7 +51,7 @@ const MaybeInterested = () => {
     },
   };
   return (
-    <section className='px-40 py-10'>
+    <section className='p-4 laptop:px-32 laptop:py-8'>
       <TitleSection title='DANH MỤC SẢN PHẨM' description='Chọn nhóm sản phẩm mà bạn quan tâm' />
       <Carousel responsive={responsive}>
         {Type.map((item, idx) => (

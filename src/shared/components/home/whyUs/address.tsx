@@ -13,13 +13,14 @@ const Address = ({image, description}: Props) => {
         <section className='mx-auto p-4 laptop:px-32 laptop:py-8'>
         <div className='w-full flex flex-col justify-around items-center gap-5'>
           <TitleSection title='HỆ THỐNG PHÂN PHỐI' description='' />
-          <div className='flex justify-between items-center border-2'>
-            <div className='justify-center items-center px-10 py-10 phone:max-laptop:hidden'>
-              <Image className='' height={300} width={300} src={image} alt={''}></Image>
+          <div className='flex justify-center items-center'>
+            <div className='flex laptop:w-1/3 justify-center items-center p-10 phone:max-laptop:hidden'>
+              <Image className='' height={500} width={500} src={image} alt={''}></Image>
             </div>
-            <div className='px-10 py-10'>
+            <div className='p-10 w-full laptop:w-2/3'>
+              <h1 className="text-3xl text-black my-5">Trụ sở chính</h1>
             {footerData.contactData.map((item, idx) => (
-              <p key={idx} className="flex items-start gap-2">
+              <p key={idx} className="flex items-start gap-2 text-xl my-3">
                 <Image height={30} width={30} src={item.icon} alt={''}></Image>
               {item.title}</p>
             ))}

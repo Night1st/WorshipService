@@ -1,15 +1,39 @@
-import TitleSection from "./TitleSection";
+import { useState } from 'react';
+import TitleSection from './TitleSection';
+import { IQuote, Quote } from '@/shared/mock/whyUs';
+import { motion } from 'framer-motion';
 
-const OurQuote = () => {
-    return ( 
-        <section className="px-40 py-10">
-          <TitleSection
-            title="THÔNG ĐIỆP CỦA CHÚNG TÔI"
-            description=""
-          />
-
-        </section>
-    );
+interface Props {
+  data: IQuote[];
 }
 
-export default OurQuote
+const OurQuote = ({ data }: Props) => {
+  const [selectedIcon, setSelectedIcon] = useState<IQuote>(Quote[0] as IQuote);
+  return (
+    <section className='p-4 laptop:px-32 laptop:py-8'>
+      <TitleSection title='THÔNG ĐIỆP CỦA CHÚNG TÔI' description='' />
+      <div className='flex items-center justify-center gap-10 py-5'>
+        {data.map((item, index) => (
+          <div key={index} className='flex flex-col justify-center items-center laptop:min-w-[200px]'>
+            <p className={`${item == selectedIcon && 'text-[var(--primary-color-800)]'} laptop:text-2xl text-center text-black`}>{`${item.title}`}</p>
+            <button
+              className={`${
+                item == selectedIcon && 'bg-[var(--primary-color-800)] text-white transition duration-750 ease-in-out'
+              } relative text-black text-left py-4 px-4 rounded-full cursor-pointer`}
+              style={{ border: '1px solid #000' }}
+              onClick={() => setSelectedIcon(item)}
+            >
+            </button>
+          </div>
+        ))}
+      </div>
+      <div className='w-full flex justify-center items-center'>
+        <motion.div className='text-sm lg:text-lg bg-thongdiep bg-cover p-10 rounded-2xl w-full flex justify-center items-center text-white min-h-[250px]' style={{backgroundSize: '100% 100%'}}>
+          {selectedIcon ? selectedIcon.description : ''}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default OurQuote;

@@ -40,7 +40,7 @@ const EventUpcoming = () => {
           <motion.button
             whileHover="hover"
             className={`bg-[white] relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-4 px-4 min-w-[200px] cursor-pointer mt-3`}
-            onClick={() => router.push("/eventUpcoming")}
+            onClick={() => router.push("/newsAndEvent/event")}
           >
             <p className="text-sm">{"Khám phá"}</p>
             <IconArrowRight  color="#550F17" />

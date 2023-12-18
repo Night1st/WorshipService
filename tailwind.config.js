@@ -21,7 +21,8 @@ module.exports = {
         sanphamkhac: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/Sản_phẩm_khác.jpg)',
         tintucsukien: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/TinTucSuKien.png)',
         lienhe: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/LienHe.jpg)',
-        gioithieu: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/GioiThieu.png)'
+        gioithieu: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/GioiThieu.png)',
+        thongdiep: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/OutQuote.jpg)'
       },
       screens: {
         'phone': '400px',

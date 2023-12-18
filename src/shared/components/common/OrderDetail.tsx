@@ -22,7 +22,7 @@ const OrderDetail = ({images}: ImageProps) => {
     const [mainImage, setMainImage] = useState<string>(images[0]);
     return (
         <section className="p-4 laptop:px-32 laptop:py-8">
-            <div className='flex-col laptop:flex'>
+            <div className='phone:max-laptop:flex-col laptop:flex'>
                 <div className='flex flex-col w-full laptop:w-1/3 p-5'>
                     <div className='flex justify-center items-center w-full min-h-[300px]'>
                         <Image width={300} height={300} src={mainImage} alt={''} className='w-full min-h-[300px] rounded-xl'/>

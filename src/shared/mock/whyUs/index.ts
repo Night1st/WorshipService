@@ -1,30 +1,23 @@
-export const WhyUsData = [
+export const Quote = [
     {
-        key: 1,
-        category: "Chuyển đổi số toàn diện",
-        title: "Tầm nhìn",
-        description:
-            "Nội dung tầm nhìn",
+      key: 1,
+      title: 'Tầm nhìn',
+      description: 'Trở thành nhà cung cấp sản phẩm đồ cúng lễ uy tín hàng đầu cho tất cả gia đình Việt Nam',
     },
     {
-        key: 2,
-        category: "Chi phí tối ưu",
-        title: "Sứ mệnh",
-        description:
-            "Nội dung sứ mệnh",
+      key: 2,
+      title: 'Sứ mệnh',
+      description: 'Gìn giữ nét đẹp văn hóa thờ cúng của người Việt, giúp tất cả gia đình Việt Nam có cuộc sống viên mãn, bình an.',
     },
     {
-        key: 3,
-        category: "Chuyển đổi số toàn diện",
-        title: "Giá trị cốt lõi",
-        description:
-            "Nội dung giá trị cốt lõi",
+      key: 3,
+      title: 'Giá trị cốt lõi',
+      description: 'Uy tín hàng đầu - Chất lượng sản phẩm - Khách hàng & đối tác',
     },
-
 ];
-export interface IWhyUsData {
-    key: number,
-    category: string,
+
+export interface IQuote {
+    key: number;
     title: string;
     description: string;
 }

@@ -25,8 +25,8 @@ const LargeNewsCard = ({title, image, author, description, date}: Props) => {
             </div>
             <div className="flex flex-col gap-3 p-5 w-1/2">
                 <h1 className="text-4xl font-bold text-black ">{title}</h1>
-                <p className="text-base line-clamp-2">{date} - {author}</p>
-                <p className="text-xl line-clamp-2">{description}</p>
+                <p className="text-base">{date} - {author}</p>
+                <p className="text-xl">{description}</p>
             </div>
         </motion.div>
     )

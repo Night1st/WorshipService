@@ -3,7 +3,7 @@ import EventList from "@/shared/components/home/eventUpcoming/eventList";
 import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
 import Head from "next/head";
 
-export function ProductDetail() {
+export function Event() {
     return (
       <>
         <Head>
@@ -41,8 +41,8 @@ export function ProductDetail() {
   //     };
   //   }
   // }
-  ProductDetail.getLayout = (children: React.ReactNode) => (
+  Event.getLayout = (children: React.ReactNode) => (
     <LayoutWebsite>{children}</LayoutWebsite>
   );
-  export default ProductDetail;
+  export default Event;
   

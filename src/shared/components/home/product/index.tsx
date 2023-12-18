@@ -3,8 +3,11 @@ import TitleSection from "../../common/TitleSection";
 import ProductCard from "./productCard";
 import router from "next/router";
 import IconArrowRight from "../../icon/IconArrowRight";
+import { useGetProductHighlight } from "@/queries/product.queries";
 
 const Product = () => {
+  const ProductHighlight = useGetProductHighlight()
+  console.log(ProductHighlight)
   const MetaData = [
     {
       title: "Hương bài Cơ Đảm tăm 38 tàn trắng",

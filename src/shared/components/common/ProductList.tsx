@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import TitleSection from "./TitleSection";
 import ProductCard from "../home/product/productCard";
 import IconArrowDown from "../icon/IconArrowDown";
-import { ProductData } from "@/shared/mock/product";
+import { IProduct } from "@/schemas/product.type";
 
 interface Props {
-  product: ProductData
+  product?: IProduct[]
 }
 
 const ProductList = ({product}: Props) => {
@@ -16,9 +16,9 @@ const ProductList = ({product}: Props) => {
             description="Khám phá các sản phẩm của chúng tôi"
           />
           <div className="w-full min-h-[350px] grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-5 mt-10 overflow-hidden">
-            {Array(20).fill(
-              <ProductCard title={product.title ? product.title : "Hương bài Cơ Đảm tăm 38 tàn trắng"} oldPrice={product.oldPrice ? product.oldPrice : "120.000đ"} newPrice={product.newPrice ? product.newPrice : "120.000đ"} image={product.image ? product.image : "/images/Product.png"} status={product.status ? product.status : "Miễn phí vận chuyển"}/>
-            )}
+            {product?.map((item, idx) => (
+              <ProductCard key={idx} product={item} />
+            ))}
           </div>
           <div className="flex justify-center items-center">
           <motion.button

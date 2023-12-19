@@ -7,9 +7,9 @@ import ConnectForm from "@/shared/components/common/ConnectForm";
 import EventUpcoming from "@/shared/components/home/eventUpcoming";
 
 const homeData = {
-  title: "Mang bình an tới mỗi gia đình Việt",
+  name: "Mang bình an tới mỗi gia đình Việt",
   description: "",
-  image: "bg-trangchu"
+  cover_image: "bg-trangchu"
 }
 
 export function Home() {

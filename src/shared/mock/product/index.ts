@@ -48,11 +48,3 @@ export const productData = [
         newPrice: "100.000đ"
     },
 ]
-
-export interface ProductData {
-    title: string,
-    image: string,
-    status: string,
-    oldPrice: string,
-    newPrice: string
-}

@@ -21,7 +21,6 @@ export function GroupOverview() {
     const {data: productGroup} = useGetAllProductGroup()
     const {data: groupOverview} = useGetProductByGroup(Number(query.id))
     const groupId = productGroup?.find(item => item.id === Number(query.id))
-    //console.log(groupOverview)
     console.log(groupId)
     const data = {
       name: groupId?.name,
@@ -36,7 +35,7 @@ export function GroupOverview() {
           <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
         </Head>
         <Banner data={data}/>
-        {/* <ProductList product={productData[0]} /> */}
+        <ProductList product={groupOverview} />
         <MaybeInterested />
         <ConnectForm/>
       </>

@@ -54,16 +54,16 @@ const Product = () => {
         {/* {MetaData.map((item, idx) => (
           <ProductCard key={idx} title={item.title} oldPrice={item.oldPrice} newPrice={item.newPrice} image={item.image} status={item.status}/>
         ))} */}
-        {/* {Array(5).fill(<ProductCard product={productHighlight} />)} */}
-        {productHighlight?.map((item, idx) => (
-          console.log(item.freeShip),
+        {Array(5).fill(
+          productHighlight?.map((item, idx) => (
           <ProductCard key={idx} product={item} />
-        ))}
+        )))}
+
       </div>
       <div className="flex justify-end items-end">
           <motion.button
             whileHover="hover"
-            className={`bg-[white] relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-4 px-4 min-w-[200px] border-2 cursor-pointer mt-3`}
+            className={`bg-[white] relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] text-left py-4 px-4 min-w-[200px] border-2 cursor-pointer mt-3`}
             onClick={() => router.push("/productDetail")}
           >
             <p className="text-sm">{"Khám phá"}</p>

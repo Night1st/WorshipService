@@ -2,9 +2,9 @@ import router from "next/router";
 import ContentBanner from "./ContentBanner";
 import Image from "next/image";
 export interface Data {
-  title: string;
-  description: string;
-  image: string;
+  name?: string;
+  description?: string;
+  cover_image?: string;
 }
 
 interface Props {

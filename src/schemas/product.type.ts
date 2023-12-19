@@ -1,8 +1,8 @@
 export interface IProduct {
-    id: string,
+    id: number,
     productName: string,
-    image: string,
-    freeship: number,
+    image: any,
+    freeShip: number,
     origin_price: number,
     current_price: number,
     sale_percent: number

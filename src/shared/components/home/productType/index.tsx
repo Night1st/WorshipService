@@ -1,7 +1,10 @@
 import TitleSection from "../../common/TitleSection";
 import router from "next/router";
+import { useGetAllProductGroup } from "@/queries/product-group.queries";
 
 const ProductType = () => {
+    const {data: productGroup} = useGetAllProductGroup()
+    console.log(productGroup)
     const Type = [
         {
             title: "Hương",
@@ -41,9 +44,12 @@ const ProductType = () => {
                 description="Chọn nhóm sản phẩm mà bạn quan tâm"
             />
             <div className="w-full grid grid-cols-1 gap-5 tablet:grid-cols-2 laptop:grid-cols-3 mt-10 overflow-hidden">
-                {Type.map((item, idx) => (
-                    <div key={idx} className={`flex justify-center ${item.image} bg-cover bg-no-repeat bg-center cursor-pointer rounded-3xl`} onClick={() => router.push(item.link)}>
-                        <p className="text-4xl text-white text-center pt-20 pb-5">{item.title}</p>
+                {productGroup?.map((item, idx) => (
+                    <div key={idx} className={`flex justify-center bg-cover bg-no-repeat bg-center cursor-pointer rounded-3xl`} 
+                        onClick={() => router.push(`/productDetail/${item.id}`)}
+                        style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(${item.cover_image})`}}
+                        >
+                        <p className="text-4xl text-white text-center pt-20 pb-5">{item.name}</p>
                     </div>
                 ))}
             </div>

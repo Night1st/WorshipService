@@ -7,9 +7,9 @@ import { productData } from "@/shared/mock/product";
 import Head from "next/head";
 
 const homeData = {
-    title: "SẢN PHẨM",
+    name: "SẢN PHẨM",
     description: "Chúng tôi luôn mong muốn mang đến các sản phẩm chất lượng nhất",
-    image: "bg-sanpham"
+    cover_image: "bg-sanpham"
 }
 
 export function ProductDetail() {
@@ -22,7 +22,7 @@ export function ProductDetail() {
         </Head>
         <Banner data={homeData}/>
         <ProductType />
-        <ProductList product={productData[0]} />
+        {/* <ProductList product={productData[0]} /> */}
         <ConnectForm/>
       </>
     );

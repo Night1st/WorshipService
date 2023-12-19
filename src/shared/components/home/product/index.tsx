@@ -6,8 +6,7 @@ import IconArrowRight from "../../icon/IconArrowRight";
 import { useGetProductHighlight } from "@/queries/product.queries";
 
 const Product = () => {
-  const ProductHighlight = useGetProductHighlight()
-  console.log(ProductHighlight)
+  const {data: productHighlight} = useGetProductHighlight()
   const MetaData = [
     {
       title: "Hương bài Cơ Đảm tăm 38 tàn trắng",
@@ -52,8 +51,13 @@ const Product = () => {
         description="Khám phá các sản phẩm của chúng tôi"
       />
       <div className="w-full min-h-[350px] grid grid-cols-1 gap-5 tablet:grid-cols-2 laptop:grid-cols-5 mt-10 overflow-hidden">
-        {MetaData.map((item, idx) => (
+        {/* {MetaData.map((item, idx) => (
           <ProductCard key={idx} title={item.title} oldPrice={item.oldPrice} newPrice={item.newPrice} image={item.image} status={item.status}/>
+        ))} */}
+        {/* {Array(5).fill(<ProductCard product={productHighlight} />)} */}
+        {productHighlight?.map((item, idx) => (
+          console.log(item.freeShip),
+          <ProductCard key={idx} product={item} />
         ))}
       </div>
       <div className="flex justify-end items-end">

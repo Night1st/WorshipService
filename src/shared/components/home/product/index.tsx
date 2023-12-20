@@ -54,10 +54,9 @@ const Product = () => {
         {/* {MetaData.map((item, idx) => (
           <ProductCard key={idx} title={item.title} oldPrice={item.oldPrice} newPrice={item.newPrice} image={item.image} status={item.status}/>
         ))} */}
-        {Array(5).fill(
-          productHighlight?.map((item, idx) => (
+        {productHighlight?.map((item, idx) => (
           <ProductCard key={idx} product={item} />
-        )))}
+        ))}
 
       </div>
       <div className="flex justify-end items-end">

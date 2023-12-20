@@ -4,7 +4,6 @@ import { useGetAllProductGroup } from "@/queries/product-group.queries";
 
 const ProductType = () => {
     const {data: productGroup} = useGetAllProductGroup()
-    console.log(productGroup)
     const Type = [
         {
             title: "Hương",
@@ -45,9 +44,10 @@ const ProductType = () => {
             />
             <div className="w-full grid grid-cols-1 gap-5 tablet:grid-cols-2 laptop:grid-cols-3 mt-10 overflow-hidden">
                 {productGroup?.map((item, idx) => (
+                    console.log(item.cover_image),
                     <div key={idx} className={`flex justify-center bg-cover bg-no-repeat bg-center cursor-pointer rounded-3xl`} 
                         onClick={() => router.push(`/productDetail/${item.id}`)}
-                        style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(${item.cover_image})`}}
+                        style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/${item.cover_image})`}}
                         >
                         <p className="text-4xl text-white text-center pt-20 pb-5">{item.name}</p>
                     </div>

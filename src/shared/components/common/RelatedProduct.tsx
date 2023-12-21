@@ -1,12 +1,59 @@
 import TitleSection from "./TitleSection";
 import ProductCard from "../home/product/productCard";
-import { ProductData } from "@/shared/mock/product";
+import { IProduct } from "@/schemas/product.type";
 
 interface Props {
-  product: ProductData
+  product: IProduct[]
 }
 
 const RelatedProduct = ({product}: Props) => {
+  const fakeProduct = [
+    {
+      id: 10,
+      productName: "Hương bài Cơ Đảm tăm 38 tàn trắng",
+      image: "/images/Huong.png",
+      freeShip: 1,
+      origin_price: 120,
+      current_price: 100,
+      sale_percent: 25
+    },
+    {
+      id: 10,
+      productName: "Hương bài Cơ Đảm tăm 38 tàn trắng",
+      image: "/images/Huong.png",
+      freeShip: 1,
+      origin_price: 120,
+      current_price: 100,
+      sale_percent: 25
+    },
+    {
+      id: 10,
+      productName: "Hương bài Cơ Đảm tăm 38 tàn trắng",
+      image: "/images/Huong.png",
+      freeShip: 1,
+      origin_price: 120,
+      current_price: 100,
+      sale_percent: 25
+    },
+    {
+      id: 10,
+      productName: "Hương bài Cơ Đảm tăm 38 tàn trắng",
+      image: "/images/Huong.png",
+      freeShip: 1,
+      origin_price: 120,
+      current_price: 100,
+      sale_percent: 25
+    },
+    {
+      id: 10,
+      productName: "Hương bài Cơ Đảm tăm 38 tàn trắng",
+      image: "/images/Huong.png",
+      freeShip: 1,
+      origin_price: 120,
+      current_price: 100,
+      sale_percent: 25
+    },
+  ]
     return ( 
         <section className="p-4 laptop:px-32 laptop:py-8">
           <TitleSection
@@ -14,9 +61,9 @@ const RelatedProduct = ({product}: Props) => {
             description="Khám phá các sản phẩm của chúng tôi"
           />
           <div className="w-full min-h-[350px] grid grid-cols-1 gap-5 tablet:grid-cols-2 laptop:grid-cols-5 mt-10 overflow-hidden">
-            {Array(5).fill(
-              <ProductCard title={product.title ? product.title : "Hương bài Cơ Đảm tăm 38 tàn trắng"} oldPrice={product.oldPrice ? product.oldPrice : "120.000đ"} newPrice={product.newPrice ? product.newPrice : "120.000đ"} image={product.image ? product.image : "/images/Product.png"} status={product.status ? product.status : "Miễn phí vận chuyển"}/>
-            )}
+            {fakeProduct?.map((item, idx) => (
+              <ProductCard key={idx} product={item} />
+            ))}
           </div>
           <div className="flex justify-center items-center">
           </div>

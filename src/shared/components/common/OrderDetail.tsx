@@ -3,32 +3,40 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import router from 'next/router';
 import { IProductDetail } from '@/schemas/product.type';
+import { Tab } from '@headlessui/react';
+import { PreImage } from './PreImage';
 
 interface Props {
-    images: string[]
     product: IProductDetail
 }
 
-const OrderDetail = ({images, product}: Props) => {
-    const [mainImage, setMainImage] = useState<string>(images[0]);
+const OrderDetail = ({product}: Props) => {
+    const [mainImage, setMainImage] = useState<string>(product.product.image);
     return (
         <section className="p-4 laptop:px-32 laptop:py-8">
             <div className='phone:max-laptop:flex-col laptop:flex'>
                 <div className='flex flex-col w-full laptop:w-1/3 p-5'>
                     <div className='flex justify-center items-center w-full min-h-[300px]'>
-                        <Image width={300} height={300} src={mainImage} alt={''} className='w-full min-h-[300px] rounded-xl'/>
+                        <PreImage width={500} height={400} src={mainImage} alt={''} className='w-full min-h-[300px] rounded-xl'/>
                     </div>
                     <div className='flex justify-center gap-4 py-5'>
-                        {images.map((img, idx) => (
-                            <Image key={idx} width={70} height={70} src={img} alt={''} className='rounded-xl'/>
-                        ))}
+                        {/* {images.map((img, idx) => (
+                            <PreImage key={idx} width={100} height={100} src={img} alt={''} className='rounded-xl'/>
+                        ))} */}
                     </div>
                 </div>
                 <div className='flex flex-col w-full laptop:w-2/3 gap-3 p-8'>
                     <h1 className="text-3xl text-black ">{product.product.productName}</h1>
                     <p className="px-2 text-base text-black bg-[#EDB84F] rounded-xl w-fit">{product.product.freeShip == 1 ? "Miễn phí vận chuyển" : "Không miễn phí vận chuyển"}</p>
-                    <p className="text-lg line-through pt-5">{product.sellInformation.origin_price}</p>
-                    <p className="text-4xl text-red-800">{product.sellInformation.current_price}</p>
+                    {product.sellInformation.map((item, idx) => (
+                        <div key={idx}>
+                            <p className="text-lg line-through pt-5">{item.origin_price * 1000}</p>
+                            <div className='flex gap-5'>
+                                <p className="text-4xl text-red-800">{item.current_price * 1000}</p>
+                                <p className='bg-[#EDB84F] text-xl text-black text-center flex justify-center items-center px-2 rounded-xl'>{"Giảm " + item.sale_percent + "%"}</p>
+                            </div>
+                        </div>
+                    ))}
                     <div className='gap-5 grid grid-cols-1 laptop:grid-cols-3 pt-5'>
                     <motion.button
                         whileHover="hover"
@@ -120,6 +128,26 @@ const OrderDetail = ({images, product}: Props) => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className='pt-5 pb-20'>
+            <Tab.Group>
+                <Tab.List className="py-2 pr-4">
+                    <Tab>
+                        {({selected}) => (
+                            <button className={selected ? "py-2 pr-6 border-b-2 border-[var(--primary-color-900)] text-[var(--primary-color-900)] outline-none" : "py-2 pr-6 text-black outline-none"}>Mô tả sản phẩm</button>
+                        )}  
+                    </Tab>
+                    <Tab>
+                        {({selected}) => (
+                            <button className={selected ? "py-2 pr-6 border-b-2 border-[var(--primary-color-900)] text-[var(--primary-color-900)] outline-none" : "py-2 pr-6 text-black outline-none"}>Chi tiết sản phẩm</button>
+                        )}  
+                    </Tab>
+                </Tab.List>
+                <Tab.Panels className={"pt-5 pl-10"}>
+                    <Tab.Panel>{product.product.description}</Tab.Panel>
+                    <Tab.Panel>{product.product.detail}</Tab.Panel>
+                </Tab.Panels>
+            </Tab.Group>
             </div>
         </section>
     )

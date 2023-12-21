@@ -16,7 +16,7 @@ const ProductCard = ({product}: Props) => {
         >
             <div className="flex">
                 <PreImage
-                    src={("https://www.dothocunggiadinh.com:8443/storage/" + product.image)}
+                    src={(product.image)}
                     width={250}
                     height={250}
                     alt={""}
@@ -29,8 +29,8 @@ const ProductCard = ({product}: Props) => {
                 <h1 className="text-lg font-bold text-black ">{product.productName}</h1>
                 </div>
                 <div className="flex flex-col">
-                <p className="text-lg text-right line-through">{product.origin_price}</p>
-                <p className="text-2xl text-red-800 text-right">{product.current_price}</p>
+                <p className="text-lg text-right line-through">{product.origin_price * 1000}</p>
+                <p className="text-2xl text-red-800 text-right">{product.current_price * 1000}</p>
                 </div>
             </div>
         </motion.div>

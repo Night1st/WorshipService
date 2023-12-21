@@ -1,4 +1,6 @@
 import { useGetProductDetail } from "@/queries/product.queries";
+import { IBaseResponse } from "@/schemas/baseResponse.type";
+import { IProductDetail } from "@/schemas/product.type";
 import ConnectForm from "@/shared/components/common/ConnectForm";
 import OrderDetail from "@/shared/components/common/OrderDetail";
 import RelatedProduct from "@/shared/components/common/RelatedProduct";
@@ -6,52 +8,60 @@ import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
 import { productData } from "@/shared/mock/product";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { GetStaticPaths, GetStaticProps } from "next/types";
+import { useEffect, useState } from "react";
 
-const imageData = [
-    "/images/Banner/Hương.jpg",
-    "/images/Banner/Hương.jpg",
-    "/images/Banner/Hương.jpg"
-]
+type Props = {
+  product: IBaseResponse<IProductDetail>;
+};
 
-export function Detail() {
-  const {query} = useRouter()
-  const {data: productDetail} = useGetProductDetail(Number(query.id))
-  console.log(query.id)
+export function Detail({product}: Props) {
+  if (!product) return <></>;
     return (
       <>
         <Head>
-          <title>Trang chủ</title>
-          <meta name="description" content="Trang chủ NGS" />
-          <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
+          <title>Thông tin Sản phẩm</title>
+          <meta name="description" content="Thông tin Sản phẩm" />
         </Head>
-        {/* <OrderDetail images={imageData} product={productDetail} /> */}
-        {/* <RelatedProduct product={productData[0]} /> */}
+        <OrderDetail product={product.data}/>
+        <RelatedProduct product={[]}/>
         <ConnectForm/>
       </>
     );
   }
-  // export async function getServerSideProps() {
-  //   try {
-  //     // Thực hiện yêu cầu API bằng Axios
-  //     const response = await axios.get("API_URL");
-  //     const data = response.data;
-  
-  //     return {
-  //       props: {
-  //         bannerData: data.bannerData,
-  //         // Các dữ liệu phần tĩnh khác
-  //       },
-  //     };
-  //   } catch (error) {
-  //     // Xử lý lỗi nếu có
-  //     console.error("Error fetching data:", error);
-  //     return {
-  //       props: {
-  //         bannerData: [],
-  //       },
-  //     };
-  //   }
-  // }
+export const getStaticProps: GetStaticProps = async ctx => {
+  const id = ctx.params?.id;
+  console.log(id)
+  if (id) {
+    try {
+      const responseProduct = await fetch(`https://www.dothocunggiadinh.com:8443/api/product/detail/${id}`);
+      const product = await responseProduct.json();
+      return {
+        props: {
+          product,
+        },
+      };
+    } catch (error) {
+      return {
+        props: {
+          product: null,
+          error: 'Failed to fetch product data',
+        },
+      };
+    }
+  } else {
+    return {
+      props: {},
+      notFound: true,
+    };
+  }
+};
+export const getStaticPaths: GetStaticPaths = async _ctx => {
+  return {
+    paths: [],
+    fallback: true,
+  };
+};
   Detail.getLayout = (children: React.ReactNode) => (
     <LayoutWebsite>{children}</LayoutWebsite>
   );

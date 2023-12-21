@@ -28,7 +28,7 @@ export const useGetProductByGroup = (productGroupId: number, options?: Partial<U
 
 export const useGetProductDetail = (productId: number, options?: Partial<UseQueryOptions>) => {
     return useQuery({
-        queryKey: [QUERY_KEY, 'get-all'],
+        queryKey: [QUERY_KEY, 'get-by-id'],
         queryFn: () => axiosInstanceNoAuth.get<IBaseResponse<IProductDetail>>('/product/detail/' + productId),
         select(data) {
             return data.data

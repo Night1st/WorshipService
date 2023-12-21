@@ -5,23 +5,36 @@ import Banner from "@/shared/components/home/banner";
 import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
 import Head from "next/head";
 import { productData } from "@/shared/mock/product";
+import { useGetAllProductGroup } from "@/queries/product-group.queries";
+import { useGetProductByGroup } from "@/queries/product.queries";
+import { useRouter } from "next/router";
+import { IProductGroup } from "@/schemas/product-group.type";
 
 const homeData = {
-    title: "HƯƠNG",
+    name: "HƯƠNG",
     description: "Hương thể hiện truyền thống, văn hóa tâm linh của dân tộc Việt, tỏ lòng thành kính với tổ tiên, thánh thần, trời đất…sau là nguyện cầu sự bình an cho gia đạo. Tấm lòng thành ấy sẽ thêm thuần khiết, khi sản phẩm ấy chính là những nén nhang sạch tự nhiên, an toàn, dịu ấm mang ý nghĩa nhân văn hướng thiện.",
-    image: "bg-huong"
+    cover_image: "bg-huong"
 }
 
-export function Huong() {
+export function GroupOverview() {
+    const {query} = useRouter()
+    const {data: groupOverview} = useGetProductByGroup(Number(query.id))
+    const {data: productGroup} = useGetAllProductGroup()
+    const groupId = productGroup?.find(item => item.id === Number(query.id))
+    const data = {
+      name: groupId?.name,
+      description: groupId?.description,
+      cover_image: "bg-huong"
+    }
     return (
       <>
         <Head>
-          <title>Hương</title>
+          <title>{groupId?.name}</title>
           <meta name="description" content="Trang chủ NGS" />
           <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
         </Head>
-        <Banner data={homeData}/>
-        <ProductList product={productData[0]} />
+        <Banner data={data}/>
+        <ProductList product={groupOverview} />
         <MaybeInterested />
         <ConnectForm/>
       </>
@@ -49,7 +62,7 @@ export function Huong() {
   //     };
   //   }
   // }
-  Huong.getLayout = (children: React.ReactNode) => (
+  GroupOverview.getLayout = (children: React.ReactNode) => (
     <LayoutWebsite>{children}</LayoutWebsite>
   );
-  export default Huong;
+  export default GroupOverview;

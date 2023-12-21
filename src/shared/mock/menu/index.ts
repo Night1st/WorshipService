@@ -9,7 +9,7 @@ export const fakeMenu = [
     },
     {
         title: "SẢN PHẨM",
-        link: "/productDetail"
+        link: "/products"
     },
     {
         title: "TIN TỨC & SỰ KIỆN",

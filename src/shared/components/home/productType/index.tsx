@@ -46,8 +46,8 @@ const ProductType = () => {
                 {productGroup?.map((item, idx) => (
                     console.log(item.cover_image),
                     <div key={idx} className={`flex justify-center bg-cover bg-no-repeat bg-center cursor-pointer rounded-3xl`} 
-                        onClick={() => router.push(`/productDetail/${item.id}`)}
-                        style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/${item.cover_image})`}}
+                        onClick={() => router.push(`/products/${item.id}`)}
+                        style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(https://www.dothocunggiadinh.com:8443/storage/${item.cover_image})`}}
                         >
                         <p className="text-4xl text-white text-center pt-20 pb-5">{item.name}</p>
                     </div>

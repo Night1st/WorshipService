@@ -1,28 +1,31 @@
+import { useGetProductDetail } from "@/queries/product.queries";
 import ConnectForm from "@/shared/components/common/ConnectForm";
-import MaybeInterested from "@/shared/components/common/MaybeInterested";
-import ProductList from "@/shared/components/common/ProductList";
-import Banner from "@/shared/components/home/banner";
+import OrderDetail from "@/shared/components/common/OrderDetail";
+import RelatedProduct from "@/shared/components/common/RelatedProduct";
 import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
-import Head from "next/head";
 import { productData } from "@/shared/mock/product";
+import Head from "next/head";
+import { useRouter } from "next/router";
 
-const homeData = {
-    title: "NẾN",
-    description: "Việc giữ lửa thắp nến, đèn thờ cúng đối với người Việt ta luôn được giữ gìn. Ánh sáng tượng trưng cho sự linh thiêng, ấm cúng. Mà những ánh sáng được tạo ra từ nén hương đèn dầu hay nến đều có ý nghĩa đặc trưng mà các gia đình luôn để tâm tới.",
-    image: "bg-nen"
-}
+const imageData = [
+    "/images/Banner/Hương.jpg",
+    "/images/Banner/Hương.jpg",
+    "/images/Banner/Hương.jpg"
+]
 
-export function Nen() {
+export function Detail() {
+  const {query} = useRouter()
+  const {data: productDetail} = useGetProductDetail(Number(query.id))
+  console.log(query.id)
     return (
       <>
         <Head>
-          <title>Nến</title>
+          <title>Trang chủ</title>
           <meta name="description" content="Trang chủ NGS" />
           <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
         </Head>
-        <Banner data={homeData}/>
-        <ProductList product={productData[1]} />
-        <MaybeInterested />
+        {/* <OrderDetail images={imageData} product={productDetail} /> */}
+        {/* <RelatedProduct product={productData[0]} /> */}
         <ConnectForm/>
       </>
     );
@@ -49,7 +52,7 @@ export function Nen() {
   //     };
   //   }
   // }
-  Nen.getLayout = (children: React.ReactNode) => (
+  Detail.getLayout = (children: React.ReactNode) => (
     <LayoutWebsite>{children}</LayoutWebsite>
   );
-  export default Nen;
+  export default Detail;

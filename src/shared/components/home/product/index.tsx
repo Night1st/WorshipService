@@ -7,43 +7,6 @@ import { useGetProductHighlight } from "@/queries/product.queries";
 
 const Product = () => {
   const {data: productHighlight} = useGetProductHighlight()
-  const MetaData = [
-    {
-      title: "Hương bài Cơ Đảm tăm 38 tàn trắng",
-      image: "/images/Product/Huong.png ",
-      oldPrice: "100.000đ",
-      newPrice: "120.000đ",
-      status: "Miễn phí vận chuyển"
-    },
-    {
-      title: "Hương bài Cơ Đảm tăm 38 tàn trắng",
-      image: "/images/Product/Huong.png",
-      oldPrice: "100.000đ",
-      newPrice: "120.000đ",
-      status: "Miễn phí vận chuyển"
-    },
-    {
-      title: "Hương bài Cơ Đảm tăm 38 tàn trắng",
-      image: "/images/Product/Huong.png",
-      oldPrice: "100.000đ",
-      newPrice: "120.000đ",
-      status: "Miễn phí vận chuyển"
-    },
-    {
-      title: "Hương bài Cơ Đảm tăm 38 tàn trắng",
-      image: "/images/Product/Huong.png",
-      oldPrice: "100.000đ",
-      newPrice: "120.000đ",
-      status: "Miễn phí vận chuyển"
-    },
-    {
-      title: "Hương bài Cơ Đảm tăm 38 tàn trắng",
-      image: "/images/Product/Huong.png",
-      oldPrice: "100.000đ",
-      newPrice: "120.000đ",
-      status: "Miễn phí vận chuyển"
-    },
-  ]
   return ( 
     <section className="p-4 laptop:px-32 laptop:py-8">
       <TitleSection
@@ -51,9 +14,6 @@ const Product = () => {
         description="Khám phá các sản phẩm của chúng tôi"
       />
       <div className="w-full min-h-[350px] grid grid-cols-1 gap-5 tablet:grid-cols-2 laptop:grid-cols-5 mt-10 overflow-hidden">
-        {/* {MetaData.map((item, idx) => (
-          <ProductCard key={idx} title={item.title} oldPrice={item.oldPrice} newPrice={item.newPrice} image={item.image} status={item.status}/>
-        ))} */}
         {productHighlight?.map((item, idx) => (
           <ProductCard key={idx} product={item} />
         ))}

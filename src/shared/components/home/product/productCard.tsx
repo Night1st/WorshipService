@@ -12,11 +12,11 @@ const ProductCard = ({product}: Props) => {
         <motion.div
             className="flex flex-col items-center cursor-pointer overflow-hidden border-collapse rounded-xl"
             style={{ border: "1px solid #555" }}
-            onClick={() => router.push('/productDetail/detail')}
+            onClick={() => router.push(`/products/detail/${product.id}`)}
         >
             <div className="flex">
                 <PreImage
-                    src={("/" + product.image)}
+                    src={("https://www.dothocunggiadinh.com:8443/storage/" + product.image)}
                     width={250}
                     height={250}
                     alt={""}

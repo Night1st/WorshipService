@@ -6,7 +6,7 @@ interface Props {
     title: string;
     image: string;
     author: string;
-    public_date: string
+    public_date?: string
 }
 
 const NewsCard = ({title, image, author, public_date}: Props) => {

@@ -7,5 +7,5 @@ export interface IEvent {
     start_date: string,
     end_date: string,
     image: string,
-    public_date: string
+    public_date: Date
 }

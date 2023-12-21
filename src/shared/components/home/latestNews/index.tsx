@@ -3,6 +3,7 @@ import TitleSection from "../../common/TitleSection";
 import router from "next/router";
 import IconArrowRight from "../../icon/IconArrowRight";
 import NewsCard from "./newsCard";
+import { useGetLatestNews } from "@/queries/news.queries";
 
 const LatestNews = () => {
     const MetaData = [
@@ -39,6 +40,7 @@ const LatestNews = () => {
         date: "08/12/2023"
       },
     ]
+    const {data: latestNews} = useGetLatestNews()
     return ( 
       <section className="px-40 py-10">
         <TitleSection
@@ -46,8 +48,8 @@ const LatestNews = () => {
           description="Theo dõi các tin tức mới nhất"
         />
         <div className="w-full min-h-[100px] grid grid-cols-1 gap-5 lg:grid-cols-2 mt-10 overflow-hidden">
-          {MetaData.map((item, idx) => (
-            <NewsCard key={idx} title={item.title} author={item.author} image={item.image} date={item.date}/>
+          {latestNews?.map((item, idx) => (
+            <NewsCard key={idx} title={item.title} author={item.author} image={item.image} public_date={item.public_date}/>
           ))}
         </div>
         <div className="flex justify-end items-end">

@@ -5,6 +5,6 @@ export interface INews {
     content: string,
     slug: string,
     image: string,
-    public_date: Date,
+    public_date: string,
     author: string,
 }

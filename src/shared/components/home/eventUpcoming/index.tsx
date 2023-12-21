@@ -3,6 +3,7 @@ import TitleSection from "../../common/TitleSection";
 import EventCard from "./eventCard";
 import router from "next/router";
 import IconArrowRight from "../../icon/IconArrowRight";
+import { useGetComingSoonEvent } from "@/queries/event.queries";
 
 const EventUpcoming = () => {
   const MetaData = [
@@ -25,6 +26,7 @@ const EventUpcoming = () => {
       date: "Tháng 01 2023"
     },
   ]
+  const {data: event} = useGetComingSoonEvent()
   return ( 
     <section className="p-4 laptop:px-32 laptop:py-8">
       <TitleSection
@@ -32,8 +34,8 @@ const EventUpcoming = () => {
         description="Theo dõi chúng tôi để tham gia các sự kiện hấp dẫn"
       />
       <div className="w-full min-h-[300px] grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 mt-10 overflow-hidden">
-        {MetaData.map((item, idx) => (
-          <EventCard key={idx} title={item.title} description={item.description} image={item.image} date={item.date}/>
+        {event?.map((item, idx) => (
+          <EventCard key={idx} title={item.title} summary={item.summary} image={item.image} public_date={item.public_date}/>
         ))}
       </div>
       <div className="flex justify-end items-end">

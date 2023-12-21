@@ -17,11 +17,12 @@ export function PreImage({ src, layer, ...rest }: Props) {
     <React.Fragment>
       <div className='relative w-full h-full overflow-hidden'>
         <img
-          src={src as string}
+          src={("https://www.dothocunggiadinh.com:8443/storage/" + src) as string}
           style={{ width: `${rest.width}px`, height: `${rest.height}px` }}
           {...rest}
           onLoad={() => setImageLoaded(true)}
           onError={() => setImageLoaded(true)}
+          className='object-fill'
         />
         {layer && (
           <div

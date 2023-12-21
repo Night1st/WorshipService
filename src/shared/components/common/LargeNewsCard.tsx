@@ -12,7 +12,7 @@ interface Props {
 const LargeNewsCard = ({title, image, author, description, date}: Props) => {
     return(
         <motion.div
-            className="flex items-center cursor-pointer border-collapse "
+            className="flex cursor-pointer border-collapse "
         >
             <div className="flex w-1/2">
                 <Image
@@ -23,7 +23,7 @@ const LargeNewsCard = ({title, image, author, description, date}: Props) => {
                     className="w-full h-auto"
                     />
             </div>
-            <div className="flex flex-col gap-3 p-5 w-1/2">
+            <div className="flex flex-col gap-3 p-10 w-1/2">
                 <h1 className="text-4xl font-bold text-black ">{title}</h1>
                 <p className="text-base">{date} - {author}</p>
                 <p className="text-xl">{description}</p>

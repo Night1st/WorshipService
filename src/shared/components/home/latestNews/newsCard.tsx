@@ -1,29 +1,30 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { PreImage } from "../../common/PreImage";
 
 interface Props {
     title: string;
     image: string;
     author: string;
-    date: string
+    public_date: string
 }
 
-const NewsCard = ({title, image, author, date}: Props) => {
+const NewsCard = ({title, image, author, public_date}: Props) => {
     return(
         <motion.div
-            className="flex items-center cursor-pointer border-collapse "
+            className="flex items-center cursor-pointer border-collapse gap-5"
             style={{ borderBottom: "1px solid #555" }}
         >
             <div className="flex p-3">
-                <Image
+                <PreImage
                     src={image}
-                    width={400}
-                    height={400}
+                    width={300}
+                    height={300}
                     alt={""}/>
             </div>
             <div className="flex flex-col gap-3">
                 <h1 className="text-xl font-bold text-black ">{title}</h1>
-                <p className="text-base line-clamp-2">{date} - {author}</p>
+                <p className="text-base">{public_date} - {author}</p>
             </div>
         </motion.div>
     )

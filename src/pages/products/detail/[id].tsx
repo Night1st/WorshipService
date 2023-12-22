@@ -1,15 +1,12 @@
-import { useGetProductDetail } from "@/queries/product.queries";
+
 import { IBaseResponse } from "@/schemas/baseResponse.type";
 import { IProductDetail } from "@/schemas/product.type";
 import ConnectForm from "@/shared/components/common/ConnectForm";
 import OrderDetail from "@/shared/components/common/OrderDetail";
 import RelatedProduct from "@/shared/components/common/RelatedProduct";
 import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
-import { productData } from "@/shared/mock/product";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps } from "next/types";
-import { useEffect, useState } from "react";
 
 type Props = {
   product: IBaseResponse<IProductDetail>;

@@ -4,38 +4,6 @@ import { useGetAllProductGroup } from "@/queries/product-group.queries";
 
 const ProductType = () => {
     const {data: productGroup} = useGetAllProductGroup()
-    const Type = [
-        {
-            title: "Hương",
-            image: "bg-huong",
-            link: '/productDetail/huong'
-        },
-        {
-            title: "Nến",
-            image: "bg-nen",
-            link: '/productDetail/nen'
-        },
-        {
-            title: "Tiền vàng",
-            image: "bg-tienvang",
-            link: '/productDetail/tienVang'
-        },
-        {
-            title: "Set đồ cúng",
-            image: "bg-setdocung",
-            link: '/productDetail/setDoCung'
-        },
-        {
-            title: "Đồ hầu",
-            image: "bg-dohau",
-            link: '/productDetail/doHau'
-        },
-        {
-            title: "Sản phẩm khác",
-            image: "bg-sanphamkhac",
-            link: '/productDetail/sanPhamKhac'
-        },
-    ]
     return (
         <section className="p-4 laptop:px-32 laptop:py-8">
             <TitleSection

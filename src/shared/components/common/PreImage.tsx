@@ -18,11 +18,10 @@ export function PreImage({ src, layer, ...rest }: Props) {
       <div className='relative w-full h-full overflow-hidden'>
         <img
           src={("https://www.dothocunggiadinh.com:8443/storage/" + src) as string}
-          style={{ width: `${rest.width}px`, height: `${rest.height}px` }}
-          {...rest}
+
           onLoad={() => setImageLoaded(true)}
           onError={() => setImageLoaded(true)}
-          className='object-fill'
+          className='object-fill w-full h-auto'
         />
         {layer && (
           <div

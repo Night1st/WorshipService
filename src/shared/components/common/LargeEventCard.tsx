@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { PreImage } from "./PreImage";
 
 interface Props {
     title: string;
@@ -14,16 +14,12 @@ const LargeEventCard = ({title, image, description, date}: Props) => {
             className="relative flex flex-col items-center cursor-pointer border-collapse "
             style={{ border: "1px solid #555" }}
         >
-            <div className="flex">
-                <Image
+                <PreImage
                     src={image}
-                    width={400}
-                    height={400}
                     alt={""}
                     className="w-full h-auto"
                     />
-            </div>
-            <div className="flex gap-3 px-3 py-5">
+            <div className="flex gap-3 px-3 py-5 ">
                 <div className="flex flex-col gap-3 bg-[var(--secondary-color-500)] justify-center text-center min-w-[80px]">
                     <p className="text-2xl text-black ">01</p>
                     <p className="text-base">{date}</p>

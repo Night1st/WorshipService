@@ -18,9 +18,8 @@ const NewsCard = ({news}: Props) => {
             <div className="flex p-3">
                 <PreImage
                     src={news.image}
-                    width={300}
-                    height={300}
-                    alt={""}/>
+                    alt={""}
+                    />
             </div>
             <div className="flex flex-col gap-3">
                 <h1 className="text-xl font-bold text-black ">{news.title}</h1>

@@ -5,9 +5,9 @@ import ConnectForm from '@/shared/components/common/ConnectForm';
 import ContactInfo from '@/shared/components/home/contactInfo';
 
 const homeData = {
-  title: 'LIÊN HỆ',
+  name: 'LIÊN HỆ',
   description: 'Theo dõi các tin tức và sự kiện của chúng tôi',
-  image: 'bg-lienhe',
+  cover_image: 'bg-lienhe',
 };
 
 export function AboutUs() {

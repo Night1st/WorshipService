@@ -14,15 +14,10 @@ const ProductCard = ({product}: Props) => {
             style={{ border: "1px solid #555" }}
             onClick={() => router.push(`/products/detail/${product.id}`)}
         >
-            <div className="flex">
-                <PreImage
-                    src={(product.image)}
-                    width={250}
-                    height={250}
-                    alt={""}
-                    className="w-full h-auto"
-                    />
-            </div>
+            <PreImage
+                src={(product.image)}
+                alt={""}
+                />
             <div className="flex flex-col gap-3 px-3 py-3 bg-white w-full h-full justify-between">
                 <div className="flex flex-col gap-2">
                 <p className="px-2 text-lg text-black bg-[#EDB84F] rounded-xl w-fit">{product.freeShip == 1 ? "Miễn phí vận chuyển" : "Không miễn phí vận chuyển"}</p>

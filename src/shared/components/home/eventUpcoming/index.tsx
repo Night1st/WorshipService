@@ -6,26 +6,6 @@ import IconArrowRight from "../../icon/IconArrowRight";
 import { useGetComingSoonEvent } from "@/queries/event.queries";
 
 const EventUpcoming = () => {
-  const MetaData = [
-    {
-      title: "Mừng Tết Nguyên đán Giáp Thìn 2024, giảm giá lên đến 50%",
-      image: "/images/SuKien.png",
-      description: "Từ 01/01/2024 , Nhang Đức Tuấn đón Tết Nguyên đán Giáp Thìn 2024, giảm giá tất cả mặt hàng đối với các đơn hàng trên 50.000 đồng. ",
-      date: "Tháng 01 2023"
-    },
-    {
-      title: "Mừng Tết Nguyên đán Giáp Thìn 2024, giảm giá lên đến 50%",
-      image: "/images/SuKien.png",
-      description: "Từ 01/01/2024 , Nhang Đức Tuấn đón Tết Nguyên đán Giáp Thìn 2024, giảm giá tất cả mặt hàng đối với các đơn hàng trên 50.000 đồng. ",
-      date: "Tháng 01 2023"
-    },
-    {
-      title: "Mừng Tết Nguyên đán Giáp Thìn 2024, giảm giá lên đến 50%",
-      image: "/images/SuKien.png",
-      description: "Từ 01/01/2024 , Nhang Đức Tuấn đón Tết Nguyên đán Giáp Thìn 2024, giảm giá tất cả mặt hàng đối với các đơn hàng trên 50.000 đồng. ",
-      date: "Tháng 01 2023"
-    },
-  ]
   const {data: event} = useGetComingSoonEvent()
   return ( 
     <section className="p-4 laptop:px-32 laptop:py-8">
@@ -35,7 +15,7 @@ const EventUpcoming = () => {
       />
       <div className="w-full min-h-[300px] grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 mt-10 overflow-hidden">
         {event?.map((item, idx) => (
-          <EventCard key={idx} title={item.title} summary={item.summary} image={item.image} public_date={item.public_date}/>
+          <EventCard key={idx} event={item} />
         ))}
       </div>
       <div className="flex justify-end items-end">

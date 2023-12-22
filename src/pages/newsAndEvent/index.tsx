@@ -7,9 +7,9 @@ import EventUpcoming from '@/shared/components/home/eventUpcoming';
 import LatestNews from '@/shared/components/home/latestNews';
 
 const homeData = {
-    title: 'TIN TỨC & SỰ KIỆN',
+    name: 'TIN TỨC & SỰ KIỆN',
     description: 'Theo dõi các tin tức và sự kiện của chúng tôi',
-    image: 'bg-tintucsukien',
+    cover_image: 'bg-tintucsukien',
   };
   
   export function NewsAndEvent() {

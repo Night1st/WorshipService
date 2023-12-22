@@ -8,9 +8,9 @@ import OurQuote from '@/shared/components/common/OurQuote';
 import { Quote } from '@/shared/mock/whyUs';
 
 const homeData = {
-  title: 'Nhang Đức Tuấn',
+  name: 'Nhang Đức Tuấn',
   description: 'Mang bình an tới mỗi gia đình Việt',
-  image: 'bg-gioithieu',
+  cover_image: 'bg-gioithieu',
 };
 
 export function AboutUs() {

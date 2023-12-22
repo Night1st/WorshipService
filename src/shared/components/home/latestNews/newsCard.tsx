@@ -1,30 +1,30 @@
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { useRouter } from "next/router";
 import { PreImage } from "../../common/PreImage";
+import { INews } from "@/schemas/news.type";
 
 interface Props {
-    title: string;
-    image: string;
-    author: string;
-    public_date?: string
+    news: INews
 }
 
-const NewsCard = ({title, image, author, public_date}: Props) => {
+const NewsCard = ({news}: Props) => {
+    const router = useRouter()
     return(
         <motion.div
             className="flex items-center cursor-pointer border-collapse gap-5"
             style={{ borderBottom: "1px solid #555" }}
+            onClick={() => router.push(`/newsAndEvent/news/${news.slug}`)}
         >
             <div className="flex p-3">
                 <PreImage
-                    src={image}
+                    src={news.image}
                     width={300}
                     height={300}
                     alt={""}/>
             </div>
             <div className="flex flex-col gap-3">
-                <h1 className="text-xl font-bold text-black ">{title}</h1>
-                <p className="text-base">{public_date} - {author}</p>
+                <h1 className="text-xl font-bold text-black ">{news.title}</h1>
+                <p className="text-base">{news.public_date} - {news.author}</p>
             </div>
         </motion.div>
     )

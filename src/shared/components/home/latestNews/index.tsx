@@ -49,7 +49,7 @@ const LatestNews = () => {
         />
         <div className="w-full min-h-[100px] grid grid-cols-1 gap-5 lg:grid-cols-2 mt-10 overflow-hidden">
           {latestNews?.map((item, idx) => (
-            <NewsCard key={idx} title={item.title} author={item.author} image={item.image} public_date={item.public_date}/>
+            <NewsCard key={idx} news={item}/>
           ))}
         </div>
         <div className="flex justify-end items-end">

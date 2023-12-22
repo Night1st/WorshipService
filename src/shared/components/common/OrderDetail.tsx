@@ -103,13 +103,14 @@ const OrderDetail = ({product}: Props) => {
                 <div className='flex border-2 rounded-xl border-[var(--primary-color-900)]'>
                     <div className='flex p-5 gap-5'>
                         <div>
-                            <Image width={100} height={100} src={'/images/Logo/Policy1.png'} alt={''}/>
+                            <Image width={100} height={100} src={'/images/Logo/Policy2.png'} alt={''}/>
                         </div>
                         <div className='flex flex-col text-left'>
-                            <p className='text-2xl text-[var(--primary-color-900)]'>Chính sách giao hàng</p>
+                            <p className='text-2xl text-[var(--primary-color-900)]'>Chính sách thanh toán</p>
                         <ul className='list-disc pl-8'>
-                            <li className='text-xl'>Giao hàng toàn quốc</li>
-                            <li className='text-xl'>Miễn phí vận chuyển đơn hàng trên 500.000 đồng</li>
+                            <li className='text-xl'>Thanh toán tiền mặt khi nhận hàng</li>
+                            <li className='text-xl'>Thanh toán chuyển khoản ngân hàng</li>
+                            <li className='text-xl'>Thanh toán online</li>
                         </ul>
                         </div>
                     </div>
@@ -117,13 +118,12 @@ const OrderDetail = ({product}: Props) => {
                 <div className='flex border-2 rounded-xl border-[var(--primary-color-900)]'>
                     <div className='flex p-5 gap-5'>
                         <div>
-                            <Image width={100} height={100} src={'/images/Logo/Policy1.png'} alt={''}/>
+                            <Image width={100} height={100} src={'/images/Logo/Policy3.png'} alt={''}/>
                         </div>
                         <div className='flex flex-col text-left'>
-                            <p className='text-2xl text-[var(--primary-color-900)]'>Chính sách giao hàng</p>
+                            <p className='text-2xl text-[var(--primary-color-900)]'>Chính sách đổi trả</p>
                         <ul className='list-disc pl-8'>
-                            <li className='text-xl'>Giao hàng toàn quốc</li>
-                            <li className='text-xl'>Miễn phí vận chuyển đơn hàng trên 500.000 đồng</li>
+                            <li className='text-xl'>Đổi trả miễn phí trong vòng 30 ngày khi phát hiện lỗi từ nhà cung cấp. Liên lạc với chúng tôi để được hỗ trợ.</li>
                         </ul>
                         </div>
                     </div>

@@ -1,18 +1,22 @@
+import { useGetComingSoonEvent } from "@/queries/event.queries";
 import LargeEventCard from "@/shared/components/common/LargeEventCard";
 import EventList from "@/shared/components/home/eventUpcoming/eventList";
 import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
 import Head from "next/head";
 
 export function Event() {
+    const {data: event} = useGetComingSoonEvent()
     return (
       <>
         <Head>
-          <title>Trang chủ</title>
+          <title>Sự kiện</title>
           <meta name="description" content="Trang chủ NGS" />
           <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
         </Head>
         <section className="px-40 py-10">
-            <LargeEventCard title={"Mừng Tết Nguyên đán Giáp Thìn 2024, giảm giá lên đến 50%"} image={"/images/SuKien.png"} description={"Từ 01/01/2024 , Nhang Đức Tuấn đón Tết Nguyên đán Giáp Thìn 2024, giảm giá tất cả mặt hàng đối với các đơn hàng trên 50.000 đồng. "} date={"Tháng 01 2023"}/>
+            {event?.map((item) => (
+                <LargeEventCard key={0} event={item}/>
+            ))}
         </section>
         
         <EventList />

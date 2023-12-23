@@ -22,7 +22,7 @@ const EventCard = ({event}: Props) => {
                 />
             <div className="flex gap-3 px-3 py-5 bg-white">
                 <div className="flex flex-col gap-3 bg-[var(--secondary-color-500)] justify-center text-center min-w-[80px]">
-                    <p className="text-2xl text-black ">{date.getDay()}</p>
+                    <p className="text-2xl text-black ">{date.getDate()}</p>
                     <p className="text-base">{"Tháng " + (date.getMonth() + 1) + " " + date.getFullYear()}</p>
                 </div>
                 <div className="flex flex-col gap-3">

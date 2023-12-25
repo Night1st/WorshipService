@@ -14,8 +14,11 @@ export function Event() {
           <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
         </Head>
         <section className="px-40 py-10">
-            {event?.map((item) => (
-                <LargeEventCard key={0} event={item}/>
+            {event?.map((item, idx) => (
+              idx === 0 ? (
+                <LargeEventCard key={idx} event={item}/>
+              )
+              : ("")
             ))}
         </section>
         

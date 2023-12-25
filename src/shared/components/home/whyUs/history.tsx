@@ -14,7 +14,7 @@ const History = ({ image, description }: Props) => {
         <TitleSection title='LỊCH SỬ HÌNH THÀNH' description='Con đường xây dựng và trưởng thành của chúng tôi' />
         <div className='flex justify-center items-center'>
           <div className='p-10 w-full laptop:w-2/3'>
-            <p className='text-xl'>{description}</p>
+            <p className='text-base'>{description}</p>
           </div>
           <div className='flex laptop:w-1/3 justify-center items-center p-10 phone:max-laptop:hidden'>
             <Image className='' height={300} width={300} src={image} alt={''}></Image>

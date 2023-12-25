@@ -21,14 +21,14 @@ export function NewsDetail ({news}: Props) {
           <section className='p-20 w-full'>
           <div className='w-full grid grid-cols-1 laptop:grid-cols-6 justify-start items-start gap-8'>
               <div className='md:col-span-4 w-full flex flex-col justify-start items-start gap-8 text-black'>
-                  <PreImage width={1000} height={600} src={news.data.image} alt={""} />
-                  <h1 className='text-lg md:text-3xl font-semibold'>{news.data.title}</h1>
-                  <p className="text-lg">{news.data.public_date} - {news.data.author}</p>
-                  <p className="text-xl">{news.data.summary}</p>
-                  <p className="text-xl">{news.data.content}</p>
+                  <PreImage width={900} height={500} src={news.data.image} alt={""} />
+                  <h1 className='text-lg laptop:text-[34px] laptop:leading-[41px] font-semibold'>{news.data.title}</h1>
+                  <p className="text-base">{news.data.public_date} - {news.data.author}</p>
+                  <p className="text-base">{news.data.summary}</p>
+                  <p className="text-base">{news.data.content}</p>
               </div>
               <div className='md:col-span-2 w-full min-h-[500px] flex flex-col justify-start items-start gap-8'>
-                  <h1 className='text-lg laptop:text-4xl text-[var(--primary-color-1000)]'>TIN TỨC KHÁC</h1>
+                  <h1 className='text-lg laptop:text-2xl laptop:text-[29px] text-[var(--primary-color-1000)]'>TIN TỨC KHÁC</h1>
                   {Array(6).fill(<NewsCard news={news.data}/>)}
               </div>
           </div>

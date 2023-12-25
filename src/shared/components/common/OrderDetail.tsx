@@ -26,14 +26,14 @@ const OrderDetail = ({product}: Props) => {
                     </div>
                 </div>
                 <div className='flex flex-col w-full laptop:w-2/3 gap-3 p-8'>
-                    <h1 className="text-3xl text-black ">{product.product.productName}</h1>
-                    <p className="px-2 text-base text-black bg-[#EDB84F] rounded-xl w-fit">{product.product.freeShip == 1 ? "Miễn phí vận chuyển" : "Không miễn phí vận chuyển"}</p>
+                    <h1 className="laptop:text-2xl laptop:leading-[29px] text-black ">{product.product.productName}</h1>
+                    <p className="px-2 text-xs leading-[19px] text-black bg-[#EDB84F] rounded-xl w-fit">{product.product.freeShip == 1 ? "Miễn phí vận chuyển" : "Không miễn phí vận chuyển"}</p>
                     {product.sellInformation.map((item, idx) => (
                         <div key={idx}>
-                            <p className="text-lg line-through pt-5">{item.origin_price * 1000}</p>
+                            <p className="text-base line-through pt-5">{item.origin_price}đ</p>
                             <div className='flex gap-5'>
-                                <p className="text-4xl text-red-800">{item.current_price * 1000}</p>
-                                <p className='bg-[#EDB84F] text-xl text-black text-center flex justify-center items-center px-2 rounded-xl'>{"Giảm " + item.sale_percent + "%"}</p>
+                                <p className="text-2xl leading-[29px] text-red-800">{item.current_price}đ</p>
+                                <p className='bg-[#EDB84F] text-base text-black text-center flex justify-center items-center px-2 rounded-xl'>{"Giảm " + item.sale_percent + "%"}</p>
                             </div>
                         </div>
                     ))}
@@ -92,10 +92,10 @@ const OrderDetail = ({product}: Props) => {
                             <Image width={100} height={100} src={'/images/Logo/Policy1.png'} alt={''}/>
                         </div>
                         <div className='flex flex-col text-left'>
-                            <p className='text-2xl text-[var(--primary-color-900)]'>Chính sách giao hàng</p>
+                            <p className='text-[20px] leading-[24px] text-[var(--primary-color-900)]'>Chính sách giao hàng</p>
                         <ul className='list-disc pl-8'>
-                            <li className='text-xl'>Giao hàng toàn quốc</li>
-                            <li className='text-xl'>Miễn phí vận chuyển đơn hàng trên 500.000 đồng</li>
+                            <li className='text-base'>Giao hàng toàn quốc</li>
+                            <li className='text-base'>Miễn phí vận chuyển đơn hàng trên 500.000 đồng</li>
                         </ul>
                         </div>
                     </div>
@@ -106,11 +106,11 @@ const OrderDetail = ({product}: Props) => {
                             <Image width={100} height={100} src={'/images/Logo/Policy2.png'} alt={''}/>
                         </div>
                         <div className='flex flex-col text-left'>
-                            <p className='text-2xl text-[var(--primary-color-900)]'>Chính sách thanh toán</p>
+                            <p className='text-[20px] leading-[24px] text-[var(--primary-color-900)]'>Chính sách thanh toán</p>
                         <ul className='list-disc pl-8'>
-                            <li className='text-xl'>Thanh toán tiền mặt khi nhận hàng</li>
-                            <li className='text-xl'>Thanh toán chuyển khoản ngân hàng</li>
-                            <li className='text-xl'>Thanh toán online</li>
+                            <li className='text-base'>Thanh toán tiền mặt khi nhận hàng</li>
+                            <li className='text-base'>Thanh toán chuyển khoản ngân hàng</li>
+                            <li className='text-base'>Thanh toán online</li>
                         </ul>
                         </div>
                     </div>
@@ -121,9 +121,9 @@ const OrderDetail = ({product}: Props) => {
                             <Image width={100} height={100} src={'/images/Logo/Policy3.png'} alt={''}/>
                         </div>
                         <div className='flex flex-col text-left'>
-                            <p className='text-2xl text-[var(--primary-color-900)]'>Chính sách đổi trả</p>
+                            <p className='text-[20px] leading-[24px] text-[var(--primary-color-900)]'>Chính sách đổi trả</p>
                         <ul className='list-disc pl-8'>
-                            <li className='text-xl'>Đổi trả miễn phí trong vòng 30 ngày khi phát hiện lỗi từ nhà cung cấp. Liên lạc với chúng tôi để được hỗ trợ.</li>
+                            <li className='text-base'>Đổi trả miễn phí trong vòng 30 ngày khi phát hiện lỗi từ nhà cung cấp. Liên lạc với chúng tôi để được hỗ trợ.</li>
                         </ul>
                         </div>
                     </div>

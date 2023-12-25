@@ -25,14 +25,14 @@ const Footer = () => {
         </div>
         <div className="flex flex-col">
           {footerData.contactData.map((item, idx) => (
-              <p key={idx} className="flex items-start gap-2">
+              <p key={idx} className="flex items-start gap-2 text-base">
                 <Image height={30} width={30} src={item.icon} alt={''}></Image>
               {item.title}</p>
             ))}
         </div>
       </div>
       <div className="w-full flex justify-end items-center border-t-2 pt-5">
-        <p>Bản quyền thuộc về...</p>
+        <p>Bản quyền thuộc về Metaverse</p>
       </div>
     </section>
   );

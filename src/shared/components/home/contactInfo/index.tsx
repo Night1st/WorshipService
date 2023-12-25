@@ -21,8 +21,8 @@ const ContactInfo = () => {
                     style={{ border: "1px solid #651D1D" }}
                 >
                     <div className="flex gap-2 flex-col text-left">
-                        <h1 className="text-xl px-3 text-black">{'Hotline'}</h1>
-                        <p className="text-xl px-3">{'0985903699'} | {'0394286488'}</p>
+                        <h1 className="text-sm px-3 text-black">{'Hotline'}</h1>
+                        <p className="text-[20px] leading-[24px] px-3">{'0985903699'} | {'0394286488'}</p>
                     </div>
                 </motion.div>
                 <motion.div
@@ -30,8 +30,8 @@ const ContactInfo = () => {
                     style={{ border: "1px solid #651D1D" }}
                 >
                     <div className="flex gap-2 flex-col text-left">
-                        <h1 className="text-xl px-3 text-black">{'Email'}</h1>
-                        <p className="text-xl px-3">{'vu.tuan35@gmail.com'}</p>
+                        <h1 className="text-sm px-3 text-black">{'Email'}</h1>
+                        <p className="text-[20px] leading-[24px] px-3">{'vu.tuan35@gmail.com'}</p>
                     </div>
                 </motion.div>
                 <motion.div
@@ -39,8 +39,8 @@ const ContactInfo = () => {
                     style={{ border: "1px solid #651D1D" }}
                 >
                     <div className="flex gap-2 flex-col text-left">
-                        <h1 className="text-xl px-3 text-black">{'Địa chỉ'}</h1>
-                        <p className="text-xl px-3">{'17/31 Khu Nam Trung, Phường Nam Khê, Thành phố Uông Bí, Tỉnh Quảng Ninh'}</p>
+                        <h1 className="text-sm px-3 text-black">{'Địa chỉ'}</h1>
+                        <p className="text-[20px] leading-[24px] px-3">{'17/31 Khu Nam Trung, Phường Nam Khê, Thành phố Uông Bí, Tỉnh Quảng Ninh'}</p>
                     </div>
                 </motion.div>
                 <motion.div
@@ -48,7 +48,7 @@ const ContactInfo = () => {
                     style={{ border: "1px solid #651D1D" }}
                 >
                     <div className="flex gap-2 flex-col text-left">
-                        <h1 className="text-xl px-3 text-black">{'Kênh liên lạc khác'}</h1>
+                        <h1 className="text-sm px-3 text-black">{'Kênh liên lạc khác'}</h1>
                         <div className="flex gap-3 py-2">
                             {footerData.icon.map((item, idx) => (
                             <Image key={idx} height={30} width={30} src={item.icon} alt={''} className="bg-[var(--primary-color-800)] cursor-pointer" onClick={() => router.push(item.link)}></Image>

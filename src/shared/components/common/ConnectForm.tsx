@@ -18,8 +18,8 @@ const ConnectForm = () => {
     <>
       <section className='mx-auto px-4 laptop:px-32 py-10'>
         <div className='bg-[var(--secondary-color-100)] p-5 justify-around items-center rounded-3xl'>
-          <h1 className='text-center text-[var(--primary-color-1000)] text-2xl laptop:text-4xl'>ĐĂNG KÍ NHẬN TƯ VẤN</h1>
-          <p className='text-center'>Vui lòng để lại thông tin, chúng tôi sẽ hỗ trợ bạn trong thời gian sớm nhất</p>
+          <h1 className='text-center text-[var(--primary-color-1000)] text-2xl laptop:text-[34px] laptop:leading-[41px]'>ĐĂNG KÍ NHẬN TƯ VẤN</h1>
+          <p className='text-center text-base pt-3'>Vui lòng để lại thông tin, chúng tôi sẽ hỗ trợ bạn trong thời gian sớm nhất</p>
           <div className='grid grid-cols-1 laptop:grid-cols-2 gap-4 pt-10 justify-between text-black'>
             <div className='flex flex-col'>
               <div className='mb-4'>
@@ -58,7 +58,7 @@ const ConnectForm = () => {
               <div className='mb-4 flex justify-end'>
               <Modal open={open} onClose={() => setOpen(false)}>
                   <div className='text-center w-full flex flex-col gap-5'>
-                    <h1 className='text-2xl laptop:text-4xl text-green-400 pt-10'>ĐĂNG KÝ THÀNH CÔNG</h1>
+                    <h1 className='text-4xl laptop:text-4xl text-green-400 pt-10'>ĐĂNG KÝ THÀNH CÔNG</h1>
                     <p className="text-lg laptop:text-2xl text-black">Quý khách đã đăng ký nhận tư vấn thành công. Chúng tôi sẽ liên hệ Quý khách sớm nhất.</p>
                     <Image className='ml-auto mr-auto py-10' height={400} width={400} src={'/images/Contact.png'} alt={''} />
                   </div>

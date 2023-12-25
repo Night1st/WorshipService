@@ -18,9 +18,9 @@ const Address = ({image, description}: Props) => {
               <Image className='' height={500} width={500} src={image} alt={''}></Image>
             </div>
             <div className='p-10 w-full laptop:w-2/3'>
-              <h1 className="text-3xl text-black my-5">Trụ sở chính</h1>
+              <h1 className="laptop:text-[34px] laptop:leading-[41px] text-black my-5">Trụ sở chính</h1>
             {footerData.contactData.map((item, idx) => (
-              <p key={idx} className="flex items-start gap-2 text-xl my-3">
+              <p key={idx} className="flex items-start gap-2 text-base my-3">
                 <Image height={30} width={30} src={item.icon} alt={''}></Image>
               {item.title}</p>
             ))}

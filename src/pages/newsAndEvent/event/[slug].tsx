@@ -23,13 +23,13 @@ export function EventDetail({event}: Props) {
         <div className='w-full grid grid-cols-1 laptop:grid-cols-6 justify-start items-start gap-8'>
             <div className='md:col-span-4 w-full flex flex-col justify-start items-start gap-8 text-black'>
                 <PreImage width={1000} height={600} src={event.data.image} alt={""} />
-                <h1 className='text-lg md:text-3xl font-semibold'>{event.data.title}</h1>
-                <p className="text-lg">{event.data.start_date} - {event.data.end_date}</p>
-                <p className="text-xl">{event.data.summary}</p>
-                <p className="text-xl">{event.data.content}</p>
+                <h1 className='text-lg laptop:text-[34px] laptop:leading-[41px] font-semibold'>{event.data.title}</h1>
+                <p className="text-base">{event.data.start_date} - {event.data.end_date}</p>
+                <p className="text-base">{event.data.summary}</p>
+                <p className="text-base">{event.data.content}</p>
             </div>
             <div className='md:col-span-2 w-full min-h-[500px] flex flex-col justify-start items-start gap-8'>
-                <h1 className='text-lg laptop:text-4xl text-[var(--primary-color-1000)]'>SỰ KIỆN KHÁC</h1>
+                <h1 className='text-lg laptop:text-2xl laptop:text-[29px] text-[var(--primary-color-1000)]'>SỰ KIỆN KHÁC</h1>
                 {Array(3).fill(<EventCard event={event.data}/>)}
             </div>
         </div>

@@ -34,7 +34,7 @@ const Header = () => {
       <ul className={`justify-center items-center gap-10 phone:max-laptop:text-center laptop:flex ml-10 ${isToggleOpen ? "block" : "hidden"}`}>
           {fakeMenu.map((item, inx) => (
             <Link href={item.link} key={inx}>
-              <li >{item.title}</li>
+              <li className="text-base">{item.title}</li>
             </Link>
           ))}
       </ul>

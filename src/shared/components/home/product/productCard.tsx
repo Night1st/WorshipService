@@ -20,14 +20,14 @@ const ProductCard = ({product}: Props) => {
                 height={400}
                 alt={""}
                 />
-            <div className="flex flex-col gap-3 px-3 py-3 bg-white w-full h-full justify-between">
+            <div className="flex flex-col gap-3 px-3 py-3 bg-white w-full h-4/5 justify-between">
                 <div className="flex flex-col gap-2">
                 <p className="px-2 text-xs leading-[19px] text-black bg-[#EDB84F] rounded-xl w-fit">{product.freeShip == 1 ? "Miễn phí vận chuyển" : "Không miễn phí vận chuyển"}</p>
-                <h1 className="text-base font-bold text-black ">{product.productName}</h1>
+                <h1 className="text-base font-bold text-black line-clamp-2">{product.productName}</h1>
                 </div>
                 <div className="flex flex-col">
-                <p className="text-base text-right line-through">{product.origin_price * 1000}</p>
-                <p className="text-2xl leading-[29px] text-red-800 text-right">{product.current_price * 1000}</p>
+                <p className="text-base text-right line-through">{product.origin_price}đ</p>
+                <p className="text-2xl leading-[29px] text-red-800 text-right">{product.current_price}đ</p>
                 </div>
             </div>
         </motion.div>

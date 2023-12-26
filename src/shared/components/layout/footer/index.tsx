@@ -8,7 +8,7 @@ const Footer = () => {
     <section className="w-full flex flex-col gap-5 justify-between mx-auto px-16 py-10 bg-[var(--primary-color-900)] text-white font-thin">
       <div className="grid grid-cols-1 laptop:grid-cols-4 gap-4 justify-start items-start align-top">
         <div className="flex flex-col justify-center items-start">
-          <Image height={150} width={150} src={"/images/Logo.png"} alt={""}></Image>
+          <Image height={150} width={150} src={"/Logo.svg"} alt={""}></Image>
         </div>
         <div className="flex flex-col">
           <InforFooter title="Giới thiệu" link='#'/>

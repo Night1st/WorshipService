@@ -8,7 +8,7 @@ import { useGetComingSoonEvent } from "@/queries/event.queries";
 const EventUpcoming = () => {
   const {data: event} = useGetComingSoonEvent()
   return ( 
-    <section className="p-4 laptop:px-32 laptop:py-8">
+    <section className="p-4 laptop:px-10 laptop:py-8">
       <TitleSection
         title="SỰ KIỆN SẮP TỚI"
         description="Theo dõi chúng tôi để tham gia các sự kiện hấp dẫn"

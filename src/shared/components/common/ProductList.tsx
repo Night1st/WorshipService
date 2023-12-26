@@ -10,7 +10,7 @@ interface Props {
 
 const ProductList = ({product}: Props) => {
     return ( 
-        <section className="p-4 laptop:px-32 laptop:py-8">
+        <section className="p-4 laptop:px-10 laptop:py-8">
           <TitleSection
             title="SẢN PHẨM NỔI BẬT"
             description="Khám phá các sản phẩm của chúng tôi"

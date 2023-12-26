@@ -51,8 +51,8 @@ const MaybeInterested = () => {
     },
   };
   return (
-    <section className='p-4 laptop:px-32 laptop:py-8'>
-      <TitleSection title='DANH MỤC SẢN PHẨM' description='Chọn nhóm sản phẩm mà bạn quan tâm' />
+    <section className='p-4 laptop:px-10 laptop:py-8'>
+      <TitleSection title='CÓ THỂ BẠN QUAN TÂM' description='Khám phá các nhóm sản phẩm khác của chúng tôi' />
       <Carousel responsive={responsive}>
         {Type.map((item, idx) => (
           <div key={idx} className={`flex justify-center ${item.image} m-4 p-4 bg-cover bg-no-repeat bg-center cursor-pointer rounded-3xl`} onClick={() => router.push(item.link)}>

@@ -5,7 +5,7 @@ import { useGetAllProductGroup } from "@/queries/product-group.queries";
 const ProductType = () => {
     const {data: productGroup} = useGetAllProductGroup()
     return (
-        <section className="p-4 laptop:px-32 laptop:py-8">
+        <section className="p-4 laptop:px-10 laptop:py-8">
             <TitleSection
                 title="DANH MỤC SẢN PHẨM"
                 description="Chọn nhóm sản phẩm mà bạn quan tâm"

@@ -4,6 +4,20 @@ import Image from 'next/image';
 import router from "next/router";
 
 const Footer = () => {
+  const linkFooter = [
+    {
+      title: "Giới thiệu",
+      link: "/"
+    },
+    {
+      title: "Sản phẩm",
+      link: "/products"
+    },
+    {
+      title: "Tin tức & Sự kiện",
+      link: "/newsAndEvent"
+    }
+  ]
   return (
     <section className="w-full flex flex-col gap-5 justify-between mx-auto px-16 py-10 bg-[var(--primary-color-900)] text-white font-thin">
       <div className="grid grid-cols-1 laptop:grid-cols-4 gap-4 justify-start items-start align-top">

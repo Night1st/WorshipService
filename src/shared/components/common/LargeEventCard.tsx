@@ -11,21 +11,20 @@ const LargeEventCard = ({event}: Props) => {
     const date = new Date(event.start_date)
     return(
         <motion.div
-            className="relative flex flex-col items-center cursor-pointer border-collapse "
-            style={{ border: "1px solid #555" }}
+            className="relative flex flex-col items-center cursor-pointer rounded-full"
         >
             <PreImage
                 src={event.image}
                 alt={""}
                 className="w-full h-auto"
                 />
-            <div className="flex gap-3 px-3 py-5 ">
-                <div className="flex flex-col gap-3 bg-[var(--secondary-color-500)] justify-center text-center min-w-[80px]">
-                    <p className="text-2xl text-black ">{date.getDate()}</p>
+            <div className="flex gap-5 p-5 bg-white">
+                <div className="flex flex-col gap-3 bg-[var(--secondary-color-500)] justify-center items-center text-center min-w-[80px]">
+                    <p className="text-[34px] leading-[41px] text-[var(--primary-color-900)]">{date.getDate()}</p>
                     <p className="text-base">{"Tháng " + (date.getMonth() + 1) + " " + date.getFullYear()}</p>
                 </div>
-                <div className="grid grid-cols-2 gap-3">
-                    <h1 className="text-base font-bold text-black ">{event.title}</h1>
+                <div className="grid grid-cols-2 gap-5 justify-center items-center ">
+                    <h1 className="text-[24px] leading-[29px] font-bold text-black border-r-2">{event.title}</h1>
                     <p className="text-base line-clamp-2">{event.summary}</p>
                 </div>
             </div>

@@ -27,11 +27,10 @@ export function Detail({product}: Props) {
     );
   }
 export const getStaticProps: GetStaticProps = async ctx => {
-  const id = ctx.params?.id;
-  console.log(id)
-  if (id) {
+  const slug = ctx.params?.slug;
+  if (slug) {
     try {
-      const responseProduct = await fetch(`https://www.dothocunggiadinh.com:8443/api/product/detail/${id}`);
+      const responseProduct = await fetch(`https://www.dothocunggiadinh.com:8443/api/product/get-by-slug?slug=${slug}`);
       const product = await responseProduct.json();
       return {
         props: {

@@ -12,7 +12,6 @@ const ProductType = () => {
             />
             <div className="w-full grid grid-cols-1 gap-5 tablet:grid-cols-2 laptop:grid-cols-3 mt-10 overflow-hidden">
                 {productGroup?.map((item, idx) => (
-                    console.log(item.cover_image),
                     <div key={idx} className={`flex justify-center bg-cover bg-no-repeat bg-center cursor-pointer rounded-3xl`} 
                         onClick={() => router.push(`/products/${item.id}`)}
                         style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(https://www.dothocunggiadinh.com:8443/storage/${item.cover_image})`}}

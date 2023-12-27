@@ -9,7 +9,7 @@
 }
 
 html {
-  @apply text-[#757693];
+  @apply text-[#000];
   max-width: 100%;
   min-height: 100%;
   overflow-x: hidden;

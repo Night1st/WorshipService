@@ -7,7 +7,7 @@ const Footer = () => {
   const linkFooter = [
     {
       title: "Giới thiệu",
-      link: "/"
+      link: "/aboutUs"
     },
     {
       title: "Sản phẩm",
@@ -25,10 +25,10 @@ const Footer = () => {
           <Image height={150} width={150} src={"/Logo.svg"} alt={""}></Image>
         </div>
         <div className="flex flex-col">
-          <InforFooter title="Liên hệ" link='#'/>
+          <InforFooter title="Liên hệ" link='/contact'/>
           <div className="flex gap-3 py-2">
             {footerData.icon.map((item, idx) => (
-              <Image key={idx} height={30} width={30} src={item.icon} alt={''} className="bg-[var(--primary-color-800)] cursor-pointer" onClick={() => router.push(item.link)}></Image>
+              <Image key={idx} height={30} width={30} src={item.icon} alt={''} className="bg-[var(--primary-color-900)] cursor-pointer" onClick={() => router.push(item.link)}></Image>
             ))}
           </div>
         </div>
@@ -41,13 +41,13 @@ const Footer = () => {
           <p className="text-base">Thông tin liên hệ</p>
           {footerData.contactData.map((item, idx) => (
               <p key={idx} className="flex items-start gap-2 text-sm">
-                <Image height={30} width={30} src={item.icon} alt={''}></Image>
+                <img src={item.icon} alt={''} className="min-w-[30px]"></img>
               {item.title}</p>
             ))}
         </div>
       </div>
       <div className="w-full flex justify-end items-center border-t-2 pt-5">
-        <p>Bản quyền thuộc về Metaverse</p>
+        <p className="cursor-pointer" onClick={() => window.open("https://metaverse-solution.vn/")}>Copyright © 2023 Đồ thờ cúng gia đình. Powered by Metaverse</p>
       </div>
     </section>
   );

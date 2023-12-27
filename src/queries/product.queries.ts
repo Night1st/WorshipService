@@ -26,10 +26,10 @@ export const useGetProductByGroup = (productGroupId: number, options?: Partial<U
     })
 }
 
-export const useGetProductDetail = (productId: number, options?: Partial<UseQueryOptions>) => {
+export const useGetRelatedProduct = (productId: number, options?: Partial<UseQueryOptions>) => {
     return useQuery({
-        queryKey: [QUERY_KEY, 'get-by-id'],
-        queryFn: () => axiosInstanceNoAuth.get<IBaseResponse<IProductDetail>>('/product/detail/' + productId),
+        queryKey: [QUERY_KEY, 'get-related'],
+        queryFn: () => axiosInstanceNoAuth.get<IBaseResponse<IProduct[]>>('/product/get-related-product/' + productId + '?limit=5'),
         select(data) {
             return data.data
         },

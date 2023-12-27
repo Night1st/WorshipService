@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Header = () => {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [menu, setMenu] = useState<string>(fakeMenu[0].title);
   const router = useRouter()
 
   return (  
@@ -22,8 +22,9 @@ const Header = () => {
         />
         <ul className={`justify-center items-center gap-5 phone:max-laptop:text-center laptop:flex ml-10 ${isToggleOpen ? "block" : "hidden"}`}>
             {fakeMenu.map((item, inx) => (
-              <Link href={item.link} key={inx}>
-                <li className="text-sm">{item.title}</li>
+              console.log(menu),
+              <Link href={item.link} key={inx} onClick={() => setMenu(item.title)}>
+                <li className={item.title == menu ? "border-b-2 text-sm" : "text-sm"}>{item.title}</li>
               </Link>
             ))}
         </ul>

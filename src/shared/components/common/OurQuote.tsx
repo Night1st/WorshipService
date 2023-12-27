@@ -16,13 +16,8 @@ const OurQuote = ({ data }: Props) => {
         {data.map((item, index) => (
           <div key={index} className='flex flex-col justify-center items-center laptop:min-w-[200px]'>
             <p className={`${item == selectedIcon && 'text-[var(--primary-color-800)]'} laptop:text-[20px] laptop:leading-[24px] text-center text-black pb-3`}>{`${item.title}`}</p>
-            <div
-              className={`
-              ${item == selectedIcon && 'bg-[url(/images/StatusOff.png)] text-white transition duration-750 ease-in-out'} 
-              bg-[url(/images/StatusOn.png)] relative text-black text-left py-4 px-4 rounded-full cursor-pointer`
-            }
-              onClick={() => setSelectedIcon(item)}
-            >
+            <div onClick={() => setSelectedIcon(item)}>
+              {item == selectedIcon ? (<img width={40} height={40} src='/images/StatusOn.png'></img>) : (<img width={40} height={40} src='/images/StatusOff.png'></img>)}
             </div>
           </div>
         ))}

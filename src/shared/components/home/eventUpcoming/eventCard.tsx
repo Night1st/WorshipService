@@ -11,8 +11,7 @@ const EventCard = ({event}: Props) => {
     const date = new Date(event.public_date)
     return(
         <motion.div
-            className="flex flex-col items-center cursor-pointer border-collapse "
-            style={{ border: "1px solid #555" }}
+            className="flex flex-col items-center cursor-pointer border-full"
             onClick={() => router.push(`/newsAndEvent/event/${event.slug}`)}
         >
             <PreImage
@@ -20,9 +19,9 @@ const EventCard = ({event}: Props) => {
                 alt={""}
                 className="w-full h-full"
                 />
-            <div className="flex gap-3 px-3 py-5 bg-white">
+            <div className="flex gap-3 p-3 bg-white">
                 <div className="flex flex-col gap-3 bg-[var(--secondary-color-500)] justify-center text-center min-w-[80px]">
-                    <p className="text-2xl leading-[29px] text-black ">{date.getDate()}</p>
+                    <p className="text-2xl leading-[29px] text-black text-[var(--primary-color-900)]">{date.getDate()}</p>
                     <p className="text-base">{"Tháng " + (date.getMonth() + 1) + " " + date.getFullYear()}</p>
                 </div>
                 <div className="flex flex-col gap-3">

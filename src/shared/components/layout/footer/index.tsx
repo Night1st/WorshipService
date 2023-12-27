@@ -19,18 +19,13 @@ const Footer = () => {
     }
   ]
   return (
-    <section className="w-full flex flex-col gap-5 justify-between mx-auto px-16 py-10 bg-[var(--primary-color-900)] text-white font-thin">
+    <section className="w-full flex flex-col gap-5 justify-between mx-auto px-16 py-10 bg-[var(--primary-color-900)] text-white">
       <div className="grid grid-cols-1 laptop:grid-cols-4 gap-4 justify-start items-start align-top">
         <div className="flex flex-col justify-center items-start">
           <Image height={150} width={150} src={"/Logo.svg"} alt={""}></Image>
         </div>
         <div className="flex flex-col">
-          <InforFooter title="Giới thiệu" link='#'/>
-          <InforFooter title="Sản phẩm" link='/productDetail'/>
-          <InforFooter title="Tin tức & Sự kiện"  link='/eventUpcoming'/>
-        </div>
-        <div className="flex flex-col">
-          <InforFooter title="Liên hệ"  link='#'/>
+          <InforFooter title="Liên hệ" link='#'/>
           <div className="flex gap-3 py-2">
             {footerData.icon.map((item, idx) => (
               <Image key={idx} height={30} width={30} src={item.icon} alt={''} className="bg-[var(--primary-color-800)] cursor-pointer" onClick={() => router.push(item.link)}></Image>
@@ -38,8 +33,14 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col">
+          {linkFooter.map((item, idx) => (
+            <InforFooter key={idx} title={item.title} link={item.link}/>
+          ))}
+        </div>
+        <div className="flex flex-col gap-2">
+          <p className="text-base">Thông tin liên hệ</p>
           {footerData.contactData.map((item, idx) => (
-              <p key={idx} className="flex items-start gap-2 text-base">
+              <p key={idx} className="flex items-start gap-2 text-sm">
                 <Image height={30} width={30} src={item.icon} alt={''}></Image>
               {item.title}</p>
             ))}

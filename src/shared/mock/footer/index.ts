@@ -3,17 +3,17 @@ export const footerData = {
         {
             head: "Hotline",
             title: "0985903699 | 0394286488",
-            icon: "/images/iconPhone.png"
+            icon: "/Phone.svg"
         },
         {
             head: "Email",
             title: "vu.tuan35@gmail.com",
-            icon: "/images/iconEmail.png"
+            icon: "/Email.svg"
         },
         {
             head: "Địa chỉ",
             title: "17/31 Khu Nam Trung, Phường Nam Khê, Thành phố Uông Bí, Tỉnh Quảng Ninh",
-            icon: "/images/iconAddress.png"
+            icon: "/Address.svg"
         },
     ],
     icon: [

@@ -10,20 +10,20 @@ interface Props {
 const OurQuote = ({ data }: Props) => {
   const [selectedIcon, setSelectedIcon] = useState<IQuote>(Quote[0] as IQuote);
   return (
-    <section className='p-4 laptop:px-32 laptop:py-8'>
+    <section className='p-4 laptop:px-24 laptop:py-8'>
       <TitleSection title='THÔNG ĐIỆP CỦA CHÚNG TÔI' description='' />
       <div className='flex items-center justify-center gap-10 py-5'>
         {data.map((item, index) => (
           <div key={index} className='flex flex-col justify-center items-center laptop:min-w-[200px]'>
             <p className={`${item == selectedIcon && 'text-[var(--primary-color-800)]'} laptop:text-[20px] laptop:leading-[24px] text-center text-black pb-3`}>{`${item.title}`}</p>
-            <button
-              className={`${
-                item == selectedIcon && 'bg-[var(--primary-color-800)] text-white transition duration-750 ease-in-out'
-              } relative text-black text-left py-4 px-4 rounded-full cursor-pointer`}
-              style={{ border: '1px solid #000' }}
+            <div
+              className={`
+              ${item == selectedIcon && 'bg-[url(/images/StatusOff.png)] text-white transition duration-750 ease-in-out'} 
+              bg-[url(/images/StatusOn.png)] relative text-black text-left py-4 px-4 rounded-full cursor-pointer`
+            }
               onClick={() => setSelectedIcon(item)}
             >
-            </button>
+            </div>
           </div>
         ))}
       </div>

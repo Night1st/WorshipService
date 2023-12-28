@@ -40,78 +40,44 @@ const OrderDetail = ({product}: Props) => {
                 <div className='flex flex-col w-full laptop:w-2/3 gap-3 p-8'>
                     {product.product.map((item, idx) => (
                         <div key={idx} className='flex flex-col gap-3'>
-                            <h1 className="laptop:text-2xl laptop:leading-[29px] text-black ">{item.productName}</h1>
+                            <h1 className="text-base laptop:text-2xl laptop:leading-[29px] text-black ">{item.productName}</h1>
                             <p className="px-2 text-xs leading-[19px] text-black bg-[#EDB84F] rounded-xl w-fit">{item.tags}</p>
                         </div>
                     ))}
                     <div>
-                        <p className="text-base line-through pt-10">{selectedType ? selectedType.origin_price : ""}đ</p>
+                        <p className="text-base line-through laptop:pt-10">{selectedType ? selectedType.origin_price : ""}đ</p>
                         <div className='flex gap-5'>
                             <p className="text-2xl leading-[29px] text-red-800">{selectedType ? selectedType.current_price : ""}đ</p>
                             <p className='bg-[#EDB84F] text-base text-black text-center flex justify-center items-center px-2 rounded-xl'>{`Giảm ${selectedType ? selectedType.sale_percent : 0}%`}</p>
                         </div>
                     </div>
-                    <p className='text-base font-semibold pt-10'>Phân loại</p>
+                    <p className='text-base font-semibold laptop:pt-10'>Phân loại</p>
                     <div className='flex items-start gap-5 py-2'>
                         {product.sellInformation.map((item, idx) => (
                             <div key={idx} className={`flex gap-3 border border-black p-3 items-center justify-center cursor-pointer ${item == selectedType && "border-[var(--primary-color-800)] text-[var(--primary-color-800)] bg-[var(--primary-color-100)]"}`} onClick={() => setSelectedType(item)}>
                                 <img width={30} height={30} src={"https://www.dothocunggiadinh.com:8443/storage/" + item.image} alt={''} />
-                                <p className='text-base'>{item.type}</p>
+                                <p className='text-sm'>{item.type}</p>
                             </div>
                         ))}
                     </div>
-                    <div className='flex justify-center gap-4 py-5'>
-                    <Carousel responsive={responsive}>
-                        {imageList?.map((item, idx) => (
-                        <PreImage key={idx} width={110} height={110} src={item} alt={''} className={`rounded-3xl`}
-                            onClick={() => setMainImage(item)}/>
-                        ))}
-                    </Carousel>
-                    </div>
-                    <div className='gap-5 grid grid-cols-1 laptop:grid-cols-3 pt-5'>
+                    <div className='gap-5 grid grid-cols-1 tablet:grid-cols-3 pt-5'>
+                    {product.socialInformation.map((item, idx) => (
                     <motion.button
+                        key={idx}
                         whileHover="hover"
                         className={`bg-[white] relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-4 px-4 min-w-[200px] cursor-pointer mt-3`}
-                        onClick={() => window.open("https://shopee.vn/_ofltgiwau?gidzl=wAnWRHM9ebNejc1l5fQhK-onRsyCnAzQzhThPW6Ig0_uvJyp3y7q2wFYCc0FmwK8fx0rP3BE4VCD58kcLW")}
+                        onClick={() => window.open(item.link)}
                     >
-                        <Image width={30} height={30} src={'/images/Logo/ShopeeIcon.jpg'} alt={''}/>
-                            <p className="text-sm font-semibold">{"Mua hàng Shopee"}</p>
-                        <motion.div
-                        className="absolute left-0 top-0 h-full w-0"
-                        transition={{
-                            duration: 0.3,
-                            ease: "easeInOut",
-                        }}
-                        ></motion.div>
+                            {/* <Image width={30} height={30} src={'/images/Logo/Shopee.png'} alt={''}/> */}
+                            <p className="text-sm font-semibold">{`Mua hàng ${item.platform}`}</p>
                     </motion.button>
-                    <motion.button
-                        whileHover="hover"
-                        className={`bg-[white] relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-4 px-4 min-w-[200px] cursor-pointer mt-3`}
-                        onClick={() => window.open("https://www.lazada.vn/shop/xmdgbhc3?dsource=share&laz_share_info=760374888_10_3000_0_760374888_null&laz_token=1c9adcd5f85dd915195a615122c4c7f4&exlaz=e_cg%2FXMrtswajGip8qo24MCXRib2ph7O2ICC6FqKlh%2FLXCXvTKdNAtBZKHAzs035vD75u2eY%2FhXT5UMHp9sjzycJAh8nO6%2FK0ZD3WnASIas1Y%3D&sub_aff_id=social_share&sub_id2=760374888&sub_id6=CPI_EXLAZ")}
-                    >
-                        <Image width={30} height={30} src={'/images/Logo/LazadaIcon.jpg'} alt={''}/>
-                        <p className="text-sm font-semibold">{"Mua hàng Lazada"}</p>
-                        <motion.div
-                        className="absolute left-0 top-0 h-full w-0"
-                        transition={{
-                            duration: 0.3,
-                            ease: "easeInOut",
-                        }}
-                        ></motion.div>
-                    </motion.button>
+                    ))}
                     <motion.button
                         whileHover="hover"
                         className={`bg-[white] relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-4 px-4 min-w-[200px] cursor-pointer mt-3`}
                         //onClick={() => router.push("")}
                     >
                         <p className="text-sm font-semibold">{"Đăng ký nhận tư vấn"}</p>
-                        <motion.div
-                        className="absolute left-0 top-0 h-full w-0"
-                        transition={{
-                            duration: 0.3,
-                            ease: "easeInOut",
-                        }}
-                        ></motion.div>
                     </motion.button>
                     </div>
                 </div>
@@ -120,7 +86,7 @@ const OrderDetail = ({product}: Props) => {
                 <div className='flex border-2 rounded-xl border-[var(--primary-color-900)]'>
                     <div className='flex p-5 gap-5'>
                         <div>
-                            <img src={'/images/Logo/Policy1.png'} alt={''} className='min-w-[100px]'/>
+                            <img src={'/images/Logo/Policy1.png'} alt={''} className='min-w-[32px] laptop:min-w-[56px]'/>
                         </div>
                         <div className='flex flex-col text-left'>
                             <p className='text-[20px] leading-[24px] text-[var(--primary-color-900)]'>Chính sách giao hàng</p>
@@ -131,7 +97,7 @@ const OrderDetail = ({product}: Props) => {
                 <div className='flex border-2 rounded-xl border-[var(--primary-color-900)]'>
                     <div className='flex p-5 gap-5'>
                         <div>
-                            <img src={'/images/Logo/Policy2.png'} alt={''} className='min-w-[100px]'/>
+                            <img src={'/images/Logo/Policy2.png'} alt={''} className='min-w-[32px] laptop:min-w-[56px]'/>
                         </div>
                         <div className='flex flex-col text-left'>
                             <p className='text-[20px] leading-[24px] text-[var(--primary-color-900)]'>Chính sách thanh toán</p>
@@ -142,7 +108,7 @@ const OrderDetail = ({product}: Props) => {
                 <div className='flex border-2 rounded-xl border-[var(--primary-color-900)]'>
                     <div className='flex p-5 gap-5'>
                         <div>
-                            <img src={'/images/Logo/Policy3.png'} alt={''} className='min-w-[100px]'/>
+                            <img src={'/images/Logo/Policy3.png'} alt={''} className='min-w-[32px] laptop:min-w-[56px]'/>
                         </div>
                         <div className='flex flex-col text-left'>
                             <p className='text-[20px] leading-[24px] text-[var(--primary-color-900)]'>Chính sách đổi trả</p>
@@ -151,22 +117,22 @@ const OrderDetail = ({product}: Props) => {
                     </div>
                 </div>
             </div>
-            <div className='pt-5 pb-20'>
+            <div className='pt-5 pb-16'>
                 {product.product.map((item, idx) => (
                 <Tab.Group key={idx}>
                     <Tab.List className="py-2 pr-4">
                         <Tab>
                             {({selected}) => (
-                                <button className={selected ? "py-2 pr-6 border-b-2 border-[var(--primary-color-900)] text-[var(--primary-color-900)] outline-none text-center" : "py-2 pr-6 text-black outline-none text-center"}>Mô tả sản phẩm</button>
+                                <button className={selected ? "py-2 px-6 border-b-2 border-[var(--primary-color-900)] text-[var(--primary-color-900)] outline-none text-center" : "py-2 px-6 text-black outline-none text-center"}>Mô tả sản phẩm</button>
                             )}  
                         </Tab>
                         <Tab>
                             {({selected}) => (
-                                <button className={selected ? "py-2 pr-6 border-b-2 border-[var(--primary-color-900)] text-[var(--primary-color-900)] outline-none text-center" : "py-2 pr-6 text-black outline-none text-center"}>Chi tiết sản phẩm</button>
+                                <button className={selected ? "py-2 px-6 border-b-2 border-[var(--primary-color-900)] text-[var(--primary-color-900)] outline-none text-center" : "py-2 px-6 text-black outline-none text-center"}>Chi tiết sản phẩm</button>
                             )}  
                         </Tab>
                     </Tab.List>
-                    <Tab.Panels className={"pt-5 pl-10"}>
+                    <Tab.Panels className={"p-5"}>
                         <Tab.Panel>{item.description}</Tab.Panel>
                         <Tab.Panel>{item.detail}</Tab.Panel>
                     </Tab.Panels>

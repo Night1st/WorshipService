@@ -27,7 +27,7 @@ export function GroupOverview({ products }: Props) {
   const data = {
     name: groupId?.name,
     description: groupId?.description,
-    cover_image: 'bg-huong',
+    cover_image: "bg-[url(https://www.dothocunggiadinh.com:8443/storage/" + groupId?.cover_image + ")]",
   };
   return (
     <React.Fragment>

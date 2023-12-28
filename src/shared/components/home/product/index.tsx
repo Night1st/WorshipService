@@ -13,7 +13,7 @@ const Product = () => {
         title="SẢN PHẨM NỔI BẬT"
         description="Khám phá các sản phẩm của chúng tôi"
       />
-      <div className="w-full min-h-[350px] grid grid-cols-1 gap-5 tablet:grid-cols-2 laptop:grid-cols-5 mt-10 overflow-hidden">
+      <div className="w-full min-h-[350px] grid grid-cols-2 gap-5 tablet:grid-cols-3 laptop:grid-cols-5 mt-10 overflow-hidden">
         {productHighlight?.map((item, idx) => (
           <ProductCard key={idx} product={item} />
         ))}
@@ -23,7 +23,7 @@ const Product = () => {
           <motion.button
             whileHover="hover"
             className={`bg-[white] relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] text-left py-4 px-4 min-w-[200px] border-2 cursor-pointer mt-3`}
-            onClick={() => router.push("/productDetail")}
+            onClick={() => router.push("/products")}
           >
             <p className="text-sm">{"Khám phá"}</p>
             <IconArrowRight  color="#550F17" />

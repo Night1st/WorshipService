@@ -1,12 +1,28 @@
 import React from "react";
 import TitleSection from "../../common/TitleSection";
 import Image from 'next/image';
-import { footerData } from "@/shared/mock/footer";
 import { motion } from "framer-motion";
-import router from "next/router";
 
 const ContactInfo = () => {
-    return (<section className="px-4 laptop:px-32 text-center">
+    const contact = [
+        {
+            link: "https://www.facebook.com/vu.tuan35?mibextid=ZbWKwL",
+            image: "/images/Logo/Facebook.png"
+        },
+        {
+            link: "https://www.youtube.com/@vutuan35",
+            image: "/images/Logo/YouTube.png"
+        },
+        {
+            link: "https://www.tiktok.com/@huongnen_quangninh?_t=8hvq0EGOsuP&_r=1",
+            image: "/images/Logo/TikTok.png"
+        },
+        {
+            link: "",
+            image: "/images/Logo/Zalo.png"
+        },
+    ]
+    return (<section className="px-4 laptop:px-10 text-center">
         <TitleSection
             title="THÔNG TIN LIÊN HỆ"
             description="Liên hệ với chúng tôi để được hỗ trợ ngay"
@@ -50,8 +66,8 @@ const ContactInfo = () => {
                     <div className="flex gap-2 flex-col text-left">
                         <h1 className="text-sm px-3 text-black">{'Kênh liên lạc khác'}</h1>
                         <div className="flex gap-3 py-2">
-                            {footerData.icon.map((item, idx) => (
-                            <Image key={idx} height={30} width={30} src={item.icon} alt={''} className="bg-[var(--primary-color-800)] cursor-pointer" onClick={() => router.push(item.link)}></Image>
+                            {contact.map((item, idx) => (
+                            <img key={idx} height={40} width={40} src={item.image} alt={''} className="cursor-pointer" onClick={() => window.open(item.link)}></img>
                             ))}
                         </div>
                     </div>

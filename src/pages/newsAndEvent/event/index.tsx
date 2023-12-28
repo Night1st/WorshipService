@@ -13,7 +13,7 @@ export function Event() {
           <meta name="description" content="Trang chủ NGS" />
           <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
         </Head>
-        <section className="px-40 py-10">
+        <section className="p-10">
             {event?.map((item, idx) => (
               idx === 0 ? (
                 <LargeEventCard key={idx} event={item}/>

@@ -1,4 +1,5 @@
 
+import { useGetRelatedProduct } from "@/queries/product.queries";
 import { IBaseResponse } from "@/schemas/baseResponse.type";
 import { IProductDetail } from "@/schemas/product.type";
 import ConnectForm from "@/shared/components/common/ConnectForm";
@@ -6,6 +7,7 @@ import OrderDetail from "@/shared/components/common/OrderDetail";
 import RelatedProduct from "@/shared/components/common/RelatedProduct";
 import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps } from "next/types";
 
 type Props = {
@@ -13,6 +15,7 @@ type Props = {
 };
 
 export function Detail({product}: Props) {
+  // const { data: relateProduct } = useGetRelatedProduct(product.data.product[0].id)
   if (!product) return <></>;
     return (
       <>
@@ -21,7 +24,7 @@ export function Detail({product}: Props) {
           <meta name="description" content="Thông tin Sản phẩm" />
         </Head>
         <OrderDetail product={product.data}/>
-        <RelatedProduct product={[]}/>
+        {/* <RelatedProduct product={relateProduct}/> */}
         <ConnectForm/>
       </>
     );

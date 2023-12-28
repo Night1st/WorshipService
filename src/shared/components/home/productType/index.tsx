@@ -16,7 +16,7 @@ const ProductType = () => {
                         onClick={() => router.push(`/products/${item.id}`)}
                         style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(https://www.dothocunggiadinh.com:8443/storage/${item.cover_image})`}}
                         >
-                        <p className="text-[34px] leading-[41px] text-white text-center pt-20 pb-5">{item.name}</p>
+                        <p className="text-[24px] leading-[29px] tablet:text-[34px] tablet:leading-[41px] text-white text-center pt-20 pb-5">{item.name}</p>
                     </div>
                 ))}
             </div>

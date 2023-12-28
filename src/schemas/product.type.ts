@@ -12,6 +12,7 @@ export interface IProduct {
 export interface IProductDetail {
     product: IProductInfo[]
     sellInformation: ISellInformation[]
+    socialInformation: ISocialInformation[]
 }
 
 export interface IProductInfo {

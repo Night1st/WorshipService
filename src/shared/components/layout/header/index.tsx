@@ -26,18 +26,21 @@ const Header = () => {
 
   return (
     <section className='w-full sticky top-0 z-50 laptop:flex justify-between items-center gap-5 px-4 py-4 laptop:px-10 transition bg-[var(--primary-color-800)] bg-opacity-100 text-white duration-500 ease-in-out '>
-      <Image height={50} width={50} src={'/Logo.svg'} alt={''} onClick={() => router.push('/')}></Image>
-      <div className='flex gap-5'>
+      <div className='flex w-1/2 items-center gap-20 tablet:justify-between'>
+
+        <Image height={50} width={50} src={'/Logo.svg'} alt={''} onClick={() => router.push('/')}></Image>
         <input
-          className='appearance-none border rounded-full px-4 py-2 focus:outline-none focus:shadow-outline text-[#000]'
+          className='appearance-none border rounded-full px-4 py-2 focus:outline-none focus:shadow-outline text-[#000] text-xs max-w-[178px]'
           type='text'
           placeholder='Tìm kiếm sản phẩm...'
           value={searchTerm}
           onChange={handleInputChange}
           onKeyPress={handleKeyPress}
         />
+      </div>
+      <div className=''>
         <ul
-          className={`justify-center items-center gap-5 phone:max-laptop:text-center laptop:flex ml-10 ${
+          className={`justify-center items-center gap-5 phone:max-laptop:text-center laptop:flex ${
             isToggleOpen ? 'block' : 'hidden'
           }`}
         >
@@ -47,10 +50,10 @@ const Header = () => {
             </Link>
           ))}
         </ul>
+        <button className='absolute right-5 top-4 block laptop:hidden' onClick={() => setIsToggleOpen(!isToggleOpen)}>
+          <Image height={50} width={50} src={'/images/Logo/MenuIcon.png'} alt={''}></Image>
+        </button>
       </div>
-      <button className='absolute right-5 top-4 block laptop:hidden' onClick={() => setIsToggleOpen(!isToggleOpen)}>
-        <Image height={50} width={50} src={'/images/Logo/MenuIcon.png'} alt={''}></Image>
-      </button>
     </section>
   );
 };

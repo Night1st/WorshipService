@@ -22,8 +22,8 @@ const NewsCard = ({news}: Props) => {
                     />
             </div>
             <div className="flex flex-col gap-3">
-                <h1 className="text-base font-bold text-black ">{news.title}</h1>
-                <p className="text-base">{news.public_date} - {news.author}</p>
+                <h1 className="text-base font-bold text-black line-clamp-2">{news.title}</h1>
+                <p className="text-xs tablet:text-base">{news.public_date} - {news.author}</p>
             </div>
         </motion.div>
     )

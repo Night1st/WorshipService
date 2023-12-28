@@ -18,7 +18,7 @@ const roboto = Roboto({ subsets: ["latin-ext"], display: 'swap', weight: ['400']
 const ContentBanner = ({ data }: Props) => {
   const src = data.cover_image
   return (
-    <div className={`w-full flex min-h-screen flex-col justify-center leading-[90%] tracking-wide ${src} bg-no-repeat px-3 tablet:px-5 laptop:px-[220px] ${data.name == "Nhang Đức Tuấn" ? "items-start" : "items-center"}`} style={{backgroundSize: '100% 100%'}}>
+    <div className={`w-full flex h-screen flex-col justify-center leading-[90%] tracking-wide ${src} bg-cover bg-no-repeat px-3 tablet:px-5 laptop:px-[220px] ${data.name == "Nhang Đức Tuấn" ? "items-start" : "items-center"}`}>
       {data.name == "Nhang Đức Tuấn" ? 
       (<div className="flex flex-col items-center">
         <div className="font-bold text-[48px] leading-[58px] tablet:text-6xl tablet:leading-[72px] laptop:text-[96px] laptop:leading-[116px] text-[var(--secondary-color-500)] text-center">

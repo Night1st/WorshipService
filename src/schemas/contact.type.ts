@@ -8,3 +8,11 @@ export interface IContact {
     description_en: string,
     order: number
 }
+
+export interface IConnectForm {
+    name: string,
+    phone: string,
+    email: string,
+    products: string[],
+    note: string
+}

@@ -13,7 +13,7 @@ export function News() {
           <meta name="description" content="Trang chủ NGS" />
           <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
         </Head>
-        <section className="px-40 py-10">
+        <section className="p-4 laptop:p-10">
           {news?.map((item, idx) => (
             idx === 0 ? (
               <LargeNewsCard key={idx} news={item} />

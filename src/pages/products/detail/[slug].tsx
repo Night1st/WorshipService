@@ -1,7 +1,7 @@
 
 import { useGetRelatedProduct } from "@/queries/product.queries";
 import { IBaseResponse } from "@/schemas/baseResponse.type";
-import { IProductDetail } from "@/schemas/product.type";
+import { IProduct, IProductDetail } from "@/schemas/product.type";
 import ConnectForm from "@/shared/components/common/ConnectForm";
 import OrderDetail from "@/shared/components/common/OrderDetail";
 import RelatedProduct from "@/shared/components/common/RelatedProduct";
@@ -24,6 +24,7 @@ export function Detail({product}: Props) {
           <meta name="description" content="Thông tin Sản phẩm" />
         </Head>
         <OrderDetail product={product.data}/>
+        {/* Todo Thuan */}
         {/* <RelatedProduct product={relateProduct}/> */}
         <ConnectForm/>
       </>
@@ -48,7 +49,8 @@ export const getStaticProps: GetStaticProps = async ctx => {
         },
       };
     }
-  } else {
+  } 
+  else {
     return {
       props: {},
       notFound: true,

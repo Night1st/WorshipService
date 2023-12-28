@@ -6,6 +6,7 @@ import Modal from './Modal';
 const data = [
     "Hương",
     "Nến",
+    "Tiền vàng",
     "Set đồ cúng",
     "Đồ hầu",
     "Sản phẩm khác"

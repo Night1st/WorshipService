@@ -6,43 +6,9 @@ import NewsCard from "./newsCard";
 import { useGetLatestNews } from "@/queries/news.queries";
 
 const LatestNews = () => {
-    const MetaData = [
-      {
-        title: "Bài cúng Tất niên theo chuẩn phong tục cổ truyền dân tộc Việt",
-        image: "/images/TinTuc.png",
-        author: "Ngô Thị Thu",
-        date: "08/12/2023"
-      },
-      {
-        title: "Bài cúng Tất niên theo chuẩn phong tục cổ truyền dân tộc Việt",
-        image: "/images/TinTuc.png",
-        author: "Ngô Thị Thu",
-        date: "08/12/2023"
-      },      {
-        title: "Bài cúng Tất niên theo chuẩn phong tục cổ truyền dân tộc Việt",
-        image: "/images/TinTuc.png",
-        author: "Ngô Thị Thu",
-        date: "08/12/2023"
-      },      {
-        title: "Bài cúng Tất niên theo chuẩn phong tục cổ truyền dân tộc Việt",
-        image: "/images/TinTuc.png",
-        author: "Ngô Thị Thu",
-        date: "08/12/2023"
-      },      {
-        title: "Bài cúng Tất niên theo chuẩn phong tục cổ truyền dân tộc Việt",
-        image: "/images/TinTuc.png",
-        author: "Ngô Thị Thu",
-        date: "08/12/2023"
-      },      {
-        title: "Bài cúng Tất niên theo chuẩn phong tục cổ truyền dân tộc Việt",
-        image: "/images/TinTuc.png",
-        author: "Ngô Thị Thu",
-        date: "08/12/2023"
-      },
-    ]
     const {data: latestNews} = useGetLatestNews()
     return ( 
-      <section className="px-40 py-10">
+      <section className="p-4 laptop:p-10">
         <TitleSection
           title="TIN TỨC MỚI NHẤT"
           description="Theo dõi các tin tức mới nhất"

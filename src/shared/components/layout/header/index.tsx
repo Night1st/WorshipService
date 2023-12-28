@@ -40,7 +40,7 @@ const Header = () => {
       </div>
       <div className=''>
         <ul
-          className={`justify-center items-center gap-5 phone:max-laptop:text-center laptop:flex ${
+          className={`phone:max-laptop:pt-5 justify-center items-center gap-5 phone:max-laptop:text-center laptop:flex ${
             isToggleOpen ? 'block' : 'hidden'
           }`}
         >

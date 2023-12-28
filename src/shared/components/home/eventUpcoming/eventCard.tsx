@@ -25,8 +25,8 @@ const EventCard = ({event}: Props) => {
                     <p className="text-base">{"Tháng " + (date.getMonth() + 1) + " " + date.getFullYear()}</p>
                 </div>
                 <div className="flex flex-col gap-3">
-                    <h1 className="text-base font-bold text-black ">{event.title}</h1>
-                    <p className="text-base line-clamp-2">{event.summary}</p>
+                    <h1 className="text-base font-bold text-black line-clamp-2">{event.title}</h1>
+                    <p className="text-xs tablet:text-base line-clamp-2">{event.summary}</p>
                 </div>
             </div>
         </motion.div>

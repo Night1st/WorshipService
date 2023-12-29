@@ -8,7 +8,7 @@ interface Props {
 }
 
 const EventCard = ({event}: Props) => {
-    const date = new Date(event.public_date)
+    const date = new Date(event.start_date)
     return(
         <motion.div
             className="flex flex-col items-center cursor-pointer border-full"

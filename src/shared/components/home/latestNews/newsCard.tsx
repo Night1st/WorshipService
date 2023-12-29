@@ -8,6 +8,7 @@ interface Props {
 }
 
 const NewsCard = ({news}: Props) => {
+    const date = new Date(news.public_date)
     const router = useRouter()
     return(
         <motion.div
@@ -23,7 +24,7 @@ const NewsCard = ({news}: Props) => {
             </div>
             <div className="flex flex-col gap-3">
                 <h1 className="text-base font-bold text-black line-clamp-2">{news.title}</h1>
-                <p className="text-xs tablet:text-base">{news.public_date} - {news.author}</p>
+                <p className="text-xs tablet:text-base">{date.toLocaleDateString("en-GB")} - {news.author}</p>
             </div>
         </motion.div>
     )

@@ -1,3 +1,4 @@
+import { useGetComingSoonEvent } from '@/queries/event.queries';
 import { IBaseResponse } from '@/schemas/baseResponse.type';
 import { IEvent } from '@/schemas/event.type';
 import { PreImage } from '@/shared/components/common/PreImage';
@@ -11,6 +12,9 @@ type Props = {
 }
 
 export function EventDetail({event}: Props) {
+  const startDate = new Date(event.data.start_date)
+  const endDate = new Date(event.data.end_date)
+  const {data: otherEvent} = useGetComingSoonEvent()
   if (!event) return <></>
   return (
     <>
@@ -24,13 +28,15 @@ export function EventDetail({event}: Props) {
             <div className='laptop:col-span-4 tablet:col-span-2 w-full flex flex-col justify-start items-start gap-7 text-black'>
                 <PreImage width={1000} height={600} src={event.data.image} alt={""} />
                 <h1 className='text-lg laptop:text-[34px] laptop:leading-[41px] font-semibold'>{event.data.title}</h1>
-                <p className="text-base">{event.data.start_date} - {event.data.end_date}</p>
+                <p className="text-base">{startDate.toLocaleDateString('en-GB')} - {endDate.toLocaleDateString('en-GB')}</p>
                 <p className="text-base">{event.data.summary}</p>
                 <p className="text-base">{event.data.content}</p>
             </div>
             <div className='tablet:col-span-2 w-full min-h-[500px] flex flex-col justify-start items-start gap-8'>
                 <h1 className='text-lg tablet:text-2xl laptop:text-[29px] text-[var(--primary-color-1000)]'>SỰ KIỆN KHÁC</h1>
-                {Array(3).fill(<EventCard event={event.data}/>)}
+                {otherEvent?.map((item, idx) => (
+                  idx < 3 && <EventCard key={idx} event={item}/>
+                ))}
             </div>
         </div>
         </section>

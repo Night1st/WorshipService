@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { PreImage } from "./PreImage";
 import { useGetComingSoonEvent } from "@/queries/event.queries";
 import { IEvent } from "@/schemas/event.type";
+import router from "next/router";
 
 interface Props {
     event: IEvent
@@ -12,6 +13,7 @@ const LargeEventCard = ({event}: Props) => {
     return(
         <motion.div
             className="relative flex flex-col items-center cursor-pointer rounded-full"
+            onClick={() => router.push(`/newsAndEvent/event/${event.slug}`)}
         >
             <PreImage
                 src={event.image}

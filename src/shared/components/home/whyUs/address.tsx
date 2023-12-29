@@ -13,7 +13,7 @@ const Address = ({ image, description }: Props) => {
     <section className='p-4 laptop:px-10 laptop:py-8'>
       <div className='w-full flex flex-col justify-around items-center'>
         <TitleSection title='HỆ THỐNG PHÂN PHỐI' description='' />
-        <div className='flex justify-center items-center gap-96'>
+        <div className='flex justify-center items-center gap-10'>
           <div className='flex justify-center items-center p-10 phone:max-laptop:hidden'>
             <Image className='' height={500} width={500} src={image} alt={''}></Image>
           </div>

@@ -23,7 +23,7 @@ const OurQuote = ({ data }: Props) => {
         ))}
       </div>
       <div className='w-full flex justify-center items-center'>
-        <motion.div className='text-sm laptop:text-[34px] laptop:leading-[41px] bg-thongdiep bg-cover p-10 rounded-2xl w-full flex justify-center items-center text-white min-h-[300px]'>
+        <motion.div className='text-sm laptop:text-[34px] laptop:leading-[41px] bg-thongdiep bg-cover p-10 rounded-2xl w-full flex justify-center items-center text-white text-center min-h-[300px]'>
           {selectedIcon ? selectedIcon.description : ''}
         </motion.div>
       </div>

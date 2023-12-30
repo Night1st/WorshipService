@@ -7,7 +7,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "dev": "next dev",
-    "build": "next build --incremental",
+    "build": "cross-env NODE_OPTIONS=--max_old_space_size=1024 next build",
     "build:test": "env-cmd -f .env.test yarn build",
     "start": "next start",
     "lint": "next lint"

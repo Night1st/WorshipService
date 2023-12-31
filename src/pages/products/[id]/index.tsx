@@ -10,39 +10,47 @@ import { useRouter } from 'next/router';
 import { GetStaticPaths, GetStaticProps } from 'next/types';
 import { IBaseResponse } from '@/schemas/baseResponse.type';
 import { IProduct } from '@/schemas/product.type';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductListAlphabet from '@/shared/components/common/ProductListAlphabet';
 
 type Props = {
   products: IBaseResponse<IProduct[]>;
 };
 export function GroupOverview({ products }: Props) {
+  const [productsCurrent, setProductsCurrent] = useState<IBaseResponse<IProduct[] | undefined>>()
   const { query } = useRouter();
-  const { data: productsQuery } = useGetProductByGroup(Number(query.id));
+  const { data: productsQuery, refetch } = useGetProductByGroup(Number(query.id));
   const { data: productGroup } = useGetAllProductGroup();
   const groupId =
     products !== undefined && products.data.length > 0
-      ? productGroup?.find(item => item.id === Number(products.data[0].id))
+      ? productGroup?.find(item => item.id === Number(products.data[0].productGroupId))
       : productGroup?.find(item => item.id === Number(query.id));
   const data = {
     name: groupId?.name,
     description: groupId?.description,
     cover_image: "bg-huong",
   };
+  useEffect(() => {
+    setProductsCurrent(products)
+  }, [products])
+
+  useEffect(() => {
+    refetch();
+  }, [query.id]);
   return (
     <React.Fragment>
       <Head>
         <title>{groupId?.name}</title>
-        <meta name='description' content='Trang chủ NGS' />
-        <meta name='keywords' content='Công nghệ thông tin, Giải pháp số' />
+        <meta name='description' content='Đồ thờ cúng' />
+        <meta name='keywords' content='Đồ thờ cúng' />
       </Head>
       {data.name ? (
         <React.Fragment>
           <Banner data={data} />
           {products !== undefined && products.data.length > 0 ? (
-            <ProductListAlphabet category={data} products={products.data} />
+            <ProductListAlphabet category={data} products={productsCurrent && productsCurrent.data} />
           ) : (
-            <ProductList product={productsQuery} />
+            <ProductList products={productsQuery} />
           )}
           <MaybeInterested />
           <ConnectForm />

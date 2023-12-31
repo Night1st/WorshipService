@@ -1,4 +1,5 @@
 export interface IProduct {
+    productGroupId: number,
     id: number,
     productName: string,
     slug: string,

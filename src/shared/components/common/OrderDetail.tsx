@@ -5,6 +5,7 @@ import { IProductDetail, ISellInformation } from '@/schemas/product.type';
 import { Tab } from '@headlessui/react';
 import { PreImage } from './PreImage';
 import Carousel from 'react-multi-carousel';
+import { formatCurrency } from '@/shared/utils/functions/formatCurrency';
 
 interface Props {
     product: IProductDetail
@@ -45,9 +46,9 @@ const OrderDetail = ({product}: Props) => {
                         </div>
                     ))}
                     <div>
-                        <p className="text-base line-through laptop:pt-10">{selectedType ? selectedType.origin_price : ""}đ</p>
+                        <p className="text-base line-through laptop:pt-10">{selectedType ? formatCurrency(selectedType.origin_price) : ""}</p>
                         <div className='flex gap-5'>
-                            <p className="text-2xl leading-[29px] text-red-800">{selectedType ? selectedType.current_price : ""}đ</p>
+                            <p className="text-2xl leading-[29px] text-red-800">{selectedType ? formatCurrency(selectedType.current_price) : ""}đ</p>
                             <p className='bg-[#EDB84F] text-base text-black text-center flex justify-center items-center px-2 rounded-xl'>{`Giảm ${selectedType ? selectedType.sale_percent : 0}%`}</p>
                         </div>
                     </div>

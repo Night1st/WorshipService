@@ -28,7 +28,7 @@ const defaultSelectAlphabets = [
   },
 ];
 const ProductListAlphabet = ({ products, category }: Props) => {
-  const [filterProducts, setFilterProducts] = useState<IProduct[]>(products!);
+  const [filterProducts, setFilterProducts] = useState<IProduct[] | undefined>(products);
   const [selected, setSelected] = useState(defaultSelectAlphabets[0]);
   const router = useRouter();
   useEffect(() => {
@@ -40,6 +40,9 @@ const ProductListAlphabet = ({ products, category }: Props) => {
       setFilterProducts(products!);
     }
   }, [products && selected]);
+  useEffect(() => {
+    setFilterProducts(products)
+  }, [products])
   return (
     <section className='p-4 laptop:px-32 laptop:py-8'>
       <div className='mb-5 w-full flex justify-between items-center'>

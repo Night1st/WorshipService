@@ -13,7 +13,7 @@ type Props = {
 
 export function NewsDetail ({news}: Props) {
   const {data: otherNews} = useGetLatestNews()
-  const date = new Date(news.data.public_date)
+  const date = new Date(news && news.data && news.data.public_date)
   if(!news || !otherNews) return <></>
   return (
       <>
@@ -26,7 +26,7 @@ export function NewsDetail ({news}: Props) {
               <div className='md:col-span-4 w-full flex flex-col justify-start items-start gap-8 text-black'>
                   <PreImage width={900} height={500} src={news.data.image} alt={""} />
                   <h1 className='text-lg laptop:text-[34px] laptop:leading-[41px] font-semibold'>{news.data.title}</h1>
-                  <p className="text-base">{date.toLocaleDateString("en-GB")} - {news.data.author}</p>
+                  <p className="text-base">{date?.toLocaleDateString("en-GB")} - {news?.data.author}</p>
                   <p className="text-base">{news.data.summary}</p>
                   <p className="text-base">{news.data.content}</p>
               </div>

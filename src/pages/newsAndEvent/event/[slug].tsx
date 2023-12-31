@@ -12,8 +12,8 @@ type Props = {
 }
 
 export function EventDetail({event}: Props) {
-  const startDate = new Date(event.data.start_date)
-  const endDate = new Date(event.data.end_date)
+  const startDate = event && event.data && event.data.start_date ? new Date(event.data.start_date) : null;
+  const endDate = event && event.data && event.data.end_date ? new Date(event.data.end_date) : null;
   const {data: otherEvent} = useGetComingSoonEvent()
   if (!event || !otherEvent) return <></>
   return (
@@ -28,7 +28,7 @@ export function EventDetail({event}: Props) {
             <div className='laptop:col-span-4 tablet:col-span-2 w-full flex flex-col justify-start items-start gap-7 text-black'>
                 <PreImage width={1000} height={600} src={event.data.image} alt={""} />
                 <h1 className='text-lg laptop:text-[34px] laptop:leading-[41px] font-semibold'>{event.data.title}</h1>
-                <p className="text-base">{startDate.toLocaleDateString('en-GB')} - {endDate.toLocaleDateString('en-GB')}</p>
+                <p className="text-base">{startDate?.toLocaleDateString('en-GB')} - {endDate?.toLocaleDateString('en-GB')}</p>
                 <p className="text-base">{event.data.summary}</p>
                 <p className="text-base">{event.data.content}</p>
             </div>

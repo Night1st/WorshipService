@@ -14,7 +14,7 @@ type Props = {
 export function NewsDetail ({news}: Props) {
   const {data: otherNews} = useGetLatestNews()
   const date = new Date(news.data.public_date)
-  if(!news) return <></>
+  if(!news || !otherNews) return <></>
   return (
       <>
           <Head>

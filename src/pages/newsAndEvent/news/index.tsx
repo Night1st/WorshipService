@@ -10,8 +10,8 @@ export function News() {
       <>
         <Head>
           <title>Trang chủ</title>
-          <meta name="description" content="Trang chủ NGS" />
-          <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
+          <meta name="description" content="Đồ thờ cúng" />
+          <meta name="keywords" content="Đồ thờ cúng" />
         </Head>
         <section className="p-4 laptop:p-10">
           {news?.map((item, idx) => (

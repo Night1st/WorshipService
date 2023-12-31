@@ -118,7 +118,7 @@ const ProductListAlphabet = ({ products, category }: Props) => {
       <div className='flex justify-center items-center'>
         <motion.button
           whileHover='hover'
-          className={`bg-[white] relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] text-left py-4 px-4 min-w-[200px] border-2 cursor-pointer mt-3`}
+          className={`bg-transparent hover:bg-white relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] text-left py-4 px-4 min-w-[200px] border-2 cursor-pointer mt-3`}
         >
           <p className='text-sm'>{'Xem thêm'}</p>
           <IconArrowDown color='#550F17' />

@@ -6,10 +6,12 @@ import { IProduct } from '@/schemas/product.type';
 import { useEffect, useState } from 'react';
 
 interface Props {
+  limit?: number;
+  setLimit?: any
   products?: IProduct[];
 }
 
-const ProductList = ({ products }: Props) => {
+const ProductList = ({ limit, products, setLimit }: Props) => {
   const [productsCurrent, setProductsCurrent] = useState<IProduct[] | undefined>();
   useEffect(() => {
     setProductsCurrent(products);
@@ -23,8 +25,8 @@ const ProductList = ({ products }: Props) => {
       <div className='flex justify-center items-center'>
         <motion.button
           whileHover='hover'
-          className={`bg-[white] relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] text-left py-4 px-4 min-w-[200px] border-2 cursor-pointer mt-3`}
-          //onClick={() => router.push("")}
+          className={`bg-transparent relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] text-left py-4 px-4 min-w-[200px] border-2 cursor-pointer mt-3`}
+          onClick={() => limit && setLimit(limit += 5)}
         >
           <p className='text-sm'>{'Xem thêm'}</p>
           <IconArrowDown color='#550F17' />

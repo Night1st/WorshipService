@@ -17,8 +17,8 @@ const homeData = {
       <>
         <Head>
           <title>Tin tức & Sự kiện</title>
-          <meta name='description' content='Trang chủ NGS' />
-          <meta name='keywords' content='Công nghệ thông tin, Giải pháp số' />
+          <meta name='description' content='Đồ thờ cúng' />
+          <meta name='keywords' content='Đồ thờ cúng' />
         </Head>
         <Banner data={homeData} />
         <EventUpcoming/>

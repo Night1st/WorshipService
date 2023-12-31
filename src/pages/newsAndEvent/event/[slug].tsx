@@ -20,8 +20,8 @@ export function EventDetail({event}: Props) {
     <>
       <Head>
         <title>Chi tiết sự kiện</title>
-        <meta name='description' content='Trang chủ NGS' />
-        <meta name='keywords' content='Công nghệ thông tin, Giải pháp số' />
+        <meta name='description' content='Đồ thờ cúng' />
+        <meta name='keywords' content='Đồ thờ cúng' />
       </Head>
       <section className='p-20 w-full'>
         <div className='w-full grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-6 justify-start items-start gap-8'>

@@ -6,15 +6,10 @@ import { ReactElement } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
 import Head from "next/head";
-import { Inter } from 'next/font/google'
-
+import { Roboto } from 'next/font/google'
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
-//import useRouterChange from "../shared/hooks/useRouterChange";
-// import { store } from 'src/shared/stores';
-import { useAppSelector } from "../shared/hooks/useRedux";
 
-const interText = Inter({ subsets: ["vietnamese"], display: 'swap', weight: ['500', '600', '700', '800', '900'] })
-
+const interText = Roboto({ subsets: ["vietnamese"], display: 'swap', weight: ['100', '300', '400', '500', '700', '900'] })
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => React.ReactNode;
 };
@@ -60,7 +55,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       <Head>
         <title>Đồ thờ cúng gia đình</title>
         <meta name="description" content="Website NGS" />
-        <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
+        <meta name="keywords" content="Đồ thờ cúng" />
         <meta property="og:type" content="website" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link

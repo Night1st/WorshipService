@@ -12,6 +12,7 @@ import { IBaseResponse } from '@/schemas/baseResponse.type';
 import { IProduct } from '@/schemas/product.type';
 import React, { useEffect, useState } from 'react';
 import ProductListAlphabet from '@/shared/components/common/ProductListAlphabet';
+import { useGetAllCategoryByProductGroup } from '@/queries/category.queries';
 
 type Props = {
   products: IBaseResponse<IProduct[]>;
@@ -30,6 +31,8 @@ export function GroupOverview({ products }: Props) {
     description: groupId?.description,
     cover_image: "bg-huong",
   };
+  const {data: categoryByProductGroup, refetch: refetchCategory} = useGetAllCategoryByProductGroup(Number(groupId?.id))
+
   useEffect(() => {
     setProductsCurrent(products)
   }, [products])
@@ -37,6 +40,10 @@ export function GroupOverview({ products }: Props) {
   useEffect(() => {
     refetch();
   }, [query.id]);
+
+  useEffect(() => {
+    refetchCategory();
+  }, [groupId]);
   return (
     <React.Fragment>
       <Head>
@@ -48,7 +55,7 @@ export function GroupOverview({ products }: Props) {
         <React.Fragment>
           <Banner data={data} />
           {products !== undefined && products.data.length > 0 ? (
-            <ProductListAlphabet category={data} products={productsCurrent && productsCurrent.data} />
+            <ProductListAlphabet categoryData={categoryByProductGroup} category={data} products={productsCurrent && productsCurrent.data} />
           ) : (
             <ProductList products={productsQuery} />
           )}

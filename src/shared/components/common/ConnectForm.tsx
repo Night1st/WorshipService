@@ -11,32 +11,37 @@ const data = ['Hương', 'Nến', 'Tiền vàng', 'Set đồ cúng', 'Đồ hầ
 
 const schema = Yup.object().shape({
   name: Yup.string().required('Hãy nhập tên của bạn!'),
-  phone: Yup.string().required('Hãy nhập số điện thoại của bạn!').min(10),
+  phone: Yup.string().required('Hãy nhập số điện thoại của bạn!').min(11),
   email: Yup.string().required('Hãy nhập email của bạn!'),
-  products: Yup.array(),
   note: Yup.string(),
 });
 
 const ConnectForm = () => {
-  const [selectedIcon, setSelectedIcon] = useState<any>()
+  const [selectedItems, setSelectedItems] = useState<string[]>([]);
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const doContact = useCreateConnect(() => router.push('/'));
+  const handleItemClick = (item: string) => {
+    if (selectedItems.includes(item)) {
+      setSelectedItems(prevItems => prevItems.filter(selectedItem => selectedItem !== item));
+    } else {
+      setSelectedItems(prevItems => [...prevItems, item]);
+    }
+  };
   const formik = useFormik({
     initialValues: {
       name: '',
       phone: '',
       email: '',
-      products: [],
       note: '',
     },
     validationSchema: schema,
-    onSubmit: async ({ name, phone, email, products, note }) => {
+    onSubmit: async ({ name, phone, email, note }) => {
       const bodyRequest = {
         name: name,
-        phone: phone,
+        phone: String(phone),
         email: email,
-        products: products,
+        products: selectedItems,
         note: note,
       };
       doContact.mutate(bodyRequest);
@@ -121,21 +126,26 @@ const ConnectForm = () => {
                 </div>
               </div>
               <div className='flex flex-col'>
-                <div className='mb-4'>
+                <div className='my-4'>
                   <label className='block text-sm font-bold'>Sản phẩm quan tâm</label>
-                  <div className='laptop:flex laptop:gap-3 laptop:py-5'>
-                    {data.map((item, index) => (
-                      <button
-                        key={index}
-                        className={`${
-                          item == selectedIcon && 'bg-[#44000D] text-white transition duration-750 ease-in-out'
-                        } border-[#44000D] border-2 justify-between items-center m-1 px-2 laptop:p-2 rounded-full cursor-pointer`}
-                        onClick={() => setSelectedIcon(item)}
-                      >{`${item}`}</button>
-                    ))}
+                  <div className='flex flex-wrap items-start justify-start gap-2 laptop:flex laptop:gap-3 laptop:py-5'>
+                    {data.map((item, index) => {
+                      const isSelected = selectedItems.includes(item);
+                      return (
+                        <div
+                          key={index}
+                          className={`flex h-[56px] cursor-pointer items-center justify-center rounded-full border p-[12px] text-center md:px-[14px] md:py-[16px] ${
+                            isSelected ? 'border-[#330009]' : 'border-[#44000D] opacity-[0.55]'
+                          }`}
+                          onClick={() => handleItemClick(item)}
+                        >
+                          <p className=''>{item}</p>
+                        </div>
+                      );
+                    })}
                   </div>
                   <textarea
-                    className='appearance-none border rounded w-full h-32 py-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline'
+                    className='appearance-none border rounded w-full h-32 py-2 px-3 my-3 leading-tight focus:outline-none focus:shadow-outline'
                     name='note'
                     value={values.note}
                     onChange={handleChange}
@@ -148,7 +158,7 @@ const ConnectForm = () => {
             <div className='flex w-full justify-center items-center'>
               <input
                 type='submit'
-                className={`relative flex justify-center items-center gap-3 text-[var(--primary-color-900)] border-[#44000D] border-2 py-4 px-4 rounded cursor-pointer mt-3 w-60`}
+                className={`relative flex justify-center items-center gap-3 text-[var(--primary-color-900)] border-[#44000D] hover:bg-white border-2 py-4 px-4 rounded cursor-pointer mt-3 w-60`}
                 value='Đăng ký'
               />
             </div>

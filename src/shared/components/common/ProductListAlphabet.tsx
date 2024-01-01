@@ -8,10 +8,12 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 import IconArrowRight from '../icon/IconArrowRight';
 import { useRouter } from 'next/router';
 import DialogModalFilterProduct from '../headlessUI/DialogModalFilterProduct';
+import { ICategory } from '@/schemas/category.type';
 
 interface Props {
   products?: IProduct[];
   category: { name?: string; description?: string; cover_image?: string };
+  categoryData?: ICategory[]
 }
 const defaultSelectAlphabets = [
   {
@@ -27,7 +29,8 @@ const defaultSelectAlphabets = [
     name: 'Giá giảm dần',
   },
 ];
-const ProductListAlphabet = ({ products, category }: Props) => {
+const ProductListAlphabet = ({ products, category, categoryData }: Props) => {
+  const [selectedItems, setSelectedItems] = useState<ICategory[]>([]);
   const [filterProducts, setFilterProducts] = useState<IProduct[] | undefined>(products);
   const [selected, setSelected] = useState(defaultSelectAlphabets[0]);
   const router = useRouter();
@@ -43,6 +46,14 @@ const ProductListAlphabet = ({ products, category }: Props) => {
   useEffect(() => {
     setFilterProducts(products)
   }, [products])
+  const handleItemClick = (item: ICategory) => {
+    if (selectedItems.includes(item)) {
+      setSelectedItems(prevItems => prevItems.filter(selectedItem => selectedItem !== item));
+    } else {
+      setSelectedItems(prevItems => [...prevItems, item]);
+    }
+  };
+  console.log(filterProducts);
   return (
     <section className='p-4 laptop:px-32 laptop:py-8'>
       <div className='mb-5 w-full flex justify-between items-center'>
@@ -57,13 +68,29 @@ const ProductListAlphabet = ({ products, category }: Props) => {
         </div>
       </div>
       {/* //Filter By Group */}
-      <div className='mb-5 w-full flex justify-between items-center'>
-        <DialogModalFilterProduct title="Bộ lọc" />
+      <div className='mb-5 w-full flex justify-start items-center gap-2'>
+        <DialogModalFilterProduct setFilterProducts={setFilterProducts} handleItemClick={handleItemClick} selectedItems={selectedItems} data={selectedItems} title="Bộ lọc" />
+        <div className='flex flex-wrap items-start justify-start gap-2'>
+        {categoryData?.map((item, index) => {
+           const isSelected = selectedItems.includes(item);
+           return (
+             <div
+               key={index}
+               className={`flex h-[56px] cursor-pointer items-center justify-center rounded-full border p-[12px] text-center md:px-[14px] md:py-[16px] ${
+                 isSelected ? 'border-[#330009]' : 'border-[#44000D] opacity-[0.55]'
+               }`}
+               onClick={() => handleItemClick(item)}
+             >
+               <p className=''>{item.name}</p>
+             </div>
+           );
+        })}
+        </div>
       </div>
       {/* //Filter By Alpha */}
       <div className='w-full flex justify-between items-center'>
         <div className='flex items-center'>
-          <p className='text-[#550F17]'>{products?.length}</p>
+          <p className='text-[#550F17]'>{filterProducts?.length}</p>
           <h3 className='ml-2 text-[#262626]'>Sản phẩm</h3>
         </div>
         <div>

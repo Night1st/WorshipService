@@ -29,7 +29,7 @@ const Header = () => {
       <div className='flex w-1/2 items-center gap-20 tablet:justify-between'>
         <Image height={50} width={50} src={'/Logo.svg'} alt={''} onClick={() => router.push('/')}></Image>
       </div>
-      <div className='flex w-full justify-end items-center gap-5'>
+      <div className='flex flex-col md:flex-row w-full justify-end items-center gap-5'>
         <input
           className='w-full appearance-none border rounded-full px-4 py-2 focus:outline-none focus:shadow-outline text-[#000] text-xs max-w-[178px]'
           type='text'

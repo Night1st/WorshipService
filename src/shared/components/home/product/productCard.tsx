@@ -12,16 +12,15 @@ const ProductCard = ({ product }: Props) => {
   return (
     <motion.div
       className='flex flex-col items-center cursor-pointer overflow-hidden border-collapse rounded-xl max-h-[370px]'
-      style={{ border: '1px solid #555' }}
       onClick={() => router.push(`/products/detail/${product.slug}`)}
     >
-      <PreImage src={product.image} width={256} height={200} alt={''} />
-      <div className='flex flex-col gap-3 px-3 py-3 bg-white w-full h-3/5 justify-between'>
+      <PreImage src={product.image} alt='products' className="w-full max-h-[256px]" />
+      <div className='flex flex-col gap-3 px-3 py-3 bg-white w-full h-[170px] justify-between'>
         <div className='flex flex-col gap-2'>
-          <p className='px-2 text-xs leading-[19px] text-black bg-[#EDB84F] rounded-xl w-fit'>
+          <p className='px-2 text-xs leading-[19px] text-[#262417] bg-[#EDB84F] rounded-xl w-fit'>
             {'Miễn phí vận chuyển'}
           </p>
-          <h1 className='text-base font-bold text-black line-clamp-2'>{product.productName}</h1>
+          <h1 className='text-base font-semibold text-[#14130E] line-clamp-2'>{product.productName}</h1>
         </div>
         <div className='flex flex-col'>
           <p className='text-base text-right line-through'>{formatCurrency(product.origin_price)}</p>

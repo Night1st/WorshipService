@@ -22,7 +22,7 @@ const Product = () => {
       <div className="flex justify-end items-end">
           <motion.button
             whileHover="hover"
-            className={`bg-transparent relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] text-left py-4 px-4 min-w-[200px] border-2 cursor-pointer mt-3`}
+            className={`bg-transparent hover:bg-white relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] text-left py-4 px-4 min-w-[200px] border-2 cursor-pointer mt-3`}
             onClick={() => router.push("/products")}
           >
             <p className="text-sm">{"Khám phá"}</p>

@@ -11,7 +11,7 @@ const data = ['Hương', 'Nến', 'Tiền vàng', 'Set đồ cúng', 'Đồ hầ
 
 const schema = Yup.object().shape({
   name: Yup.string().required('Hãy nhập tên của bạn!'),
-  phone: Yup.string().required('Hãy nhập số điện thoại của bạn!').min(11),
+  phone: Yup.string().required('Hãy nhập số điện thoại của bạn!'),
   email: Yup.string().required('Hãy nhập email của bạn!'),
   note: Yup.string(),
 });
@@ -45,6 +45,7 @@ const ConnectForm = () => {
         note: note,
       };
       doContact.mutate(bodyRequest);
+      setOpen(true)
     },
   });
   const { errors, touched, values, handleChange, handleSubmit } = formik;

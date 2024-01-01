@@ -14,7 +14,7 @@ const homeData = {
 };
 
 export function ProductDetail() {
-  const [limit, setLimit] = useState(10)
+  const [limit, setLimit] = useState(5)
   const { data: productHighlight, refetch } = useGetProductHighlight(limit);
   useEffect(() => {
     refetch()

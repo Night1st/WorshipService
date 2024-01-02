@@ -14,8 +14,8 @@ const OurQuote = ({ data }: Props) => {
       <TitleSection title='THÔNG ĐIỆP CỦA CHÚNG TÔI' description='' />
       <div className='relative flex items-center justify-center gap-10 py-5'>
         {data.map((item, index) => (
-          <React.Fragment>
-            <div key={index} className='flex flex-col justify-center items-center laptop:min-w-[200px] z-30 cursor-pointer'>
+          <React.Fragment key={index}>
+            <div className='flex flex-col justify-center items-center laptop:min-w-[200px] z-30 cursor-pointer'>
               <p
                 className={`${
                   item == selectedIcon && 'text-[var(--primary-color-800)]'

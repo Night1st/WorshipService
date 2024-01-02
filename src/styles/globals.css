@@ -55,3 +55,8 @@ body {
 .overflow-strategies::-webkit-scrollbar {
   width: 0;
 }
+.border-quote{
+  border-width: 4px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #FFCE56, #651D1D) 1;
+}

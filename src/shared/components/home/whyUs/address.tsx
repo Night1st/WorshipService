@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import TitleSection from '../../common/TitleSection';
 import { footerData } from '@/shared/mock/footer';
+import { PreImage } from '../../common/PreImage';
 
 interface Props {
   image: string;
@@ -13,9 +14,9 @@ const Address = ({ image, description }: Props) => {
     <section className='p-4 laptop:px-10 laptop:py-8'>
       <div className='w-full flex flex-col justify-around items-center'>
         <TitleSection title='HỆ THỐNG PHÂN PHỐI' description='' />
-        <div className='flex justify-center items-center gap-10'>
-          <div className='flex justify-center items-center p-10 phone:max-laptop:hidden'>
-            <Image className='' height={500} width={500} src={image} alt={''}></Image>
+        <div className='flex justify-center items-center gap-[135px] mt-10'>
+          <div className='flex justify-center items-center phone:max-laptop:hidden h-[300px]'>
+            <PreImage alt='image-address' className='w-full max-h-[300px]' src={image} fix={true} />
           </div>
           <div className='p-10'>
             <h1 className='laptop:text-[34px] laptop:leading-[41px] text-black my-5'>Trụ sở chính</h1>

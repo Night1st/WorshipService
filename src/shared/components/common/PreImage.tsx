@@ -5,9 +5,10 @@ import React from 'react';
 
 interface Props extends ImageProps {
   layer?: boolean;
+  fix?: boolean
 }
 
-export function PreImage({ src, layer, ...rest }: Props) {
+export function PreImage({ src, layer, fix, ...rest }: Props) {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const { theme } = useTheme();
@@ -17,7 +18,7 @@ export function PreImage({ src, layer, ...rest }: Props) {
     <React.Fragment>
       <div className='relative w-full h-full overflow-hidden'>
         <img
-          src={("https://www.dothocunggiadinh.com:8443/storage/" + src) as string}
+          src={(fix ? src : "https://www.dothocunggiadinh.com:8443/storage/" + src) as string}
           onLoad={() => setImageLoaded(true)}
           onError={() => setImageLoaded(true)}
           className='object-cover w-full h-full'

@@ -20,7 +20,7 @@ const ProductCard = ({ product }: Props) => {
           <p className='px-2 text-xs leading-[19px] text-[#262417] bg-[#EDB84F] rounded-xl w-fit'>
             {'Miễn phí vận chuyển'}
           </p>
-          <h1 className='text-base font-semibold text-[#14130E] line-clamp-2'>{product.productName}</h1>
+          <h1 className='text-base font-semibold text-[#14130E] line-clamp-2 whitespace-nowrap'>{product.productName}</h1>
         </div>
         <div className='flex flex-col'>
           <p className='text-base text-right line-through'>{formatCurrency(product.origin_price)}</p>

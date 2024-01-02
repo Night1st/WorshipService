@@ -21,7 +21,7 @@ const LatestNews = () => {
         <div className="flex justify-end items-end">
             <motion.button
               whileHover="hover"
-              className={`bg-transparent hover:bg-white relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-4 px-4 min-w-[200px] cursor-pointer mt-3`}
+              className={`bg-transparent hover:bg-white relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-3 px-10 cursor-pointer mt-3`}
               onClick={() => router.push("/newsAndEvent/news")}
             >
               <p className="text-sm">{"Xem tất cả"}</p>

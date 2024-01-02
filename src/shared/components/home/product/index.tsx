@@ -8,7 +8,7 @@ import { useGetProductHighlight } from "@/queries/product.queries";
 const Product = () => {
   const {data: productHighlight} = useGetProductHighlight(5)
   return ( 
-    <section className="p-4 laptop:px-10 laptop:pb-8">
+    <section className="mt-5 p-4 laptop:px-10 laptop:pb-8">
       <TitleSection
         title="SẢN PHẨM NỔI BẬT"
         description="Khám phá các sản phẩm của chúng tôi"
@@ -22,7 +22,7 @@ const Product = () => {
       <div className="flex justify-end items-end">
           <motion.button
             whileHover="hover"
-            className={`bg-transparent hover:bg-white relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] text-left py-4 px-4 min-w-[200px] border-2 cursor-pointer mt-3`}
+            className={`bg-transparent hover:bg-white relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] text-left py-3 px-10 border-2 cursor-pointer mt-3`}
             onClick={() => router.push("/products")}
           >
             <p className="text-sm">{"Khám phá"}</p>

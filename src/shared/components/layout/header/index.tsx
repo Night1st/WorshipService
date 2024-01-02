@@ -23,7 +23,7 @@ const Header = () => {
       handleSearch();
     }
   };
-
+  console.log(router.pathname.split("/")[1])
   return (
     <section className='w-full sticky top-0 z-50 laptop:flex justify-between items-center gap-5 px-4 py-4 laptop:px-10 transition bg-[var(--primary-color-800)] bg-opacity-100 text-white duration-500 ease-in-out '>
       <div className='flex w-1/2 items-center gap-20 tablet:justify-between'>
@@ -39,13 +39,13 @@ const Header = () => {
           onKeyPress={handleKeyPress}
         />
         <ul
-          className={`phone:max-laptop:pt-5 justify-center items-center gap-5 phone:max-laptop:text-center laptop:flex ${
+          className={`phone:max-laptop:pt-5 justify-center items-center gap-5 phone:max-laptop:text-center laptop:flex border-b border-b-gray-100 ${
             isToggleOpen ? 'block' : 'hidden'
           }`}
         >
           {fakeMenu.map((item, inx) => (
             <Link href={item.link} key={inx}>
-              <li className='text-base'>{item.title}</li>
+              <li className={`text-base ${router.pathname === item.link && "pb-2 border-b border-b-gray-200"}`}>{item.title}</li>
             </Link>
           ))}
         </ul>

@@ -5,6 +5,7 @@ import Product from "@/shared/components/home/product";
 import WhyUs from "@/shared/components/home/whyUs";
 import ConnectForm from "@/shared/components/common/ConnectForm";
 import EventUpcoming from "@/shared/components/home/eventUpcoming";
+import React from "react";
 
 const homeData = {
   name: "Mang bình an tới mỗi gia đình Việt",
@@ -14,7 +15,7 @@ const homeData = {
 
 export function Home() {
   return (
-    <>
+    <React.Fragment>
       <Head>
         <title>Trang chủ</title>
         <meta name="description" content="Đồ thờ cúng" />
@@ -25,31 +26,9 @@ export function Home() {
       <EventUpcoming />
       <WhyUs/>
       <ConnectForm/>
-    </>
+    </React.Fragment>
   );
 }
-// export async function getServerSideProps() {
-//   try {
-//     // Thực hiện yêu cầu API bằng Axios
-//     const response = await axios.get("API_URL");
-//     const data = response.data;
-
-//     return {
-//       props: {
-//         bannerData: data.bannerData,
-//         // Các dữ liệu phần tĩnh khác
-//       },
-//     };
-//   } catch (error) {
-//     // Xử lý lỗi nếu có
-//     console.error("Error fetching data:", error);
-//     return {
-//       props: {
-//         bannerData: [],
-//       },
-//     };
-//   }
-// }
 Home.getLayout = (children: React.ReactNode) => (
   <LayoutWebsite>{children}</LayoutWebsite>
 );

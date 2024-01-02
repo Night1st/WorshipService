@@ -22,7 +22,7 @@ const ContactInfo = () => {
             image: "/images/Logo/Zalo.png"
         },
     ]
-    return (<section className="px-4 laptop:px-10 text-center">
+    return (<section className="px-4 laptop:px-10 text-center mt-10">
         <TitleSection
             title="THÔNG TIN LIÊN HỆ"
             description="Liên hệ với chúng tôi để được hỗ trợ ngay"

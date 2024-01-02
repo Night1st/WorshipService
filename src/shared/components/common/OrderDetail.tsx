@@ -65,7 +65,7 @@ const OrderDetail = ({product}: Props) => {
                     <motion.button
                         key={idx}
                         whileHover="hover"
-                        className={`bg-transparent relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-4 px-4 min-w-[200px] cursor-pointer mt-3`}
+                        className={`bg-transparent relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-3 px-10 cursor-pointer mt-3`}
                         onClick={() => window.open(item.link)}
                     >
                             {/* <Image width={30} height={30} src={'/images/Logo/Shopee.png'} alt={''}/> */}
@@ -74,7 +74,7 @@ const OrderDetail = ({product}: Props) => {
                     ))}
                     <motion.button
                         whileHover="hover"
-                        className={`bg-transparent relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-4 px-4 min-w-[200px] cursor-pointer mt-3`}
+                        className={`bg-transparent relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-3 px-10 cursor-pointer mt-3`}
                         //onClick={() => router.push("")}
                     >
                         <p className="text-sm font-semibold">{"Đăng ký nhận tư vấn"}</p>

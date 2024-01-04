@@ -23,9 +23,9 @@ const OurQuote = ({ data }: Props) => {
               >{`${item.title}`}</p>
               <div onClick={() => setSelectedIcon(item)}>
                 {item == selectedIcon ? (
-                  <img width={40} height={40} src='/images/StatusOn.png'></img>
+                  <img width={40} height={40} src='/images/StatusOn.png' className='z-30'></img>
                 ) : (
-                  <img width={40} height={40} src='/images/StatusOff.png'></img>
+                  <img width={40} height={40} src='/images/StatusOff.png' className='z-30'></img>
                 )}
               </div>
             </div>

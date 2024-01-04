@@ -1,6 +1,6 @@
 import React, { SVGProps } from "react";
 
-export default function IconArrowLeft({ ...rest }: SVGProps<SVGSVGElement>) {
+export default function IconArrowLeft({ fill, ...rest }: SVGProps<SVGSVGElement> & { fill: string }) {
   return (
     <svg
       width="24"
@@ -24,9 +24,10 @@ export default function IconArrowLeft({ ...rest }: SVGProps<SVGSVGElement>) {
       <g mask="url(#mask0_1408_331)">
         <path
           d="M10 18L4 12L10 6L11.4 7.45L7.85 11H20V13H7.85L11.4 16.55L10 18Z"
-          fill="white"
+          fill={fill}
         />
       </g>
     </svg>
   );
 }
+

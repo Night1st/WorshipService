@@ -1,6 +1,7 @@
 import { useGetProductHighlight } from '@/queries/product.queries';
 import ConnectForm from '@/shared/components/common/ConnectForm';
 import ProductList from '@/shared/components/common/ProductList';
+import ProductListAlphabet from '@/shared/components/common/ProductListAlphabet';
 import Banner from '@/shared/components/home/banner';
 import ProductType from '@/shared/components/home/productType';
 import LayoutWebsite from '@/shared/components/layout/LayoutWebsite';

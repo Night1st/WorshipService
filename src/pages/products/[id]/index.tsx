@@ -43,6 +43,7 @@ export function GroupOverview({ products }: Props) {
 
   useEffect(() => {
     refetchCategory();
+    refetch()
   }, [groupId]);
   return (
     <React.Fragment>
@@ -57,7 +58,7 @@ export function GroupOverview({ products }: Props) {
           {products !== undefined && products.data.length > 0 ? (
             <ProductListAlphabet categoryData={categoryByProductGroup} category={data} products={productsCurrent && productsCurrent.data} />
           ) : (
-            <ProductList products={productsQuery} />
+            <ProductListAlphabet categoryData={categoryByProductGroup} category={data} products={productsQuery && productsQuery} />
           )}
           <MaybeInterested />
           <ConnectForm />

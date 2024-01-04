@@ -53,7 +53,6 @@ const ProductListAlphabet = ({ products, category, categoryData }: Props) => {
       setSelectedItems(prevItems => [...prevItems, item]);
     }
   };
-  console.log(filterProducts);
   return (
     <section className='p-4 laptop:px-32 laptop:py-8'>
       <div className='mb-5 w-full flex justify-between items-center'>
@@ -62,7 +61,7 @@ const ProductListAlphabet = ({ products, category, categoryData }: Props) => {
             <p className='text-[#262417] cursor-pointer' onClick={() => router.push('/products')}>
               Sản phẩm
             </p>
-            <IconArrowRight />
+            <IconArrowRight fill="#262417"/>
           </div>
           <h3 className='ml-2 text-[#14130E]'>{category.name}</h3>
         </div>

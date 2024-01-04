@@ -3,17 +3,17 @@ export const footerData = {
         {
             head: "Hotline",
             title: "0985903699 | 0394286488",
-            icon: "/Phone.svg"
+            icon: "/PhoneFooter.svg"
         },
         {
             head: "Email",
             title: "vu.tuan35@gmail.com",
-            icon: "/Email.svg"
+            icon: "/EmailFooter.svg"
         },
         {
             head: "Địa chỉ",
             title: "17/31 Khu Nam Trung, Phường Nam Khê, Thành phố Uông Bí, Tỉnh Quảng Ninh",
-            icon: "/Address.svg"
+            icon: "/AddressFooter.svg"
         },
     ],
     icon: [
@@ -38,4 +38,23 @@ export const footerData = {
             link: ""
         },
     ]
+}
+export const aboutUsData = {
+    contactData: [
+        {
+            head: "Hotline",
+            title: "0985903699 | 0394286488",
+            icon: "/Phone.svg"
+        },
+        {
+            head: "Email",
+            title: "vu.tuan35@gmail.com",
+            icon: "/Email.svg"
+        },
+        {
+            head: "Địa chỉ",
+            title: "17/31 Khu Nam Trung, Phường Nam Khê, Thành phố Uông Bí, Tỉnh Quảng Ninh",
+            icon: "/Address.svg"
+        },
+    ],
 }

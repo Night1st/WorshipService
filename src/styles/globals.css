@@ -38,8 +38,6 @@ body {
   }
 }
 
-
-
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -59,4 +57,7 @@ body {
   border-width: 4px;
   border-style: solid;
   border-image: linear-gradient(to right, #FFCE56, #651D1D) 1;
+}
+.bg-gioithieu {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(/images/Banner/GioiThieu.png);
 }

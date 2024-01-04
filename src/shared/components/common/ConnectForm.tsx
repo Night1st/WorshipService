@@ -60,14 +60,14 @@ const ConnectForm = () => {
             Vui lòng để lại thông tin, chúng tôi sẽ hỗ trợ bạn trong thời gian sớm nhất
           </p>
           <form onSubmit={handleSubmit}>
-            <div className='grid grid-cols-1 laptop:grid-cols-2 gap-4 pt-10 justify-between text-black'>
-              <div className='flex flex-col'>
+            <div className='grid grid-cols-1 laptop:grid-cols-2 desktop:gap-10 pt-10 justify-between text-black'>
+              <div className='w-full flex flex-col justify-between desktop:gap-5'>
                 <div className='mb-4'>
                   <label className={`block text-sm font-bold mb-2 ${errors.name && touched.name && 'border-red-500'}`}>
                     Họ tên *
                   </label>
                   <input
-                    className='appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline'
+                    className='appearance-none border rounded-lg w-full p-4 leading-tight focus:outline-none focus:shadow-outline'
                     type='text'
                     name='name'
                     value={values.name}
@@ -83,7 +83,7 @@ const ConnectForm = () => {
                     Số điện thoại *
                   </label>
                   <input
-                    className='appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline'
+                    className='appearance-none border rounded-lg w-full p-4 leading-tight focus:outline-none focus:shadow-outline'
                     type='number'
                     name='phone'
                     value={values.phone}
@@ -99,7 +99,7 @@ const ConnectForm = () => {
                     Email *
                   </label>
                   <input
-                    className='appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline'
+                    className='appearance-none border rounded-lg w-full p-4 leading-tight focus:outline-none focus:shadow-outline'
                     type='text'
                     name='email'
                     value={values.email}
@@ -127,8 +127,8 @@ const ConnectForm = () => {
                 </div>
               </div>
               <div className='flex flex-col'>
-                <div className='my-4'>
-                  <label className='block text-sm font-bold'>Sản phẩm quan tâm</label>
+                <div className='mb-4'>
+                  <label className='block text-sm font-bold mb-3 desktop:mb-0'>Sản phẩm quan tâm</label>
                   <div className='flex flex-wrap items-start justify-start gap-2 laptop:flex laptop:gap-3 laptop:py-5'>
                     {data.map((item, index) => {
                       const isSelected = selectedItems.includes(item);
@@ -136,7 +136,7 @@ const ConnectForm = () => {
                         <div
                           key={index}
                           className={`flex h-[56px] cursor-pointer items-center justify-center rounded-full border p-[12px] text-center md:px-[14px] md:py-[16px] ${
-                            isSelected ? 'border-[#330009]' : 'border-[#44000D] opacity-[0.55]'
+                            isSelected ? 'bg-[#44000D] text-white' : 'border-[#44000D]'
                           }`}
                           onClick={() => handleItemClick(item)}
                         >
@@ -146,7 +146,7 @@ const ConnectForm = () => {
                     })}
                   </div>
                   <textarea
-                    className='appearance-none border rounded w-full h-32 py-2 px-3 my-3 leading-tight focus:outline-none focus:shadow-outline'
+                    className='appearance-none border rounded-lg w-full min-h-[178px] py-2 px-3 my-3 leading-tight focus:outline-none focus:shadow-outline'
                     name='note'
                     value={values.note}
                     onChange={handleChange}

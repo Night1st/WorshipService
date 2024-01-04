@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import TitleSection from '../../common/TitleSection';
-import { footerData } from '@/shared/mock/footer';
+import { aboutUsData, footerData } from '@/shared/mock/footer';
 import { PreImage } from '../../common/PreImage';
 
 interface Props {
@@ -20,7 +20,7 @@ const Address = ({ image, description }: Props) => {
           </div>
           <div className='p-10'>
             <h1 className='laptop:text-[34px] laptop:leading-[41px] text-black my-5'>Trụ sở chính</h1>
-            {footerData.contactData.map((item, idx) => (
+            {aboutUsData.contactData.map((item, idx) => (
               <p key={idx} className='flex items-start gap-2 text-base my-3'>
                 <Image height={30} width={30} src={item.icon} alt={''} style={{color: "black"}}></Image>
                 {item.title}

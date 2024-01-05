@@ -14,11 +14,11 @@ const WhyUs = () => {
           <div className="flex justify-center items-center">
           <motion.button
             whileHover="hover"
-            className={`bg-transparent hover:bg-white relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] text-left py-3 px-10 border-2 cursor-pointer mt-3`}
+            className={`bg-transparent hover:bg-white relative flex justify-center items-center gap-1 laptop:gap-3 text-[#550F17] border-[var(--primary-color-900)] text-left px-4 laptop:py-3 laptop:px-10 border-2 cursor-pointer mt-3`}
             onClick={() => router.push("/aboutUs")}
           >
             <p className="text-sm">{"Khám phá"}</p>
-            <IconArrowRight  color="#550F17" />
+            <IconArrowRight fill="#550F17" />
             <motion.div
               className="absolute left-0 top-0 h-full w-0"
               transition={{

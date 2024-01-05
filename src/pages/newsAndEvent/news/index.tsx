@@ -5,7 +5,7 @@ import LargeNewsCard from "@/shared/components/common/LargeNewsCard";
 import { useGetLatestNews } from "@/queries/news.queries";
 
 export function News() {
-  const {data: news} = useGetLatestNews()
+  const {data: news} = useGetLatestNews(5)
     return (
       <>
         <Head>

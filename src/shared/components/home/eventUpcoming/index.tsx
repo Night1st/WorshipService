@@ -6,7 +6,7 @@ import IconArrowRight from "../../icon/IconArrowRight";
 import { useGetComingSoonEvent } from "@/queries/event.queries";
 
 const EventUpcoming = () => {
-  const {data: event} = useGetComingSoonEvent()
+  const {data: event} = useGetComingSoonEvent(5)
   return ( 
     <section className="p-4 laptop:px-10 laptop:py-8">
       <TitleSection
@@ -25,7 +25,7 @@ const EventUpcoming = () => {
             onClick={() => router.push("/newsAndEvent/event")}
           >
             <p className="text-sm">{"Khám phá"}</p>
-            <IconArrowRight  color="#550F17" />
+            <IconArrowRight fill='#550F17'/>
             <motion.div
               className="absolute left-0 top-0 h-full w-0"
               transition={{

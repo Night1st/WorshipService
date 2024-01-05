@@ -14,7 +14,7 @@ type Props = {
 export function EventDetail({event}: Props) {
   const startDate = event && event.data && event.data.start_date ? new Date(event.data.start_date) : null;
   const endDate = event && event.data && event.data.end_date ? new Date(event.data.end_date) : null;
-  const {data: otherEvent} = useGetComingSoonEvent()
+  const {data: otherEvent} = useGetComingSoonEvent(5)
   if (!event || !otherEvent) return <></>
   return (
     <>

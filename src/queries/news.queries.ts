@@ -5,10 +5,10 @@ import { INews } from "@/schemas/news.type"
 
 const QUERY_KEY = "News"
 
-export const useGetLatestNews = (options?: Partial<UseQueryOptions>) => {
+export const useGetLatestNews = (limit: number, options?: Partial<UseQueryOptions>) => {
     return useQuery ({
         queryKey: [QUERY_KEY, "get-all"],
-        queryFn: () => axiosInstanceNoAuth.get<IBaseResponse<INews[]>>('/news/list-latest-news'),
+        queryFn: () => axiosInstanceNoAuth.get<IBaseResponse<INews[]>>(`/news/list-latest-news?limit=${limit}`),
         select(data) {
             return data.data
         },

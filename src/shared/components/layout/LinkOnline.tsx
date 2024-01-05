@@ -22,7 +22,7 @@ const LinkOnline = () => {
       className={`${
         isSticky
           ? 'w-full sticky top-40 z-40 flex flex-col justify-end items-end transition duration-500 ease-in-out'
-          : 'absolute bottom-0 right-0'
+          : 'absolute bottom-0 right-0 z-40'
       }`}
     >
       <div

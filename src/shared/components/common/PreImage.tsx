@@ -21,7 +21,7 @@ export function PreImage({ src, layer, fix, ...rest }: Props) {
           src={(fix ? src : "https://www.dothocunggiadinh.com:8443/storage/" + src) as string}
           onLoad={() => setImageLoaded(true)}
           onError={() => setImageLoaded(true)}
-          className='object-cover w-full h-full'
+          className='object-cover w-full h-full object-top'
         />
         {layer && (
           <div

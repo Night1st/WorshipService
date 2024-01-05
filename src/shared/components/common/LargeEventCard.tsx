@@ -12,13 +12,13 @@ const LargeEventCard = ({event}: Props) => {
     const date = new Date(event.start_date)
     return(
         <motion.div
-            className="relative flex flex-col items-center cursor-pointer rounded-full"
+            className="relative flex flex-col items-center cursor-pointer rounded-full w-full h-[600px]"
             onClick={() => router.push(`/newsAndEvent/event/${event.slug}`)}
         >
             <PreImage
                 src={event.image}
-                alt={""}
-                className="w-full h-auto"
+                alt="large-event"
+                className="w-full max-h-[500px] object-cover"
                 />
             <div className="flex gap-5 p-5 bg-white laptop:w-full">
                 <div className="flex flex-col gap-3 bg-[var(--secondary-color-500)] justify-center items-center text-center min-w-[80px]">

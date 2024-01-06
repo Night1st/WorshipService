@@ -110,7 +110,7 @@ const ConnectForm = () => {
                 </div>
                 <div className='mb-4 flex justify-end z-30'>
                   <Modal open={open} onClose={() => setOpen(false)}>
-                    <div className='text-center w-full flex flex-col gap-5'>
+                    <div className='text-center w-[744px] flex flex-col gap-5 '>
                       <h1 className='text-4xl laptop:text-4xl text-green-400 pt-10'>ĐĂNG KÝ THÀNH CÔNG</h1>
                       <p className='text-lg laptop:text-2xl text-black'>
                         Quý khách đã đăng ký nhận tư vấn thành công. Chúng tôi sẽ liên hệ Quý khách sớm nhất.

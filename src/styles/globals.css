@@ -61,3 +61,59 @@ body {
 .bg-gioithieu {
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(/images/Banner/GioiThieu.png);
 }
+.about-background {
+  background-image: url('/images/background_about_us.png');
+}
+.quote-line {
+  z-index: 2;
+  position: relative;
+}
+.quote-line:before {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 1px;
+  background: #9A4E46;
+  left: -200px;
+  bottom: 18px;
+  position: absolute;
+  z-index: 1;
+}
+.quote-line:after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 1px;
+  background: #9A4E46;
+  right: -200px;
+  bottom: 18px;
+  position: absolute;
+  z-index: 1;
+}
+@media screen and (max-width: 450px) {
+  .bg-gioithieu {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(/images/Banner/GioiThieu2.png);
+  }
+  .quote-line:before {
+    content: "";
+    display: block;
+    width: 69px;
+    height: 1px;
+    background: #9A4E46;
+    left: -68px;
+    bottom: 18px;
+    position: absolute;
+    z-index: 1;
+  }
+  .quote-line:after {
+    content: "";
+    display: block;
+    width: 69px;
+    height: 1px;
+    background: #9A4E46;
+    right: -68px;
+    bottom: 18px;
+    position: absolute;
+    z-index: 1;
+  }
+}

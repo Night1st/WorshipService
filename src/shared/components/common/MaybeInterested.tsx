@@ -7,8 +7,12 @@ import { useGetAllProductGroup } from '@/queries/product-group.queries';
 const MaybeInterested = () => {
   const {data: productGroup} = useGetAllProductGroup()
   const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+    desktopFullHd: {
+      breakpoint: { max: 3000, min: 1366 },
+      items: 4,
+    },
+    desktopH: {
+      breakpoint: { max: 1366, min: 1024 },
       items: 3,
     },
     tablet: {

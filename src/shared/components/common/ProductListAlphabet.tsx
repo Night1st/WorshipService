@@ -9,6 +9,7 @@ import IconArrowRight from '../icon/IconArrowRight';
 import { useRouter } from 'next/router';
 import DialogModalFilterProduct from '../headlessUI/DialogModalFilterProduct';
 import { ICategory } from '@/schemas/category.type';
+import IconChevronRight from '../icon/IconChevronRight';
 
 interface Props {
   products?: IProduct[];
@@ -61,7 +62,7 @@ const ProductListAlphabet = ({ products, category, categoryData }: Props) => {
             <p className='text-[#262417] cursor-pointer' onClick={() => router.push('/products')}>
               Sản phẩm
             </p>
-            <IconArrowRight fill="#262417"/>
+            <IconChevronRight fill="#262417"/>
           </div>
           <h3 className='ml-2 text-[#14130E]'>{category.name}</h3>
         </div>

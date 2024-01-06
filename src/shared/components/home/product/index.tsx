@@ -13,7 +13,7 @@ const Product = () => {
         title="SẢN PHẨM NỔI BẬT"
         description="Khám phá các sản phẩm của chúng tôi"
       />
-      <div className="w-full min-h-[350px] grid grid-cols-2 gap-5 tablet:grid-cols-3 laptop:grid-cols-5 mt-10 overflow-hidden">
+      <div className="w-full min-h-[350px] grid grid-cols-2 gap-5 tablet:grid-cols-3 laptop:grid-cols-5 desktop:grid-cols-5 mt-10 overflow-hidden">
         {productHighlight?.map((item, idx) => (
           <ProductCard key={idx} product={item} />
         ))}

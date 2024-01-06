@@ -19,8 +19,8 @@ const ProductList = ({ limit, products, setLimit }: Props) => {
   return (
     <section className='p-4 laptop:px-10 laptop:py-8'>
       <TitleSection title='SẢN PHẨM NỔI BẬT' description='Khám phá các sản phẩm của chúng tôi' />
-      <div className='w-full min-h-[350px] grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-5 mt-10 overflow-hidden'>
-        {productsCurrent?.map((item, idx) => <ProductCard key={idx} product={item} />)}
+      <div className='w-full min-h-[350px] grid grid-cols-2 gap-5 laptop:grid-cols-5 desktop::grid-cols-5 mt-10 overflow-hidden phone:grid-cols-2 tablet:grid-cols-3'>
+        {productsCurrent?.map((item, idx) => (<ProductCard  key={idx} product={item} />))}
       </div>
       <div className='flex justify-center items-center'>
         <motion.button

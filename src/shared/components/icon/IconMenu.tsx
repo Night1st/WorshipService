@@ -6,9 +6,9 @@ export default function IconMenu({ ...rest }: SVGProps<SVGSVGElement>) {
       <path
         d='M3.75 7.5H20.25M3.75 12H20.25M3.75 16.5H20.25'
         stroke='#FCFCFC'
-        stroke-width='1.5'
-        stroke-miterlimit='10'
-        stroke-linecap='round'
+        strokeWidth='1.5'
+        strokeMiterlimit='10'
+        strokeLinecap='round'
       />
     </svg>
   );

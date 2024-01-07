@@ -141,7 +141,7 @@ const OrderDetail = ({ product }: Props) => {
             </div>
             <div className='flex flex-col text-left'>
               <p className='text-[20px] leading-[24px] text-[var(--primary-color-900)]'>Chính sách giao hàng</p>
-              <p className='text-base'>{product.product[0].sell_policy}</p>
+              <p className='text-base' dangerouslySetInnerHTML={{__html: product.product[0].sell_policy}}></p>
             </div>
           </div>
         </div>
@@ -152,7 +152,7 @@ const OrderDetail = ({ product }: Props) => {
             </div>
             <div className='flex flex-col text-left'>
               <p className='text-[20px] leading-[24px] text-[var(--primary-color-900)]'>Chính sách thanh toán</p>
-              <p className='text-base'>{product.product[0].payment_policy}</p>
+              <p className='text-base' dangerouslySetInnerHTML={{__html: product.product[0].payment_policy}}></p>
             </div>
           </div>
         </div>
@@ -163,7 +163,7 @@ const OrderDetail = ({ product }: Props) => {
             </div>
             <div className='flex flex-col text-left'>
               <p className='text-[20px] leading-[24px] text-[var(--primary-color-900)]'>Chính sách đổi trả</p>
-              <p className='text-base'>{product.product[0].change_policy}</p>
+              <p className='text-base' dangerouslySetInnerHTML={{__html: product.product[0].change_policy}}></p>
             </div>
           </div>
         </div>

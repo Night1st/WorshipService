@@ -28,7 +28,7 @@ const Banner = ({ data }: Props) => {
   }, []);
 
   return (
-    <div className='scrollbar-none relative flex flex-col overflow-hidden text-white'>
+    <div className='scrollbar-none relative flex flex-col overflow-hidden text-white desktop:h-[69vh] laptop:h-[69vh] phone:h-[69vh] tablet:h-[69vh]'>
       <div className='w-full flex justify-center items-center mx-auto'>
         <ContentBanner data={data} />
       </div>

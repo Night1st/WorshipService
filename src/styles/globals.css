@@ -62,7 +62,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(/images/Banner/GioiThieu.png);
 }
 .about-background {
-  background-image: url('/images/background_about_us.png');
+  background-image: url('/images/background_about_us.png')!important;
 }
 .quote-line {
   z-index: 2;

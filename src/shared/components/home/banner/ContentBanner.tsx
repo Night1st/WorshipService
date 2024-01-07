@@ -18,9 +18,9 @@ const roboto = Roboto({ subsets: ["latin-ext"], display: 'swap', weight: ['400']
 const ContentBanner = ({ data }: Props) => {
   const src = data.cover_image
   return (
-    <div className={`w-full flex h-screen flex-col justify-center leading-[90%] tracking-wide ${src} bg-cover bg-no-repeat px-3 desktop:bg-cover laptop:bg-cover  phone:bg-[length:100vw_100vh] tablet:bg-[length:100vw_100vh] tablet:px-5 laptop:px-[220px] ${data.name == "Nhang Đức Tuấn" ? "items-start" : "items-center"}`}>
-      {data.name == "Nhang Đức Tuấn" ? 
-      (<div className="flex flex-col items-center">
+    <div className={`w-full flex h-screen flex-col justify-center leading-[90%] tracking-wide ${src} bg-cover bg-no-repeat px-3 desktop:bg-[length:100vw_69vh] laptop:bg-[length:100vw_69vh]  phone:bg-[length:100vw_69vh] tablet:bg-[length:100vw_69vh] tablet:px-5 laptop:px-[220px] ${data.name == "Nhang Đức Tuấn" ? "items-start" : "items-center"}`}>
+      {data.name == "Nhang Đức Tuấn" ?
+      (<div className="flex flex-col items-center translate-y-[-16vh]">
         <div className="font-bold text-[48px] leading-[58px] tablet:text-6xl tablet:leading-[72px] laptop:text-[96px] laptop:leading-[116px] text-[var(--secondary-color-500)] text-center">
           <AnimatePresence mode="wait">
             <motion.span variants={staggerChildren} animate="animate" className={(vujahday.className)}>
@@ -31,16 +31,16 @@ const ContentBanner = ({ data }: Props) => {
         <motion.div className="text-base text-center laptop:text-2xl leading-[29px] mt-5">
           {data.description}
         </motion.div>
-      </div>) : 
+      </div>) :
       (<>
-        <div className="font-bold text-[34px] leading-[41px] tablet:text-[48px] tablet-[58px] laptop:text-6xl laptop:leading-[72px] text-center">
+        <div className="translate-y-[-16vh] font-bold text-[34px] leading-[41px] tablet:text-[48px] tablet-[58px] laptop:text-6xl laptop:leading-[72px] text-center">
           <AnimatePresence mode="wait">
             <motion.span variants={staggerChildren} animate="animate" className={(roboto.className)}>
               {data.name}
             </motion.span>
           </AnimatePresence>
         </div>
-        <motion.div className="text-base text-center laptop:text-2xl leading-[29px] mt-5">
+        <motion.div className="translate-y-[-16vh] text-base text-center laptop:text-2xl leading-[29px] mt-5">
           {data.description}
         </motion.div>
       </>) }

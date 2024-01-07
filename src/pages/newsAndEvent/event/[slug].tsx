@@ -27,7 +27,7 @@ export function EventDetail({ event }: Props) {
         <meta name='description' content='Đồ thờ cúng' />
         <meta name='keywords' content='Đồ thờ cúng' />
       </Head>
-      <section className='p-10 w-full'>
+      <section className='p-10 w-full phone:p-4 tablet:p4'>
         <div className='flex items-center pb-5'>
           {breadcrumbs.map((breadcrumb, index) => (
             <div className='flex justify-center items-center gap-2'>
@@ -48,7 +48,8 @@ export function EventDetail({ event }: Props) {
             <p className='text-base'>{event.data.summary}</p>
             <p className='text-base'>{event.data.content}</p>
           </div>
-          <div className='tablet:col-span-2 w-full min-h-[500px] flex flex-col justify-start items-start gap-8'>
+          <div className='tablet:col-span-2 w-full min-h-[500px] flex flex-col justify-start items-start gap-8 phone:pt-16
+          tablet:pt-16 desktop:pt-28 laptop:pt-28'>
             <h1 className='text-lg tablet:text-2xl laptop:text-[29px] text-[var(--primary-color-1000)]'>
               SỰ KIỆN KHÁC
             </h1>

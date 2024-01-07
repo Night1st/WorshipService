@@ -21,7 +21,7 @@ export function AboutUs() {
         <meta name='description' content='Đồ thờ cúng' />
         <meta name='keywords' content='Đồ thờ cúng' />
       </Head>
-      <div className={'about-background bg-cover bg-no-repeat'}>
+      <div className={'about-background desktop:bg-cover laptop:bg-cover tablet:bg-[length:100%_69%] bg-no-repeat phone:bg-[length:100%_69%]'}>
         <Banner data={homeData} />
         <OurQuote data={Quote} />
         <History

@@ -51,7 +51,7 @@ const ConnectForm = () => {
   const { errors, touched, values, handleChange, handleSubmit } = formik;
   return (
     <React.Fragment>
-      <section className='mx-auto px-4 laptop:px-32 py-10'>
+      <section className='mx-auto px-4 laptop:px-10 py-10 tablet:px-10'>
         <div className='bg-[var(--secondary-color-100)] p-5 justify-around items-center rounded-3xl'>
           <h1 className='text-center text-[var(--primary-color-1000)] text-2xl laptop:text-[34px] laptop:leading-[41px]'>
             ĐĂNG KÍ NHẬN TƯ VẤN
@@ -60,7 +60,7 @@ const ConnectForm = () => {
             Vui lòng để lại thông tin, chúng tôi sẽ hỗ trợ bạn trong thời gian sớm nhất
           </p>
           <form onSubmit={handleSubmit}>
-            <div className='grid grid-cols-1 laptop:grid-cols-2 desktop:gap-10 pt-10 justify-between text-black'>
+            <div className='grid grid-cols-1 laptop:gap-10 laptop:grid-cols-2 desktop:gap-10 pt-10 justify-between text-black'>
               <div className='w-full flex flex-col justify-between desktop:gap-5'>
                 <div className='mb-4'>
                   <label className={`block text-sm font-bold mb-2 ${errors.name && touched.name && 'border-red-500'}`}>

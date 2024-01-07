@@ -27,10 +27,10 @@ export function EventDetail({ event }: Props) {
         <meta name='description' content='Đồ thờ cúng' />
         <meta name='keywords' content='Đồ thờ cúng' />
       </Head>
-      <section className='p-10 w-full phone:p-4 tablet:p4'>
+      <section className='p-10 w-full phone:p-4 tablet:p-4'>
         <div className='flex items-center pb-5'>
           {breadcrumbs.map((breadcrumb, index) => (
-            <div className='flex justify-center items-center gap-2'>
+            <div key={'number' + index} className='flex justify-center items-center gap-2'>
               <p className='text-[#262417] cursor-pointer' onClick={() => router.push('/products')}>
                 {breadcrumb}
               </p>

@@ -70,7 +70,7 @@ const OrderDetail = ({ product }: Props) => {
             </div>
           </div>
         </div>
-        <div className='laptop:col-span-4 flex flex-col w-full gap-3 px-8'>
+        <div className='laptop:col-span-4 flex flex-col w-full gap-3'>
           {product.product.map((item, idx) => (
             <div key={idx} className='flex flex-col gap-3'>
               <h1 className='laptop:text-2xl laptop:leading-[29px] text-black text-2xl'>{item.productName}</h1>
@@ -111,12 +111,12 @@ const OrderDetail = ({ product }: Props) => {
               </div>
             ))}
           </div>
-          <div className='gap-5 grid grid-cols-1 tablet:grid-cols-3 pt-5'>
+          <div className={`gap-5 grid grid-cols-1 phone:grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 laptop:grid-cols-2 pt-5`}>
             {product.socialInformation.map((item, idx) => (
               <motion.button
                 key={idx}
                 whileHover='hover'
-                className={`min-w-[250px] max-h-[46px] bg-transparent relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-3 px-10 cursor-pointer mt-3`}
+                className={`desktop:min-w-[170px] max-h-[46px] bg-transparent relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-3 px-10 cursor-pointer mt-3`}
                 onClick={() => window.open(item.link)}
               >
                 <Image width={30} height={30} src={'/images/Logo/Shopee.png'} alt={''} />
@@ -125,7 +125,7 @@ const OrderDetail = ({ product }: Props) => {
             ))}
             <motion.button
               whileHover='hover'
-              className={`min-w-[250px] max-h-[46px] bg-transparent relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-3 px-10 cursor-pointer mt-3`}
+              className={`min-w-[170px] max-h-[46px] bg-transparent relative flex justify-center items-center gap-3 text-[#550F17] border-[var(--primary-color-900)] border-2 text-left py-3 px-10 cursor-pointer mt-3`}
               //onClick={() => router.push("")}
             >
               <p className='text-sm font-semibold'>{'Đăng ký nhận tư vấn'}</p>

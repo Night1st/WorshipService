@@ -91,10 +91,6 @@ body {
   z-index: 1;
 }
 @media screen and (max-width: 450px) {
-  .bg-gioithieu {
-    /*background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(/images/Banner/GioiThieu2.png);*/
-    background-size: 100vw 100vh;
-  }
   .quote-line:before {
     content: "";
     display: block;

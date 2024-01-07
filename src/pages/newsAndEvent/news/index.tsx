@@ -17,7 +17,7 @@ export function News() {
           {news?.map((item, idx) => (
             idx === 0 ? (
               <LargeNewsCard key={idx} news={item} />
-            ) : ("")
+            ) : <></>
           ))}
         </section>
         

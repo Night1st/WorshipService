@@ -6,6 +6,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useCreateConnect } from '@/queries/contact.queries';
 import { useRouter } from 'next/router';
+import { PreImage } from './PreImage';
 
 const data = ['Hương', 'Nến', 'Tiền vàng', 'Set đồ cúng', 'Đồ hầu', 'Sản phẩm khác'];
 
@@ -110,18 +111,14 @@ const ConnectForm = () => {
                 </div>
                 <div className='mb-4 flex justify-end z-30'>
                   <Modal open={open} onClose={() => setOpen(false)}>
-                    <div className='text-center w-[744px] flex flex-col gap-5 '>
+                    <div className='w-full justify-center items-center text-center max-h-[371px] flex flex-col gap-5 '>
                       <h1 className='text-4xl laptop:text-4xl text-green-400 pt-10'>ĐĂNG KÝ THÀNH CÔNG</h1>
                       <p className='text-lg laptop:text-2xl text-black'>
                         Quý khách đã đăng ký nhận tư vấn thành công. Chúng tôi sẽ liên hệ Quý khách sớm nhất.
                       </p>
-                      <Image
-                        className='ml-auto mr-auto py-10'
-                        height={400}
-                        width={400}
-                        src={'/images/Contact.png'}
-                        alt={''}
-                      />
+                      <div className='w-[200px] hidden justify-center items-center min-h-[200px] laptop:flex py-10'>
+                        <PreImage fix={true} src='/images/Contact.png' alt='image-contact'/>
+                      </div>
                     </div>
                   </Modal>
                 </div>

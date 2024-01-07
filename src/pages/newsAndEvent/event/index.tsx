@@ -21,7 +21,7 @@ export function Event() {
       <section className='p-10'>
       <div className='flex items-center pb-5'>
           {breadcrumbs.map((breadcrumb, index) => (
-            <div className='flex justify-center items-center gap-2'>
+            <div className='flex justify-center items-center gap-2' key={index}>
               <p className='text-[#262417] cursor-pointer' onClick={() => router.push('/products')}>
                 {breadcrumb}
               </p>

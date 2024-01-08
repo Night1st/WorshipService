@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Modal from './Modal';
-import { useFormik } from 'formik';
+import { Field, FieldArray, useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useCreateConnect } from '@/queries/contact.queries';
 import { useRouter } from 'next/router';
@@ -13,12 +13,13 @@ const data = ['Hương', 'Nến', 'Tiền vàng', 'Set đồ cúng', 'Đồ hầ
 const schema = Yup.object().shape({
   name: Yup.string().required('Hãy nhập tên của bạn!'),
   phone: Yup.string().required('Hãy nhập số điện thoại của bạn!'),
-  email: Yup.string().required('Hãy nhập email của bạn!'),
-  note: Yup.string(),
+  email: Yup.string().required('Hãy nhập email của bạn!').email('Email không đúng định dạng'),
+  note: Yup.string()
 });
 
 const ConnectForm = () => {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
+  const [formSubmit, setFormSubmit] = useState<boolean>(false);
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const doContact = useCreateConnect(() => router.push('/'));
@@ -37,7 +38,7 @@ const ConnectForm = () => {
       note: '',
     },
     validationSchema: schema,
-    onSubmit: async ({ name, phone, email, note }) => {
+    onSubmit: selectedItems.length ? async ({ name, phone, email, note }) => {
       const bodyRequest = {
         name: name,
         phone: String(phone),
@@ -47,9 +48,12 @@ const ConnectForm = () => {
       };
       doContact.mutate(bodyRequest);
       setOpen(true)
-    },
+    } : (() => {
+      setFormSubmit(true);
+      console.log('over');
+    }) ,
   });
-  const { errors, touched, values, handleChange, handleSubmit } = formik;
+  const { errors, touched, values, handleChange, handleSubmit, isSubmitting } = formik;
   return (
     <React.Fragment>
       <section className='mx-auto px-4 laptop:px-10 py-10 tablet:px-10'>
@@ -76,41 +80,44 @@ const ConnectForm = () => {
                     id='name'
                     placeholder='Vui lòng cho biết họ tên của bạn'
                   />
+                  <small className={'text-red-500'}>{errors.name}</small>
                 </div>
-                <div className='mb-4'>
+                <div className="mb-4">
                   <label
                     className={`block text-sm font-bold mb-2 ${errors.phone && touched.phone && 'border-red-500'}`}
                   >
                     Số điện thoại *
                   </label>
                   <input
-                    className='appearance-none border rounded-lg w-full p-4 leading-tight focus:outline-none focus:shadow-outline'
-                    type='number'
-                    name='phone'
+                    className="appearance-none border rounded-lg w-full p-4 leading-tight focus:outline-none focus:shadow-outline"
+                    type="number"
+                    name="phone"
                     value={values.phone}
                     onChange={handleChange}
-                    id='phone'
-                    placeholder='Nhập số điện thoại của bạn'
+                    id="phone"
+                    placeholder="Nhập số điện thoại của bạn"
                   />
+                  <small className={'text-red-500'}>{errors.phone}</small>
                 </div>
-                <div className='mb-4'>
+                <div className="mb-4">
                   <label
                     className={`block text-sm font-bold mb-2 ${errors.email && touched.email && 'border-red-500'}`}
                   >
                     Email *
                   </label>
                   <input
-                    className='appearance-none border rounded-lg w-full p-4 leading-tight focus:outline-none focus:shadow-outline'
-                    type='text'
-                    name='email'
+                    className="appearance-none border rounded-lg w-full p-4 leading-tight focus:outline-none focus:shadow-outline"
+                    type="text"
+                    name="email"
                     value={values.email}
                     onChange={handleChange}
-                    id='email'
-                    placeholder='Nhập email của bạn'
+                    id="email"
+                    placeholder="Nhập email của bạn"
                   />
+                  <small className={'text-red-500'}>{errors.email}</small>
                 </div>
-                <div className='mb-4 flex justify-end z-30'>
-                  <Modal open={open} onClose={() => setOpen(false)}>
+                <div className="mb-4 flex justify-end z-30">
+                <Modal open={open} onClose={() => setOpen(false)}>
                     <div className='w-full justify-center items-center text-center max-h-[371px] flex flex-col gap-5 '>
                       <h1 className='text-4xl laptop:text-4xl text-green-400 pt-10'>ĐĂNG KÝ THÀNH CÔNG</h1>
                       <p className='text-lg laptop:text-2xl text-black'>
@@ -142,6 +149,7 @@ const ConnectForm = () => {
                       );
                     })}
                   </div>
+                  {formSubmit && !selectedItems.length ? (<small className={'text-red-500'}>{'Hãy chọn sản phẩm quan tâm'}</small>) : null}
                   <textarea
                     className='appearance-none border rounded-lg w-full min-h-[178px] py-2 px-3 my-3 leading-tight focus:outline-none focus:shadow-outline'
                     name='note'

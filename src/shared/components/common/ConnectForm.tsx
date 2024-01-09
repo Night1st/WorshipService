@@ -19,7 +19,6 @@ const schema = Yup.object().shape({
 
 const ConnectForm = () => {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
-  const [formSubmit, setFormSubmit] = useState<boolean>(false);
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const doContact = useCreateConnect(() => router.push('/'));
@@ -38,7 +37,7 @@ const ConnectForm = () => {
       note: '',
     },
     validationSchema: schema,
-    onSubmit: selectedItems.length ? async ({ name, phone, email, note }) => {
+    onSubmit:  async ({ name, phone, email, note }) => {
       const bodyRequest = {
         name: name,
         phone: String(phone),
@@ -48,10 +47,7 @@ const ConnectForm = () => {
       };
       doContact.mutate(bodyRequest);
       setOpen(true)
-    } : (() => {
-      setFormSubmit(true);
-      console.log('over');
-    }) ,
+    },
   });
   const { errors, touched, values, handleChange, handleSubmit, isSubmitting } = formik;
   return (
@@ -149,7 +145,6 @@ const ConnectForm = () => {
                       );
                     })}
                   </div>
-                  {formSubmit && !selectedItems.length ? (<small className={'text-red-500'}>{'Hãy chọn sản phẩm quan tâm'}</small>) : null}
                   <textarea
                     className='appearance-none border rounded-lg w-full min-h-[178px] py-2 px-3 my-3 leading-tight focus:outline-none focus:shadow-outline'
                     name='note'

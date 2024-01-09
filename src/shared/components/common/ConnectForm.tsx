@@ -13,7 +13,7 @@ const data = ['Hương', 'Nến', 'Tiền vàng', 'Set đồ cúng', 'Đồ hầ
 const schema = Yup.object().shape({
   name: Yup.string().required('Hãy nhập tên của bạn!'),
   phone: Yup.string().required('Hãy nhập số điện thoại của bạn!'),
-  email: Yup.string().required('Hãy nhập email của bạn!').email('Email không đúng định dạng'),
+  email: Yup.string().email('Email không đúng định dạng'),
   note: Yup.string()
 });
 
@@ -103,7 +103,7 @@ const ConnectForm = () => {
                   <label
                     className={`block text-sm font-bold mb-2 ${errors.email && touched.email && 'border-red-500'}`}
                   >
-                    Email *
+                    Email
                   </label>
                   <input
                     className="appearance-none border rounded-lg w-full p-4 leading-tight focus:outline-none focus:shadow-outline"

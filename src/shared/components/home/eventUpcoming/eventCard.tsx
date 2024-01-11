@@ -19,7 +19,7 @@ const EventCard = ({event}: Props) => {
                 alt="event"
                 className="w-full max-h-[200px]"
                 />
-            <div className="flex gap-3 p-3 bg-white rounded-md min-h-[140px]">
+            <div className="flex gap-3 p-3 bg-white rounded-md min-h-[140px] w-[100%]">
                 <div className="flex flex-col gap-3 bg-[var(--secondary-color-500)] justify-center text-center min-w-[80px]">
                     <p className="text-2xl leading-[29px] text-black text-[var(--primary-color-900)]">{date.getDate()}</p>
                     <p className="text-base">{"Tháng " + (date.getMonth() + 1) + " " + date.getFullYear()}</p>

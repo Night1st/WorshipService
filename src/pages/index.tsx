@@ -8,7 +8,7 @@ import EventUpcoming from "@/shared/components/home/eventUpcoming";
 import React from "react";
 
 const homeData = {
-  name: "Mang bình an tới mỗi gia đình Việt",
+  name: "",
   description: "",
   cover_image: "bg-trangchu"
 }

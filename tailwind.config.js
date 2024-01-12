@@ -12,7 +12,7 @@ module.exports = {
       backgroundImage: {
         bannerRadial: 'radial-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2))',
         sanpham: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/Sản_phẩm.jpg)',
-        trangchu: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/Trang_chủ.jpg)',
+        trangchu: ' url(/images/Banner/Trang_chủ_2.jpg)',
         huong: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/Hương.jpg)',
         nen: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/Nến.jpg)',
         tienvang: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/Tiền_vàng.jpg)',

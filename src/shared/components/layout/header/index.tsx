@@ -56,11 +56,11 @@ const Header = () => {
       </div>
       <ul
         className={`col-span-4 w-full absolute top-30 left-0 bg-[var(--primary-color-800)] px-4 pb-4 laptop:px-0 laptop:pb-0 phone:max-laptop:pt-5 justify-center items-center laptop:justify-center laptop:items-start gap-5 phone:max-laptop:text-center flex flex-col laptop:flex-row laptop:relative laptop:border-b laptop:border-b-gray-100 ${
-          isToggleOpen ? 'block' : 'hidden'
+          isToggleOpen ? 'laptop:flex desktop:flex table:flex phone:hidden' : 'flex'
         }`}
       >
         {fakeMenu.map((item, inx) => (
-          <Link href={item.link} key={inx}>
+          <Link href={item.link} key={inx} onClick={() => setIsToggleOpen(!isToggleOpen)}>
             <li className={`text-sm ${router.pathname === item.link && 'pb-2 border-b border-b-gray-200'}`}>
               {item.title}
             </li>

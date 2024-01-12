@@ -60,7 +60,7 @@ const OrderDetail = ({ product }: Props) => {
             <div className='w-[48px] h-[48px] flex justify-center items-center p-3 border border-[#550F17] cursor-pointer'>
               <IconArrowLeft fill='#550F17' onClick={() => handleChangeImage("prev")}/>
             </div>
-            {imageList.slice(0, 3).map(image => (
+            {imageList.slice(0, 3).map(image => image && (
               <div key={image} className='w-full h-[100px] rounded-xl overflow-hidden'>
                 <PreImage src={image} alt={'image-other'} className='w-full max-h-[100px] rounded-xl' />
               </div>
@@ -134,8 +134,8 @@ const OrderDetail = ({ product }: Props) => {
         </div>
       </div>
       <div className='grid grid-cols-1 laptop:grid-cols-3 gap-10 pt-8'>
-        <div className='flex border-2 rounded-xl border-[var(--primary-color-900)]'>
-          <div className='flex p-5 gap-5'>
+        {product.product[0].sell_policy && <div className='flex border-2 rounded-xl border-[var(--primary-color-900)]'>
+           <div className='flex p-5 gap-5'>
             <div>
               <img src={'/images/Logo/Policy1.png'} alt={''} className='min-w-[32px] laptop:min-w-[56px]' />
             </div>
@@ -144,8 +144,8 @@ const OrderDetail = ({ product }: Props) => {
               <p className='text-base pt-2' dangerouslySetInnerHTML={{__html: product.product[0].sell_policy}}></p>
             </div>
           </div>
-        </div>
-        <div className='flex border-2 rounded-xl border-[var(--primary-color-900)]'>
+        </div> }
+        {product.product[0].payment_policy && <div className='flex border-2 rounded-xl border-[var(--primary-color-900)]'>
           <div className='flex p-5 gap-5'>
             <div>
               <img src={'/images/Logo/Policy2.png'} alt={''} className='min-w-[32px] laptop:min-w-[56px]' />
@@ -156,7 +156,8 @@ const OrderDetail = ({ product }: Props) => {
             </div>
           </div>
         </div>
-        <div className='flex border-2 rounded-xl border-[var(--primary-color-900)]'>
+        }
+        {product.product[0].payment_policy && <div className='flex border-2 rounded-xl border-[var(--primary-color-900)]'>
           <div className='flex p-5 gap-5'>
             <div>
               <img src={'/images/Logo/Policy3.png'} alt={''} className='min-w-[32px] laptop:min-w-[56px]' />
@@ -167,6 +168,7 @@ const OrderDetail = ({ product }: Props) => {
             </div>
           </div>
         </div>
+        }
       </div>
       <div className='pt-5 pb-16'>
         {product.product.map((item, idx) => (

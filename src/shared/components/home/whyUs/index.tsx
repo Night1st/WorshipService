@@ -13,8 +13,8 @@ const WhyUs = () => {
     <>
       <section className='mx-auto p-4 laptop:px-32 laptop:py-8'>
         <div className='w-full flex flex-col justify-around items-center'>
-          <TitleSection title='VỀ CHÚNG TÔI' description='Mang bình an tới mỗi gia đình Việt'/>
-          <AboutUs image={'/images/AboutUs.jpg'} description={aboutUs ? aboutUs[0].description_vi: ''}/>
+          <TitleSection title='VỀ CHÚNG TÔI' description={aboutUs ? aboutUs[0].description_vi: ''}/>
+          <AboutUs image={'/images/AboutUs.jpg'} description={aboutUs ? aboutUs[1].description_vi: ''}/>
           <div className="flex justify-center items-center">
           <motion.button
             whileHover="hover"

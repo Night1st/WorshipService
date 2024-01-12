@@ -36,7 +36,7 @@ const OrderDetail = ({ product }: Props) => {
     product.product[0].image5,
     product.product[0].image6,
     product.product[0].image7,
-  ];
+  ].filter(e => e);
   const [mainImage, setMainImage] = useState<string>(imageList[0]);
   const [selectedType, setSelectedType] = useState<ISellInformation>(product.sellInformation[0] as ISellInformation);
   const handleChangeImage = (type: string) => {

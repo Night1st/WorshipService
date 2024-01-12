@@ -6,6 +6,9 @@ import History from '@/shared/components/home/whyUs/history';
 import Address from '@/shared/components/home/whyUs/address';
 import OurQuote from '@/shared/components/common/OurQuote';
 import { Quote } from '@/shared/mock/whyUs';
+import {useGetComingSoonEvent} from "@/queries/event.queries";
+import {useGetHistory} from "@/queries/history.queries";
+import {useGetSlogan} from "@/queries/slogan.queries";
 
 const homeData = {
   name: 'Nhang Đức Tuấn',
@@ -14,6 +17,9 @@ const homeData = {
 };
 
 export function AboutUs() {
+  const { data: history } = useGetHistory();
+  const { data: quote} = useGetSlogan();
+
   return (
     <>
       <Head>
@@ -23,11 +29,11 @@ export function AboutUs() {
       </Head>
       <div className={'about-background desktop:bg-cover laptop:bg-cover tablet:bg-[length:100%_69%] bg-no-repeat phone:bg-[length:100%_69%]'}>
         <Banner data={homeData} />
-        <OurQuote data={Quote} />
+        <OurQuote data={quote||[]} />
         <History
           image={'/images/LichSu.jpg'}
           description={
-            `Năm ..., Nhang Đức Tuấn chính thức được thành lập, nhằm cung cấp sản phẩm chính là hương cúng và tiền vàng. <br><br> Năm ..., Nhang Đức Tuấn mở rộng kinh doanh các sản phẩm cúng lễ khác như nến, đồ hầu,...`
+            history ? history[0].description_vi : ''
           }
         />
         <Address image={'/images/Banner/Sản_phẩm.jpg'} description={''} />

@@ -17,7 +17,12 @@ export const Quote = [
 ];
 
 export interface IQuote {
-    key: number;
-    title: string;
-    description: string;
+    id: number,
+    group: string,
+    type: string,
+    value: number,
+    image: string,
+    description_vi: string,
+    description_en: string,
+    order: number
 }

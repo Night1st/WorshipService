@@ -25,7 +25,7 @@ module.exports = {
         thongdiep: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/OutQuote.jpg)'
       },
       screens: {
-        'phone': '400px',
+        'phone': '390px',
         'tablet': '768px',
         'laptop': '1024px',
         'desktop': '1280px',

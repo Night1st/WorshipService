@@ -1,4 +1,4 @@
-export interface IHistory {
+export interface ISystemInfo {
     id: number,
     group: string,
     type: string,

@@ -3,14 +3,18 @@ import TitleSection from '../../common/TitleSection';
 import AboutUs from './aboutUs';
 import router from 'next/router';
 import IconArrowRight from '../../icon/IconArrowRight';
+import { useGetHistory } from '@/queries/history.queries';
+import { useGetAboutUs } from '@/queries/about-us.queries';
 
 const WhyUs = () => {
+  const { data: aboutUs } = useGetAboutUs();
+
   return (
     <>
       <section className='mx-auto p-4 laptop:px-32 laptop:py-8'>
         <div className='w-full flex flex-col justify-around items-center'>
           <TitleSection title='VỀ CHÚNG TÔI' description='Mang bình an tới mỗi gia đình Việt'/>
-          <AboutUs image={'/images/AboutUs.jpg'} description={'Đồ thờ cúng là sợi dây kết nối giữa âm dương, những món đồ mang đến không gian thờ cúng trở nên trang nghiêm và ấm cúng hơn. Thấu hiểu ý nghĩa đó, Nhang Đức Tuấn chuyên cung cấp các sản phẩm đồ thờ cúng chất lượng, an toàn, nhằm giúp Quý khách hàng gửi gắm tấm lòng tới gia tiên.'}/>
+          <AboutUs image={'/images/AboutUs.jpg'} description={aboutUs ? aboutUs[0].description_vi: ''}/>
           <div className="flex justify-center items-center">
           <motion.button
             whileHover="hover"

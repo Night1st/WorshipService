@@ -7,7 +7,7 @@ const QUERY_KEY = "AboutUs"
 export const useGetAboutUs = (options?: Partial<UseQueryOptions>) => {
   return useQuery ({
     queryKey: [QUERY_KEY, "get-all"],
-    queryFn: () => axiosInstanceNoAuth.get<IBaseResponse<ISystemInfo[]>>(`/system-information/aboutUs`),
+    queryFn: () => axiosInstanceNoAuth.get<IBaseResponse<ISystemInfo[]>>(`/system-information/about-us`),
     select(data) {
       return data.data
     },

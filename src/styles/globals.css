@@ -91,6 +91,9 @@ body {
   z-index: 1;
 }
 @media screen and (max-width: 450px) {
+  .bg-sanpham {
+    background-image: url('/images/Banner/san_pham_mobie.jpg')!important;
+  }
   .quote-line:before {
     content: "";
     display: block;

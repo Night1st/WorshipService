@@ -34,17 +34,17 @@ const ContentBanner = ({ data }: Props) => {
       </div>) :
         (data.name === "SẢN PHẨM" ?
           (<div
-            className="flex flex-col items-left desktop:translate-y-[-16vh] phone:translate-x-[-23vw] laptop:translate-y-[-16vh] tablet:translate-y-[-16vh] phone:translate-y-[-32vh]">
+            className="flex flex-col items-left desktop:translate-y-[-16vh] phone:translate-x-[-23vw] laptop:translate-y-[-16vh] tablet:translate-y-[-16vh] phone:translate-y-[-33vh]">
             <div
-              className="font-bold text-[42px] leading-[58px] tablet:text-6xl tablet:leading-[72px] laptop:text-[70px] laptop:leading-[116px] text-[var(--primary-color-600)] text-center">
+              className="font-bold text-[34px] leading-[40px] tablet:text-6xl tablet:leading-[72px] laptop:text-[70px] laptop:leading-[116px] text-[var(--primary-color-600)] tablet:text-center phone:text-left">
               <AnimatePresence mode="wait">
                 <motion.span variants={staggerChildren} animate="animate">
                   {data.name}
                 </motion.span>
               </AnimatePresence>
             </div>
-            <motion.div className="text-base phone:text-[27px] font-[500] text-[var(--primary-color-800)]
-            text-center phone:text-2xl laptop:text-4xl leading-[29px] mt-5 phone:w-[249px] desktop:w-[700px] laptop:text-[40px]">
+            <motion.div className="text-base phone:text-[16px] font-[500] text-[var(--primary-color-800)]
+            tablet:text-center phone:text-left phone:text-2xl laptop:text-4xl phone:leading-[25px] tablet:mt-5 phone:mt-2 phone:w-[210px] desktop:w-[700px] laptop:text-[40px]">
               {data.description}
             </motion.div>
           </div>) :

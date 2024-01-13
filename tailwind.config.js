@@ -11,8 +11,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         bannerRadial: 'radial-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2))',
-        sanpham: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/Sản_phẩm.jpg)',
-        trangchu: ' url(/images/Banner/Trang_chủ_2.jpg)',
+        sanpham: 'url(/images/Banner/San_pham.jpg)',
+        trangchu: ' url(/images/Banner/Trang_chu_2.jpg)',
         huong: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/Hương.jpg)',
         nen: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/Nến.jpg)',
         tienvang: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/images/Banner/Tiền_vàng.jpg)',

@@ -8,8 +8,8 @@ import EventUpcoming from "@/shared/components/home/eventUpcoming";
 import React from "react";
 
 const homeData = {
-  name: "",
-  description: "",
+  name: "ĐỒ THỜ CÚNG ĐỨC TUẤN",
+  description: "dịch vụ cung cấp đồ cúng hàng đầu việt nam",
   cover_image: "bg-trangchu"
 }
 

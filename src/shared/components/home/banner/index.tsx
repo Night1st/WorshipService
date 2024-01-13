@@ -1,6 +1,7 @@
 import ContentBanner from './ContentBanner';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
+import ContentBannerHome from '@/shared/components/home/banner/ContentBannerHome';
 export interface Data {
   name?: string;
   description?: string;
@@ -28,9 +29,10 @@ const Banner = ({ data }: Props) => {
   }, []);
 
   return (
-    <div className='scrollbar-none relative flex flex-col overflow-hidden text-white desktop:h-[69vh] laptop:h-[69vh] phone:h-[69vh] tablet:h-[69vh]'>
+    <div className='scrollbar-none relative flex flex-col overflow-hidden text-white desktop:h-[69vh] laptop:h-[69vh] phone:h-[35vh] tablet:h-[69vh]'>
       <div className='w-full flex justify-center items-center mx-auto'>
-        <ContentBanner data={data} />
+        {data.name == 'ĐỒ THỜ CÚNG ĐỨC TUẤN' &&<ContentBannerHome data={data} />}
+        {data.name != 'ĐỒ THỜ CÚNG ĐỨC TUẤN' &&<ContentBanner data={data} />}
       </div>
     </div>
   );
